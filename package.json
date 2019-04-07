@@ -1,0 +1,11 @@
+{
+  "name": "Ecstar",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mouse484/Ecstar.git",
+  "author": "mouse_484",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
