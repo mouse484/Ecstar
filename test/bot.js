@@ -1,0 +1,1 @@
+const Ecstar = require("../src");
