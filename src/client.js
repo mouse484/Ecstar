@@ -17,7 +17,7 @@ class Ecstar_client extends discord.Client {
     constructor(options = {}) {
         if (!options.predix) options.commandPrefix = "!";
         super(options);
-    };
-};
+    }
+}
 
 module.exports = Ecstar_client;

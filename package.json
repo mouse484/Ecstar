@@ -6,7 +6,8 @@
     "author": "mouse_484",
     "license": "MIT",
     "scripts": {
-        "test": "node test/bot"
+        "test": "node test/bot",
+        "eslint":"eslint --fix src/*js"
     },
     "dependencies": {
         "discord.js": "^11.4.2"
@@ -14,6 +15,8 @@
     "devDependencies": {
         "eslint": "^5.16.0",
         "eslint-config-esc": "Esc-Developer/eslint-config-esc#master",
+        "eslint-config-prettier": "^4.1.0",
+        "eslint-plugin-prettier": "^3.0.1",
         "prettier": "^1.16.4"
     }
 }
