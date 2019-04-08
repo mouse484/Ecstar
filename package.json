@@ -1,16 +1,23 @@
 {
-  "name": "Ecstar",
-  "version": "0.0.0",
-  "main": "src/index.js",
-  "repository": "https://github.com/mouse484/Ecstar.git",
-  "author": "mouse_484",
-  "license": "MIT",
-  "dependencies": {
-    "discord.js": "^11.4.2"
-  },
-  "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-esc": "Esc-Developer/eslint-config-esc#master",
-    "prettier": "^1.16.4"
-  }
+    "name": "Ecstar",
+    "version": "0.0.0",
+    "main": "src/index.js",
+    "repository": "https://github.com/mouse484/Ecstar.git",
+    "author": "mouse_484",
+    "license": "MIT",
+    "scripts": {
+        "test": "node --require dotenv/config test/bot",
+        "eslint": "eslint --fix src/*js"
+    },
+    "dependencies": {
+        "discord.js": "^11.4.2"
+    },
+    "devDependencies": {
+        "dotenv": "^7.0.0",
+        "eslint": "^5.16.0",
+        "eslint-config-esc": "Esc-Developer/eslint-config-esc#master",
+        "eslint-config-prettier": "^4.1.0",
+        "eslint-plugin-prettier": "^3.0.1",
+        "prettier": "^1.16.4"
+    }
 }
