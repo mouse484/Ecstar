@@ -18,6 +18,15 @@ class Ecstar_client extends discord.Client {
         if (!options.predix) options.commandPrefix = "!";
         super(options);
     }
+
+    /**
+    * login your bot
+    * @param {string} token Your bot token
+    */
+
+    login(token) {
+        return super.login(token);
+    }
 }
 
 module.exports = Ecstar_client;
