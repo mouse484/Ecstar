@@ -11,13 +11,13 @@ class Ecstar_client extends discord.Client {
     /**
      * Options for Client
      * @typedef {ClientOptions} Client_options
-     * @property {string} [prefix] - command prefix
-     * @property {string} [owner] - Bot owner ID
-     * @property {bool} [log=false] - loging
+     * @property {String} [prefix] - command prefix
+     * @property {String} [owner] - Bot owner ID
+     * @property {Boolean} [log=false] - loging
      */
 
     constructor(options = {}) {
-        if (!options.predix) options.commandPrefix = "!";
+        if (!options.predix) options.prefix = "!";
         super(options);
 
         // command handling
@@ -25,6 +25,12 @@ class Ecstar_client extends discord.Client {
         // loging
         if (options.log) super.on("log", log => console.log(log));
     }
+
+    /**
+     * loging your bot
+     * @param {String} token - your bot token
+     */
+
     login(token) {
         super.emit("log", "starting...");
         return super.login(token);

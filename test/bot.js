@@ -5,8 +5,6 @@ const client = new Ecstar.client({
     log: true,
 });
 
-new Ecstar.command({
-    
-});
+new Ecstar.command();
 
 client.login(process.env.TOKEN);
