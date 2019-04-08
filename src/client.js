@@ -8,11 +8,11 @@ const discord = require("discord.js");
 class Ecstar_client extends discord.Client {
 
     /**
-	 * Options for Client
-	 * @typedef {ClientOptions} Client_options
-	 * @property {string} [commandPrefix=!] - Default command prefix
-	 * @property {string|string[]|Set<string>} [owner] - ID of the bot owner's Discord user, or multiple IDs
-	 */
+    * Options for Client
+    * @typedef {ClientOptions} Client_options
+    * @property {string} [prefix] - command prefix
+    * @property {string} [owner] - Bot owner ID
+    */
 
     constructor(options = {}) {
         if (!options.predix) options.commandPrefix = "!";
