@@ -3,7 +3,6 @@ class command_handle {
         if (message.author.bot) return;
         if (!message.content.startsWith(client.options.prefix)) return;
 
-        
     }
 }
 

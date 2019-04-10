@@ -9,8 +9,11 @@
         "test": "eslint --fix test && node --require dotenv/config test/bot",
         "lint": "eslint --fix src"
     },
-    "dependencies": {
+    "peerDependencies": {
         "discord.js": "^11.4.2"
+    },
+    "dependencies": {
+        "require-all": "^3.0.0"
     },
     "devDependencies": {
         "dotenv": "^7.0.0",
