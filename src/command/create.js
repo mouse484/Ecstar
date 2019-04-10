@@ -1,6 +1,6 @@
 class command {
     constructor(client, info) {
-        console.log(info);
+        this.client = client;
     }
 }
 

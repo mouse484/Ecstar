@@ -7,6 +7,8 @@ module.exports = class extends command {
         });
     }
     run(message) {
+        const ping = this.client.ping;
+
         return message.channel.send(`${ping}ms`);
     }
 };
