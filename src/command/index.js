@@ -7,11 +7,11 @@ class command {
      * @property {string} [path=command/] - commands dir path
      */
 
-    constructor(options = {}) {
-        if (!options.path) options.path = "commands/";
-
-        this.options = options;
+    constructor(client, message) {
+        if (message.author.bot) return;
+        message.channel.send(message.content);
     }
+
 
     /**
      * command handling
