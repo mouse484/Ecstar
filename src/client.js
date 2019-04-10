@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 
-const command = require("./command");
+const command_handle = require("./command/handle.js");
 
 /**
  * Discord.js Client with a command framework
@@ -21,7 +21,7 @@ class Ecstar_client extends discord.Client {
         super(options);
 
         // command handling
-        super.on("message", message => new command(this, message));
+        super.on("message", message => new command_handle(this, message));
         // loging
         if (options.log) super.on("log", log => console.log(log));
     }
