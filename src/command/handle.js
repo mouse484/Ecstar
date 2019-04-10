@@ -1,6 +1,6 @@
 class command_handle {
     constructor(client, message) {
-        const prefix = client.options.prefix
+        const prefix = client.options.prefix;
         if (message.author.bot) return;
         if (!message.content.startsWith(prefix)) return;
 
