@@ -6,7 +6,7 @@
     "author": "mouse_484",
     "license": "MIT",
     "scripts": {
-        "test": "node --require dotenv/config test/bot",
+        "test": "eslint --fix test && node --require dotenv/config test/bot",
         "lint": "eslint --fix src"
     },
     "dependencies": {
