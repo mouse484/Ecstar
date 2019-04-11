@@ -1,0 +1,27 @@
+{
+    "name": "ecstar",
+    "version": "0.0.1",
+    "main": "src/index.js",
+    "repository": "https://github.com/mouse484/Ecstar.git",
+    "author": "mouse_484",
+    "license": "MIT",
+    "scripts": {
+        "test": "eslint --fix test && node --require dotenv/config test/bot",
+        "lint": "eslint --fix src"
+    },
+    "peerDependencies": {
+        "discord.js": "^11.4.2"
+    },
+    "dependencies": {
+        "discord.js": "^11.4.2",
+        "require-all": "^3.0.0"
+    },
+    "devDependencies": {
+        "dotenv": "^7.0.0",
+        "eslint": "^5.16.0",
+        "eslint-config-esc": "Esc-Developer/eslint-config-esc#master",
+        "eslint-config-prettier": "^4.1.0",
+        "eslint-plugin-prettier": "^3.0.1",
+        "prettier": "^1.16.4"
+    }
+}
