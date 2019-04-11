@@ -13,6 +13,7 @@
         "discord.js": "^11.4.2"
     },
     "dependencies": {
+        "discord.js": "^11.4.2",
         "require-all": "^3.0.0"
     },
     "devDependencies": {

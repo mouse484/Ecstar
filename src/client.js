@@ -43,6 +43,16 @@ class Ecstar_client extends discord.Client {
         super.emit("log", "starting...");
         return super.login(token);
     }
+
+    /**
+     * Discord event listener
+     * @param {String} event - Discord client event
+     * @callback parameter - Discord client event parameter
+     * @returns {object} - Discord client events
+     */
+    on(event, parameter) {
+        super.on(event, parameter);
+    }
 }
 
 module.exports = Ecstar_client;
