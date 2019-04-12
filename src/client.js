@@ -9,18 +9,22 @@ const command_handle = require("./command/handle.js");
  */
 
 class Ecstar_client extends discord.Client {
-    /**
+     /**
      * Options for Client
      * @typedef {ClientOptions} Client_options
      * @property {String} [prefix] - command prefix
      * @property {String} [owner] - Bot owner ID
      * @property {Boolean} [log=false] - loging
+     * @property {Boolean} [help=false] - auto create help command
      */
 
     constructor(options = {}) {
         if (!options.prefix) options.prefix = "!";
         if (!options.command) options.command = "/commands";
+        if (!options.log) options.log = false;
+        if (!options.help) options.help = false;
         super(options);
+
 
         // ready
         super.once("ready", () => {
