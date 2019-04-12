@@ -5,7 +5,9 @@ class command_handle {
         if (!message.content.startsWith(prefix)) return;
 
         const args = message.content.slice(prefix.length).split(" ");
-        client.commands[args[0]].run(message);
+
+        const command = client.commands[args[0]];
+        if (command) command.run(message);
     }
 }
 
