@@ -9,7 +9,7 @@ const command_handle = require("./command/handle.js");
  */
 
 class Ecstar_client extends discord.Client {
-     /**
+    /**
      * Options for Client
      * @typedef {ClientOptions} Client_options
      * @property {String} [prefix] - command prefix
@@ -20,11 +20,9 @@ class Ecstar_client extends discord.Client {
 
     constructor(options = {}) {
         if (!options.prefix) options.prefix = "!";
-        if (!options.command) options.command = "/commands";
         if (!options.log) options.log = false;
         if (!options.help) options.help = false;
         super(options);
-
 
         // ready
         super.once("ready", () => {
