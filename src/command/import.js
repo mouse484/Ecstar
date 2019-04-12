@@ -28,7 +28,9 @@ module.exports = class extends discord.Client {
 
                     if (commands[command.info.namename]) {
                         throw new Error(
-                            `Can not create a command with the same name. Duplicate command: "${command.info.name}"`
+                            `Can not create a command with the same name. Duplicate command: "${
+                                command.info.name
+                            }"`
                         );
                     }
                     commands[command.info.name] = command;
