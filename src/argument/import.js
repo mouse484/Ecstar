@@ -4,10 +4,17 @@ const ignore = ["index.js", "import.js"];
 
 class arugument_import {
     constructor(client) {
+        const args = {};
+
         const dir = fs.readdirSync(__dirname);
         dir.filter(file => !ignore.includes(file)).forEach(file => {
-            console.log(file);
+            const arugment_file = require(`./${file}`);
+            const argumrnt = new arugment_file(client);
+
+            args[argumrnt.type] = argumrnt;
         });
+
+        client.arguments = args;
     }
 }
 

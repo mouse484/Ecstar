@@ -5,7 +5,7 @@ const isdir = dir_path => {
     fs.statSync(dir_path).isDirectory();
 };
 
-module.exports = class command_import {
+class command_import {
     constructor(client) {
         const commands = {};
 
@@ -38,4 +38,6 @@ module.exports = class command_import {
         });
         client.commands = commands;
     }
-};
+}
+
+module.exports = command_import;
