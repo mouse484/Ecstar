@@ -14,7 +14,7 @@ class arugument_import {
             args[argumrnt.type] = argumrnt;
         });
 
-        client.arguments = args;
+        client.args = args;
     }
 }
 

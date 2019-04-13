@@ -4,14 +4,10 @@ module.exports = class extends command {
     constructor(client) {
         super(client, {
             name: "say",
-            // args: {
-            //     text: this.client.args.text,
-            // },
+            args: "text",
         });
     }
-    run(message) {
-        const ping = this.client.ping;
-
-        return message.channel.send(`${ping}ms`);
+    run(message, text) {
+        return message.channel.send(text);
     }
 };

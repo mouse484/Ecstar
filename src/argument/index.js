@@ -1,5 +1,3 @@
-const fs = require("fs");
-
 class arugment {
     constructor(client, type) {
         if (!client) throw new Error("client is required.");

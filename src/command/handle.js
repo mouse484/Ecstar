@@ -6,9 +6,14 @@ class command_handle {
         if (message.author.bot) return;
         if (!message.content.startsWith(prefix)) return;
 
-        const args = message.content.slice(prefix.length).split(" ");
+        const name = message.content.slice(prefix.length).split(" ")[0];
+        const command = client.commands[name];
 
-        const command = client.commands[args[0]];
+        if (command.info.args) {
+            const args = client.args[command.info.args].parse(message.content);
+            if (command && args) command.run(message, args);
+        }
+
         if (command) command.run(message);
     }
 }
