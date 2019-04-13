@@ -6,7 +6,7 @@ const isdir = dir_path => {
     fs.statSync(dir_path).isDirectory();
 };
 
-module.exports = class extends discord.Client {
+module.exports = class command_import {
     constructor(client) {
         const commands = {};
 
@@ -38,6 +38,5 @@ module.exports = class extends discord.Client {
                 });
         });
         client.commands = commands;
-        super(client);
     }
 };

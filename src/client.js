@@ -2,6 +2,7 @@ const discord = require("discord.js");
 
 const command_import = require("./command/import.js");
 const command_handle = require("./command/handle.js");
+const argument = require("./argument");
 
 /**
  * Discord.js Client with a command framework
@@ -27,6 +28,8 @@ class Ecstar_client extends discord.Client {
         // ready
         super.once("ready", () => {
             new command_import(this);
+            //new argument()
+
             super.emit("log", `go! ${this.user.tag}`);
         });
         // command handling

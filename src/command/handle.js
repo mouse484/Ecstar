@@ -1,3 +1,5 @@
+const arugment = require("../argument");
+
 class command_handle {
     constructor(client, message) {
         const prefix = client.options.prefix;
