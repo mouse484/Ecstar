@@ -29,7 +29,10 @@ class command_handle {
         if (command.info.args) {
             const args = {};
             Object.keys(command.info.args).forEach(ar => {
-                this.args[ar] = client.args[ar].parse(message.command.value);
+                console.log(ar);
+                args[ar] = client.args[command.info.args[ar]].parse(
+                    message.command.value
+                );
             });
             return command.run(message, args);
         }

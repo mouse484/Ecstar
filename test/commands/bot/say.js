@@ -5,11 +5,11 @@ module.exports = class extends command {
         super(client, {
             name: "say",
             args: {
-                text: "text",
+                tx: "text",
             },
         });
     }
-    run(message, { text }) {
-        return message.channel.send(text);
+    run(message, { tx }) {
+        return message.channel.send(tx);
     }
 };
