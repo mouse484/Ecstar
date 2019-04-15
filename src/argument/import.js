@@ -8,10 +8,10 @@ class arugument_import {
 
         const dir = fs.readdirSync(__dirname);
         dir.filter(file => !ignore.includes(file)).forEach(file => {
-            const arugment_file = require(`./${file}`);
-            const argumrnt = new arugment_file(client);
+            const argument_file = require(`./${file}`);
+            const arugmrnt = new argument_file(client);
 
-            args[argumrnt.type] = argumrnt;
+            args[arugmrnt.type] = argumrnt;
         });
 
         client.args = args;
