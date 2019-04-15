@@ -9,9 +9,9 @@ class argument_import {
         const dir = fs.readdirSync(__dirname);
         dir.filter(file => !ignore.includes(file)).forEach(file => {
             const argument_file = require(`./${file}`);
-            const arugmrnt = new argument_file(client);
-
-            args[arugmrnt.type] = argumrnt;
+            const argument = new argument_file(client);
+            
+            args[argument.type] = argument;
         });
 
         client.args = args;
