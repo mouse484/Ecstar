@@ -27,8 +27,13 @@ class command_handle {
         if (!command) return;
 
         if (command.info.args) {
-            console.log(command.info.args);
+            const args = {};
+            Object.keys(command.info.args).forEach(ar => {
+                this.args[ar] = client.args[ar].parse(message.command.value);
+            });
+            return command.run(message, args);
         }
+        return command.run(message);
     }
 }
 
