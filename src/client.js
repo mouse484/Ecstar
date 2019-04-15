@@ -1,6 +1,9 @@
 const discord = require("discord.js");
 
-const command_import = require("./command/import.js");
+const imports = {
+    command: require("./command/import.js"),
+    argument: require("./argument/import.js"),
+};
 const command_handle = require("./command/handle.js");
 
 /**
@@ -15,18 +18,23 @@ class Ecstar_client extends discord.Client {
      * @property {String} [prefix] - command prefix
      * @property {String} [owner] - Bot owner ID
      * @property {Boolean} [log=false] - loging
+     * @property {Boolean} [help=false] - auto create help command
      */
 
     constructor(options = {}) {
         if (!options.prefix) options.prefix = "!";
-        if (!options.command) options.command = "/commands";
+        if (!options.log) options.log = false;
+        if (!options.help) options.help = false;
         super(options);
 
         // ready
         super.once("ready", () => {
-            new command_import(this);
+            new imports.command(this);
+            new imports.argument(this);
+
             super.emit("log", `go! ${this.user.tag}`);
         });
+
         // command handling
         super.on("message", message => new command_handle(this, message));
 
