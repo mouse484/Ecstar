@@ -2,7 +2,7 @@ const fs = require("fs");
 
 const ignore = ["index.js", "import.js"];
 
-class arugument_import {
+class argument_import {
     constructor(client) {
         const args = {};
 
@@ -18,4 +18,4 @@ class arugument_import {
     }
 }
 
-module.exports = arugument_import;
+module.exports = argument_import;
