@@ -10,7 +10,7 @@ class argument_import {
         dir.filter(file => !ignore.includes(file)).forEach(file => {
             const argument_file = require(`./${file}`);
             const argument = new argument_file(client);
-            
+
             args[argument.type] = argument;
         });
 
