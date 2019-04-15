@@ -1,4 +1,4 @@
-class arugment {
+class argument {
     constructor(client, type) {
         if (!client) throw new Error("client is required.");
         if (typeof type !== "string")
@@ -10,4 +10,4 @@ class arugment {
     }
 }
 
-module.exports = arugment;
+module.exports = argument;
