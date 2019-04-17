@@ -10,11 +10,13 @@ class command_handle {
             this.command.name = message.content
                 .slice(prefix.length)
                 .trim()
-                .split(/ +/g);
-            this.command.value = message.content.slice(
-                this.command.name.length
-            );
-        } else if (!message.guild) {
+                .split(/ +/g)[0];
+            this.command.value = message.content
+                .slice(prefix.length + this.command.name.length)
+                .trim();
+
+            console.log(this.command.name, this.command.value);
+        } else if (message.channel.type === "dm") {
             this.command.name = message.content.split(" ")[0];
             this.command.value = message.content
                 .slice(this.command.name.length)
