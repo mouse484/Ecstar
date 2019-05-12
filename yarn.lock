@@ -196,7 +196,7 @@ escape-string-regexp@^1.0.5:
 
 eslint-config-esc@Esc-Developer/eslint-config-esc#master:
   version "1.0.0"
-  resolved "https://codeload.github.com/Esc-Developer/eslint-config-esc/tar.gz/964d76376bbb372a950cd9cd8ab587b49748c613"
+  resolved "https://codeload.github.com/Esc-Developer/eslint-config-esc/tar.gz/19b2cabffcc1d77d662cb0190812996947a2352e"
   dependencies:
     eslint "^5.16.0"
 
