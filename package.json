@@ -6,7 +6,7 @@
     "author": "mouse_484",
     "license": "MIT",
     "scripts": {
-        "dev": "yarn lint && node --require dotenv/config test/bot",
+        "dev": "node --require dotenv/config test/bot",
         "lint": "eslint --fix src && eslint --fix test"
     },
     "peerDependencies": {

@@ -2,7 +2,7 @@ const Ecstar = require("../src");
 
 const client = new Ecstar.client({
     prefix: ",,",
-    command: "/workspace/Ecstar/test/commands",
+    command: `${__dirname}/commands/`,
     log: true,
 });
 
