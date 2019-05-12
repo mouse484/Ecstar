@@ -1,9 +1,7 @@
 const discord = require("discord.js");
 
-const imports = {
-    command: require("./command/import.js"),
-    argument: require("./argument/import.js"),
-};
+const command = require("./command/import.js");
+const argument = require("./argument/import.js");
 const command_handle = require("./command/handle.js");
 
 /**
@@ -27,23 +25,23 @@ class Ecstar_client extends discord.Client {
         if (!options.help) options.help = false;
         super(options);
 
-        // ready
+        /* Ready */
         super.once("ready", () => {
-            new imports.command(this);
-            new imports.argument(this);
+            new command(this);
+            new argument(this);
 
             super.emit("log", `go! ${this.user.tag}`);
         });
 
-        // command handling
+        /* Command handling */
         super.on("message", message => new command_handle(this, message));
 
-        // loging
+        /* Loging */
         if (options.log) super.on("log", log => console.log(log));
     }
 
     /**
-     * loging your bot
+     * Loging your bot
      * @param {String} token - your bot token
      */
 

@@ -8,6 +8,7 @@ class argument_import {
 
         const dir = fs.readdirSync(__dirname);
         dir.filter(file => !ignore.includes(file)).forEach(file => {
+            /* eslint-disable global-require */
             const argument_file = require(`./${file}`);
             const argument = new argument_file(client);
 
