@@ -1,5 +1,6 @@
 class command_handle {
     constructor(client, message) {
+        this.client = client;
         this.message = message;
         this.prefix = client.options.prefix;
         this.command = {};
@@ -18,7 +19,14 @@ class command_handle {
         this.command.name = this.message.content
             .slice(this.prefix.length)
             .split(" ")[0];
-        return this.command;
+
+        return this.cmd_run();
+    }
+
+    cmd_run() {
+        const command = this.client.commands[this.command.name];
+        if (!command) return this.error("no command");
+        return command.run(this.message, "");
     }
 }
 
