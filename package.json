@@ -6,14 +6,14 @@
     "author": "mouse_484",
     "license": "MIT",
     "scripts": {
-        "dev": "yarn lint && node --require dotenv/config test/bot",
+        "dev": "node --require dotenv/config test/bot",
         "lint": "eslint --fix src && eslint --fix test"
     },
     "peerDependencies": {
-        "discord.js": "^11.4.2"
+        "discord.js": "^11.5.0"
     },
     "dependencies": {
-        "discord.js": "^11.4.2"
+        "discord.js": "^11.5.0"
     },
     "devDependencies": {
         "dotenv": "^7.0.0",
