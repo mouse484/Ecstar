@@ -1,24 +1,23 @@
 const error = require("../errors/command.js");
-// const argument = require("../argument");
 
 class command_run {
-    constructor(client, message, command) {
+    constructor(client, message, command_data) {
         this.client = client;
-        this.command = this.client.commands[command.name];
+        const command = this.client.commands[command_data.name];
 
-        if (!this.command) return new error("no command");
+        if (!command) return new error("no command");
 
-        if (this.command.info.args) {
-            const args = {};
-            Object.keys(this.command.info.args).forEach(ar => {
-                console.log(ar);
-                args[ar] = client.args[this.command.info.args[ar]].parse(
-                    command.value
-                );
+        if (command.info.args) {
+            this.args = {};
+            Object.keys(command.info.args).forEach(args_name => {
+                const args_type = command.info.args[args_name];
+                const argument = client.args[args_type];
+                if (argument) {
+                    this.args[args_name] = argument.parse(command_data.value);
+                }
             });
-            return this.command.run(message, args);
+            return this.command.run(message, this.args);
         }
-
         return this.command.run(this.message, "");
     }
 }
