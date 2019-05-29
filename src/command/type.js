@@ -16,7 +16,7 @@ class command_type {
                 .slice(this.prefix.length + this.command.name.length)
                 .trim();
 
-            new run(this.client, message, this.command);
+            new run(this.client, this.message, this.command);
         }
     }
 }

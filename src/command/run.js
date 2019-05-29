@@ -2,6 +2,7 @@ const error = require("../errors/command.js");
 
 class command_run {
     constructor(client, message, command_data) {
+        this.message = message;
         this.client = client;
         const command = this.client.commands[command_data.name];
 
@@ -16,9 +17,9 @@ class command_run {
                     this.args[args_name] = argument.parse(command_data.value);
                 }
             });
-            return this.command.run(message, this.args);
+            return command.run(this.message, this.args);
         }
-        return this.command.run(this.message, "");
+        return command.run(this.message, "");
     }
 }
 

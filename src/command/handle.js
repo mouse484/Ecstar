@@ -9,7 +9,7 @@ class command_handle {
 
         if (this.message.author.bot) return new error("bot");
 
-        new command_type(client, message);
+        new command_type(client, this.message);
     }
 }
 
