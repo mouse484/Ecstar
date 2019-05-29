@@ -1,4 +1,4 @@
-const error = require("../errors/command.js");
+const run = require("./run.js");
 
 class command_type {
     constructor(client, message) {
@@ -12,15 +12,12 @@ class command_type {
             this.command.name = this.message.content
                 .slice(this.prefix.length)
                 .split(" ")[0];
+            this.command.value = message.content
+                .slice(this.prefix.length + this.command.name.length)
+                .trim();
 
-            this.cmd_run();
+            new run(this.client, message, this.command);
         }
-    }
-
-    cmd_run() {
-        const command = this.client.commands[this.command.name];
-        if (!command) return new error("no command");
-        return command.run(this.message, "");
     }
 }
 
