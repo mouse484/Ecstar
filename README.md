@@ -68,4 +68,4 @@ module.exports = class extends command {
 We're still making and we think there are only problems.
 Please feel free to send issues or opinions at following any of link:
 
-[issue](https://github.com/mouse484/Ecstar/issues),[Twitter](https://twitter.com/Esc_mouse_484),[Discordサーバー](https://discord.gg/6EhyV5u)
+[issue](https://github.com/mouse484/Ecstar/issues),[Twitter](https://twitter.com/mouse_484),[Discordサーバー](https://discord.gg/6EhyV5u)
