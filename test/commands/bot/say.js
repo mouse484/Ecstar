@@ -9,6 +9,7 @@ module.exports = class extends command {
             },
         });
     }
+
     run(message, { tx }) {
         return message.channel.send(tx);
     }

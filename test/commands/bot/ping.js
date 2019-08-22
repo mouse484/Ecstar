@@ -6,6 +6,7 @@ module.exports = class extends command {
             name: "ping",
         });
     }
+
     run(message) {
         const ping = this.client.ping;
 

@@ -22,14 +22,13 @@ class command_import {
             category_dir
                 .filter(file => file.endsWith(".js"))
                 .forEach(file => {
+                    // eslint-disable-next-line global-require
                     const command_file = require(`${category_dir_path}/${file}`);
                     const command = new command_file(client);
 
                     if (commands[command.info.name]) {
                         throw new Error(
-                            `Can not create a command with the same name. Duplicate command: "${
-                                command.info.name
-                            }"`
+                            `Can not create a command with the same name. Duplicate command: "${command.info.name}"`
                         );
                     }
                     commands[command.info.name] = command;
