@@ -1,5 +1,9 @@
 const Ecstar = require("../../src/");
 
-const client = new Ecstar.Client();
+const options = {
+    prefix: "e!",
+};
+
+const client = new Ecstar.Client(options);
 
 client.login(process.env.TOKEN);

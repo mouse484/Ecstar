@@ -2,6 +2,6 @@
 
 module.exports = {
     // Ecstar Client
-    Client: require("./lib/Client.js"),
-    EcstarClient: require("./lib/Client.js"),
+    Client: require("./lib/client.js"),
+    EcstarClient: require("./lib/client.js"),
 };

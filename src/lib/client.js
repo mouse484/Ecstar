@@ -1,7 +1,9 @@
 const Discord = require("discord.js");
 
-const logger = require("log4js").getLogger();
-logger.level = "debug";
+const logger = require("log4js").getLogger("Ecstar");
+logger.level = "all";
+
+const dispatcher = require("./dispatcher.js");
 
 class EcstarClient extends Discord.Client {
     constructor(options = {}) {
@@ -9,10 +11,15 @@ class EcstarClient extends Discord.Client {
 
         this.logger = logger;
 
-        // Ready Ecstar
+        this.dispatcher = new dispatcher(this);
+
+        /* Ready Ecstar */
         super.once("ready", () => {
             this.logger.info(`Go!! ${this.user.tag}`);
         });
+
+        /* message events */
+        super.on("message", message => this.dispatcher.messageHandle(message));
     }
 
     login(token) {
