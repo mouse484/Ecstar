@@ -7,7 +7,7 @@ class dispatcher {
         if (!this.messageCheck(message)) return;
         if (!this.commandCheck(message)) return;
 
-        this.client.logger.trace(`[Command] : ${message.content}`);
+        this.client.logger.command(message.content);
         message.channel.send(`[Command] : ${message.content}`);
     }
 
