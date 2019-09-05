@@ -1,15 +1,14 @@
 const Discord = require("discord.js");
 
-const logger = require("log4js").getLogger("Ecstar");
-logger.level = "all";
+const logger = require("./lib/logger.js");
 
-const dispatcher = require("./dispatcher.js");
+const dispatcher = require("./lib/dispatcher.js");
 
 class EcstarClient extends Discord.Client {
     constructor(options = {}) {
         super(options);
 
-        this.logger = logger;
+        this.logger = new logger();
 
         this.dispatcher = new dispatcher(this);
 
