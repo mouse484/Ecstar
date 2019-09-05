@@ -13,8 +13,7 @@
         "discord.js": "^11.5.0"
     },
     "dependencies": {
-        "discord.js": "^11.5.0",
-        "log4js": "^5.1.0"
+        "discord.js": "^11.5.0"
     },
     "devDependencies": {
         "dotenv": "^7.0.0",
