@@ -12,7 +12,8 @@ class logger {
     }
 
     error(args) {
-        return log(`${chalk.red("[error]")} ${args}`);
+        log(`${chalk.red("[error]")} ${args}`);
+        return process.exit(0);
     }
 
     warn(args) {
