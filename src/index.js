@@ -4,4 +4,7 @@ module.exports = {
     // Ecstar Client
     Client: require("./client.js"),
     EcstarClient: require("./client.js"),
+    // Command
+    Command: require("./commands"),
+    EcstarCommand: require("./commands"),
 };

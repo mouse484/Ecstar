@@ -1,4 +1,4 @@
-class dispatcher {
+class Dispatcher {
     constructor(client) {
         this.client = client;
     }
@@ -22,4 +22,4 @@ class dispatcher {
     }
 }
 
-module.exports = dispatcher;
+module.exports = Dispatcher;

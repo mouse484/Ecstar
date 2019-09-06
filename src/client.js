@@ -1,19 +1,22 @@
 const Discord = require("discord.js");
 
-const logger = require("./lib/logger.js");
+const Logger = require("./lib/logger.js");
 
-const dispatcher = require("./lib/dispatcher.js");
+const CommandImport = require("./commands/import.js");
+
+const Dispatcher = require("./lib/dispatcher.js");
 
 class EcstarClient extends Discord.Client {
     constructor(options = {}) {
         super(options);
 
-        this.logger = new logger();
+        this.logger = new Logger();
 
-        this.dispatcher = new dispatcher(this);
+        this.dispatcher = new Dispatcher(this);
 
         /* Ready Ecstar */
         super.once("ready", () => {
+            new CommandImport(this);
             this.logger.info(`Go!! ${this.user.tag}`);
         });
 
