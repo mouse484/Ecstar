@@ -2,7 +2,7 @@ const chalk = require("chalk");
 
 const log = console.log;
 
-class logger {
+class Logger {
     info(args) {
         return log(`${chalk.blue("[info]")} ${args}`);
     }
@@ -21,4 +21,4 @@ class logger {
     }
 }
 
-module.exports = logger;
+module.exports = Logger;
