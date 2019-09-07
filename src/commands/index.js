@@ -6,7 +6,7 @@ class Command {
         this.info = info;
     }
 
-    static info_check(client, info) {
+    info_check(client, info) {
         if (!client) logger.error("A client must be specified.");
     }
 }
