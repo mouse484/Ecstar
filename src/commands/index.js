@@ -8,6 +8,7 @@ class Command {
 
     info_check(client, info) {
         if (!client) logger.error("A client must be specified.");
+        if (!info.name) logger.error("command name must be specified.");
     }
 }
 
