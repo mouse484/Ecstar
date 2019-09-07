@@ -35,6 +35,7 @@ class CommandImport {
 
                 });
         });
+        client.commands = commands;
     }
 
     isDir(path) {
