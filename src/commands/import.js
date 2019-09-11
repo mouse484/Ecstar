@@ -31,8 +31,11 @@ class CommandImport {
                         );
                     }
 
-                    client.logger.info(`import:${command_sub_dir}/${file} - ${command.info.name}`);
+                    commands[command.info.name] = command;
 
+                    client.logger.info(
+                        `import:${command_sub_dir}/${file} - ${command.info.name}`
+                    );
                 });
         });
         client.commands = commands;

@@ -2,6 +2,8 @@ const chalk = require("chalk");
 
 const log = console.log;
 
+const exit = process.exit;
+
 class Logger {
     info(args) {
         return log(`${chalk.blue("[info]")} ${args}`);
@@ -13,7 +15,7 @@ class Logger {
 
     error(args) {
         log(`${chalk.red("[error]")} ${args}`);
-        return process.exit(0);
+        return exit();
     }
 
     warn(args) {
