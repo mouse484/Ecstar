@@ -6,4 +6,7 @@ module.exports = class extends Command {
             name: "test",
         });
     }
+    run(message){
+        return message.channel.send("test");
+    }
 };
