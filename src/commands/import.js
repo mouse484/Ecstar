@@ -3,7 +3,7 @@ const path = require("path");
 
 class CommandImport {
     constructor(client) {
-        const commands = {};
+        this.commands = {};
 
         const directory_path = path.join(process.argv[1], "commands");
 
@@ -19,30 +19,45 @@ class CommandImport {
             fs.readdirSync(command_sub_dir)
                 .filter(file => file.endsWith(".js"))
                 .forEach(file => {
-                    const command_file = require(path.join(
-                        command_sub_dir,
-                        file
-                    ));
+                    /* eslint-disable global-require*/
+                    const file_path = path.join(command_sub_dir, file);
+                    const command_file = require(file_path);
                     const command = new command_file(client);
 
-                    if (commands[command.info.name]) {
-                        client.logger.error(
-                            `Can not create a command with the same name. Duplicate command: "${command.info.name}"`
-                        );
-                    }
-
-                    commands[command.info.name] = command;
-
-                    client.logger.info(
-                        `import:${command_sub_dir}/${file} - ${command.info.name}`
+                    if (this.commands[command.info.name])
+                        this.commandErroer(client, command.info.name);
+                    this.addCommand(
+                        client,
+                        file_path,
+                        command,
+                        command.info.name
                     );
+
+                    if (command.info.aliases) {
+                        command.info.aliases.forEach(alias => {
+                            if (this.commands[alias])
+                                this.commandErroer(client, alias);
+                            this.addCommand(client, file_path, command, alias);
+                        });
+                    }
                 });
         });
-        client.commands = commands;
+        client.commands = this.commands;
     }
 
-    isDir(path) {
-        return fs.statSync(path).isDirectory();
+    isDir(dir_path) {
+        return fs.statSync(dir_path).isDirectory();
+    }
+
+    addCommand(client, command_file, command, name) {
+        this.commands[name] = command;
+        client.logger.info(`import: ${command_file} - ${name}`);
+    }
+
+    commandErroer(client, name) {
+        return client.logger.error(
+            `Can not create a command with the same name. Duplicate command: "${name}"`
+        );
     }
 }
 
