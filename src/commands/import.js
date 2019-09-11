@@ -25,7 +25,7 @@ class CommandImport {
                     const command = new command_file(client);
 
                     if (this.commands[command.info.name])
-                        this.commandErroer(client);
+                        this.commandErroer(client, command.info.name);
                     this.addCommand(
                         client,
                         file_path,
@@ -36,7 +36,7 @@ class CommandImport {
                     if (command.info.aliases) {
                         command.info.aliases.forEach(alias => {
                             if (this.commands[alias])
-                                this.commandErroer(client);
+                                this.commandErroer(client, alias);
                             this.addCommand(client, file_path, command, alias);
                         });
                     }
@@ -54,9 +54,9 @@ class CommandImport {
         client.logger.info(`import: ${command_file} - ${name}`);
     }
 
-    commandErroer(client) {
+    commandErroer(client, name) {
         return client.logger.error(
-            `Can not create a command with the same name. Duplicate command: "${command.info.name}"`
+            `Can not create a command with the same name. Duplicate command: "${name}"`
         );
     }
 }
