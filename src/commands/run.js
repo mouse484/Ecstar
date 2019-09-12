@@ -8,6 +8,7 @@ class CommandRun {
             );
 
         command.run(message);
+        client.logger.command(`running: ${command_name}`);
     }
 }
 
