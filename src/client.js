@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 const Logger = require("./lib/logger.js");
 
-const CommandImport = require("./commands/import.js");
+const CommandImport = require("./command/import.js");
 
 const Dispatcher = require("./lib/dispatcher.js");
 

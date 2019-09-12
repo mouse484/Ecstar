@@ -1,4 +1,4 @@
-const CommandRun = require("../commands/run.js");
+const CommandRun = require("../command/run.js");
 class Dispatcher {
     constructor(client) {
         this.client = client;

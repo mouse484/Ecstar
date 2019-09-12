@@ -5,6 +5,6 @@ module.exports = {
     Client: require("./client.js"),
     EcstarClient: require("./client.js"),
     // Command
-    Command: require("./commands"),
-    EcstarCommand: require("./commands"),
+    Command: require("./command"),
+    EcstarCommand: require("./command"),
 };
