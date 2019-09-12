@@ -11,9 +11,12 @@ class Dispatcher {
         const args = message.content
             .slice(this.client.options.prefix.length)
             .split(" ");
-        const command_name = args.shift().toLowerCase();
 
-        new CommandRun(this.client, message, command_name);
+        const info = {
+            name: args.shift().toLowerCase(),
+        };
+
+        new CommandRun(this.client, message, info);
     }
 
     messageCheck(message) {
