@@ -3,17 +3,16 @@ const CommandRun = require("../command/run.js");
 class Dispatcher {
     constructor(client) {
         this.client = client;
-        this.argument = new argument(client);
     }
 
-    async messageHandle(msg) {
-        const message = msg.toLowerCase();
+    async messageHandle(message) {
         if (!this.messageCheck(message)) return;
         if (!this.commandCheck(message)) return;
 
         const name = message.content
             .slice(this.client.options.prefix.length)
-            .split(" ").shift();
+            .split(" ")
+            .shift();
 
         new CommandRun(this.client, message, name);
     }
