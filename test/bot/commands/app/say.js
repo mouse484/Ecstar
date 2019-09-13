@@ -3,11 +3,11 @@ const { Command } = require("../../../../src");
 module.exports = class extends Command {
     constructor(client) {
         super(client, {
-            name: "test",
-            aliases: ["テスト"],
+            name: "say",
+            args: { value: "text" },
         });
     }
-    run(message) {
-        return message.channel.send("test");
+    run(message, { text }) {
+        return message.channel.send(text);
     }
 };
