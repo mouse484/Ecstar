@@ -5,7 +5,6 @@ class Argument {
         this.type = type;
     }
 
-    
 }
 
 module.exports = Argument;

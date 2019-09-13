@@ -11,9 +11,9 @@ class ArgumentGet {
 
             if (args) {
                 argument[name] = args.parse(message);
+                console.log(args.parse(message))
             }
         });
-        console.log(argument)
         return argument;
     }
 

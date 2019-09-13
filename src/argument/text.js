@@ -6,6 +6,7 @@ module.exports = class extends Argument {
 
     parse(message) {
         this.message = message;
+        console.log(message)
         return message;
     }
 };
