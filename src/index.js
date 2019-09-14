@@ -1,6 +1,10 @@
-/* eslint-disable global-require*/
+/* eslint-disable global-require */
 
 module.exports = {
-    client: require("./client"),
-    command: require("./command/create"),
+    // Ecstar Client
+    Client: require("./client.js"),
+    EcstarClient: require("./client.js"),
+    // Command
+    Command: require("./command"),
+    EcstarCommand: require("./command"),
 };

@@ -1,13 +1,9 @@
-class argument {
+class Argument {
     constructor(client, type) {
-        if (!client) throw new Error("client is required.");
-        if (typeof type !== "string")
-            throw new Error("Argument type must be string.");
-        if (type !== type.toLowerCase())
-            throw new Error("Argument type must be lowercase.");
-
+        if (!client) client.logger.error("A client must be specified.");
+        this.client = client;
         this.type = type;
     }
 }
 
-module.exports = argument;
+module.exports = Argument;

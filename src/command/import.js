@@ -1,43 +1,64 @@
 const fs = require("fs");
 const path = require("path");
 
-const isdir = dir_path => {
-    fs.statSync(dir_path).isDirectory();
-};
-
-class command_import {
+class CommandImport {
     constructor(client) {
-        const commands = {};
+        this.commands = {};
 
-        const command_dir_path = client.options.command;
-        if (!command_dir_path) return;
-        isdir(command_dir_path);
+        const directory_path = path.join(process.argv[1], "commands");
 
-        const command_dir = fs.readdirSync(command_dir_path);
-        command_dir.forEach(dir => {
-            const category_dir_path = path.join(command_dir_path, dir);
-            isdir(category_dir_path);
+        if (!fs.existsSync(directory_path))
+            client.logger.error("'commands' directory is required");
 
-            const category_dir = fs.readdirSync(category_dir_path);
-            category_dir
+        fs.readdirSync(directory_path).forEach(file_or_dir => {
+            const command_sub_dir = path.join(directory_path, file_or_dir);
+            if (!this.isDir(command_sub_dir))
+                client.logger.error(
+                    `Files cannot be placed directly under the 'commands' directory (${file_or_dir})`
+                );
+            fs.readdirSync(command_sub_dir)
                 .filter(file => file.endsWith(".js"))
                 .forEach(file => {
-                    const command_file = require(`${category_dir_path}/${file}`);
+                    /* eslint-disable global-require*/
+                    const file_path = path.join(command_sub_dir, file);
+                    const command_file = require(file_path);
                     const command = new command_file(client);
 
-                    if (commands[command.info.name]) {
-                        throw new Error(
-                            `Can not create a command with the same name. Duplicate command: "${
-                                command.info.name
-                            }"`
-                        );
+                    if (this.commands[command.info.name])
+                        this.commandErroer(client, command.info.name);
+                    this.addCommand(
+                        client,
+                        file_path,
+                        command,
+                        command.info.name
+                    );
+
+                    if (command.info.aliases) {
+                        command.info.aliases.forEach(alias => {
+                            if (this.commands[alias])
+                                this.commandErroer(client, alias);
+                            this.addCommand(client, file_path, command, alias);
+                        });
                     }
-                    commands[command.info.name] = command;
-                    client.emit("log", `import:${dir}/${file}`);
                 });
         });
-        client.commands = commands;
+        client.commands = this.commands;
+    }
+
+    isDir(dir_path) {
+        return fs.statSync(dir_path).isDirectory();
+    }
+
+    addCommand(client, command_file, command, name) {
+        this.commands[name] = command;
+        client.logger.info(`import: ${command_file} - ${name}`);
+    }
+
+    commandErroer(client, name) {
+        return client.logger.error(
+            `Can not create a command with the same name. Duplicate command: "${name}"`
+        );
     }
 }
 
-module.exports = command_import;
+module.exports = CommandImport;

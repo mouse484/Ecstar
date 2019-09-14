@@ -1,12 +1,11 @@
-const argument = require("../argument");
-
-module.exports = class text extends argument {
+const Argument = require("./index");
+module.exports = class extends Argument {
     constructor(client) {
         super(client, "text");
     }
 
-    parse(value) {
-        this.value = value;
-        return value;
+    parse(message) {
+        this.message = message;
+        return message;
     }
 };

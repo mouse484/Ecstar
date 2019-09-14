@@ -1,5 +1,0 @@
-linter:
-  eslint:
-    npm_install: true
-    options:
-      config: .eslintrc.js

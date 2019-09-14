@@ -1,26 +1,24 @@
-const error = require("../errors/command.js");
+const Argument = require("../argument/get.js");
 
-class command_run {
-    constructor(client, message, command_data) {
-        this.message = message;
-        this.client = client;
-        const command = this.client.commands[command_data.name];
+class CommandRun {
+    constructor(client, message, name) {
+        this.argument = new Argument(client);
 
-        if (!command) return new error("no command");
+        const command = client.commands[name];
+
+        if (!command)
+            return client.logger.warn(`Command that does not exist(${name})`);
 
         if (command.info.args) {
-            this.args = {};
-            Object.keys(command.info.args).forEach(args_name => {
-                const args_type = command.info.args[args_name];
-                const argument = client.args[args_type];
-                if (argument) {
-                    this.args[args_name] = argument.parse(command_data.value);
-                }
-            });
-            return command.run(this.message, this.args);
+            const args = this.argument.get(message, command.info);
+
+            command.run(message, args);
+            client.logger.command(`running: ${name}`);
+        } else {
+            command.run(message);
+            client.logger.command(`running: ${name}`);
         }
-        return command.run(this.message, "");
     }
 }
 
-module.exports = command_run;
+module.exports = CommandRun;
