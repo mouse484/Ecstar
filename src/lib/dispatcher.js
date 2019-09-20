@@ -1,19 +1,20 @@
-const CommandRun = require("../commands/run.js");
+const CommandRun = require("../command/run.js");
+
 class Dispatcher {
     constructor(client) {
         this.client = client;
     }
 
-    messageHandle(message) {
+    async messageHandle(message) {
         if (!this.messageCheck(message)) return;
         if (!this.commandCheck(message)) return;
 
-        const args = message.content
+        const name = message.content
             .slice(this.client.options.prefix.length)
-            .split(" ");
-        const command_name = args.shift().toLowerCase();
+            .split(" ")
+            .shift();
 
-        new CommandRun(this.client, message, command_name);
+        new CommandRun(this.client, message, name);
     }
 
     messageCheck(message) {
