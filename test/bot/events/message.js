@@ -1,12 +1,10 @@
-const { Event } = require("../../../../src");
+const { Event } = require("../../../src");
 
 module.exports = class extends Event {
     constructor(client) {
-        super(client, {
-            name: "message",
-        });
+        super(client, "message");
     }
-    on(message) {
+    run(message) {
         return console.log(message);
     }
 };
