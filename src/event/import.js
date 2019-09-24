@@ -3,7 +3,7 @@ const path = require("path");
 
 class EventImport {
     constructor(client) {
-        this.events = {};
+        this.events = [];
 
         const directory_path = path.join(process.argv[1], "events");
 
@@ -23,6 +23,7 @@ class EventImport {
                     client.logger.info(`import event: ${event.name}`);
                 }
             });
+        client.events = this.events;
     }
 }
 
