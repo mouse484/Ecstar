@@ -4,7 +4,6 @@ class Dispatcher {
     constructor(client) {
         this.client = client;
     }
-
     async messageHandle(message) {
         if (!this.messageCheck(message)) return;
         if (!this.commandCheck(message)) return;
@@ -15,6 +14,17 @@ class Dispatcher {
             .shift();
 
         new CommandRun(this.client, message, name);
+    }
+
+    event(name, callback) {
+        switch (name) {
+            case "ready":
+                this.client.logger.info(`Go!! ${this.client.user.tag}`);
+                break;
+            case "message":
+                this.messageHandle(callback);
+                break;
+        }
     }
 
     messageCheck(message) {
