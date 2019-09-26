@@ -7,4 +7,7 @@ module.exports = {
     // Command
     Command: require("./command"),
     EcstarCommand: require("./command"),
+    // Event
+    Event: require("./event"),
+    EcstarEvent: require("./event"),
 };

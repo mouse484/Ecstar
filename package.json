@@ -14,7 +14,9 @@
     },
     "dependencies": {
         "chalk": "^2.4.2",
-        "discord.js": "^11.5.0"
+        "discord.js": "^11.5.0",
+        "eventemitter2": "^5.0.1",
+        "propagate": "^2.0.1"
     },
     "devDependencies": {
         "dotenv": "^7.0.0",
