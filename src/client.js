@@ -7,13 +7,11 @@ const ArgumenrImport = require("./argument/import.js");
 const EventImport = require("./event/import.js");
 
 const Dispatcher = require("./lib/dispatcher.js");
-const EventRun = require("./event/run.js");
+// const EventRun = require("./event/run.js");
 
-class EcstarClient extends client {
+class EcstarClient extends Discord.Client {
     constructor(options = {}) {
         super(options);
-
-        this.on = false;
 
         this.logger = new Logger();
 
@@ -25,12 +23,10 @@ class EcstarClient extends client {
             new ArgumenrImport(this);
             new EventImport(this);
             this.logger.info(`Go!! ${this.user.tag}`);
-            this.on = true;
         });
 
         /* message events */
         super.on("message", message => this.dispatcher.messageHandle(message));
-
     }
 
     login(token) {
