@@ -1,19 +1,9 @@
 const CommandRun = require("../command/run.js");
+const EventRun = require("../event/run.js");
 
 class Dispatcher {
     constructor(client) {
         this.client = client;
-    }
-    async messageHandle(message) {
-        if (!this.messageCheck(message)) return;
-        if (!this.commandCheck(message)) return;
-
-        const name = message.content
-            .slice(this.client.options.prefix.length)
-            .split(" ")
-            .shift();
-
-        new CommandRun(this.client, message, name);
     }
 
     event(name, callback) {
@@ -25,6 +15,19 @@ class Dispatcher {
                 this.messageHandle(callback);
                 break;
         }
+        return new EventRun(this.client).run(name, callback);
+    }
+
+    messageHandle(message) {
+        if (!this.messageCheck(message)) return;
+        if (!this.commandCheck(message)) return;
+
+        const name = message.content
+            .slice(this.client.options.prefix.length)
+            .split(" ")
+            .shift();
+
+        new CommandRun(this.client, message, name);
     }
 
     messageCheck(message) {

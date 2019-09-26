@@ -5,6 +5,6 @@ module.exports = class extends Event {
         super(client, "message");
     }
     run(message) {
-        return console.log(message);
+        return console.log(message.content);
     }
 };
