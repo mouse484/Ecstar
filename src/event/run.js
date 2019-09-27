@@ -8,7 +8,7 @@ class EventRun {
         const event = this.client.events[name];
 
         if (!event) return;
-        event.run(callback)
+        event.run(callback);
     }
 }
 
