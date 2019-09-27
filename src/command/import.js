@@ -27,8 +27,7 @@ class CommandImport {
                     const name = command.info.name;
 
                     if (this.commands[name]) this.commandErroer(client, name);
-                    this.addCommand(client, {
-                        file_path,
+                    this.addCommand(client, file_path, {
                         command,
                         name,
                     });
@@ -37,8 +36,7 @@ class CommandImport {
                         command.info.aliases.forEach(alias => {
                             if (this.commands[alias])
                                 this.commandErroer(client, alias);
-                            this.addCommand(client, {
-                                file_path,
+                            this.addCommand(client, file_path, {
                                 command,
                                 alias,
                             });
@@ -53,9 +51,9 @@ class CommandImport {
         return fs.statSync(dir_path).isDirectory();
     }
 
-    addCommand(client, parms) {
+    addCommand(client, file_path, parms) {
         this.commands[parms.name] = parms.command;
-        client.logger.info(`import: ${parms.command_file} - ${parms.name}`);
+        client.logger.info(`import: ${file_path} - ${parms.name}`);
     }
 
     commandErroer(client, name) {
