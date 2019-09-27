@@ -3,6 +3,7 @@ const path = require("path");
 
 class CommandImport {
     constructor(client) {
+        this.client = client;
         this.commands = {};
 
         const directory_path = path.join(process.argv[1], "commands");
@@ -27,19 +28,13 @@ class CommandImport {
                     const name = command.info.name;
 
                     if (this.commands[name]) this.commandErroer(client, name);
-                    this.addCommand(client, file_path, {
-                        command,
-                        name,
-                    });
+                    this.addCommand(file_path, command, name);
 
                     if (command.info.aliases) {
                         command.info.aliases.forEach(alias => {
                             if (this.commands[alias])
                                 this.commandErroer(client, alias);
-                            this.addCommand(client, file_path, {
-                                command,
-                                alias,
-                            });
+                            this.addCommand(file_path, command, alias);
                         });
                     }
                 });
@@ -51,9 +46,9 @@ class CommandImport {
         return fs.statSync(dir_path).isDirectory();
     }
 
-    addCommand(client, file_path, parms) {
-        this.commands[parms.name] = parms.command;
-        client.logger.info(`import: ${file_path} - ${parms.name}`);
+    addCommand(file_path, command, name) {
+        this.commands[name] = command;
+        this.client.logger.info(`import: ${file_path} - ${name}`);
     }
 
     commandErroer(client, name) {
