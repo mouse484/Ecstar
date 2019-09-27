@@ -37,7 +37,12 @@ class CommandImport {
                         command.info.aliases.forEach(alias => {
                             if (this.commands[alias])
                                 this.commandErroer(client, alias);
-                            this.addCommand(client, file_path, command, alias);
+                            this.addCommand({
+                                client,
+                                file_path,
+                                command,
+                                alias,
+                            });
                         });
                     }
                 });
@@ -49,9 +54,11 @@ class CommandImport {
         return fs.statSync(dir_path).isDirectory();
     }
 
-    addCommand(client, command_file, command, name) {
-        this.commands[name] = command;
-        client.logger.info(`import: ${command_file} - ${name}`);
+    addCommand(parms) {
+        this.commands[parms.name] = parms.command;
+        parms.client.logger.info(
+            `import: ${parms.command_file} - ${parms.name}`
+        );
     }
 
     commandErroer(client, name) {
