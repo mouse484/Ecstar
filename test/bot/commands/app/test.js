@@ -7,6 +7,7 @@ module.exports = class extends Command {
             aliases: ["テスト"],
         });
     }
+
     run(message) {
         return message.channel.send("test");
     }
