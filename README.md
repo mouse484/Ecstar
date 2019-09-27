@@ -14,56 +14,72 @@ Framework of [discord.js](https://github.com/discordjs/discord.js).
 
 ### インストール (Installation)
 ```
-npm i mouse484/Ecstar#master
+// npm
+npm install ecstar
+
+// yarn
+yarn add ecstar
 ```
 ### フォルダ構成 (Directory Tree)
 ```md
-開発フォルダ/
-　├ commands/
-　│　  └ カテゴリー名(英語)/
-　│　　　└ コマンドファイル(下記)
-　└ メインファイル(下記)
+Development Folder/
+├ commands/
+│ └ command-type/
+│ 　 　 └ command-name.js(command file)
+├ events/
+│ └ event-name.js(event file)
+└ index.js(main file)
 ```
 
-```md
-Development Folder/
-　├ commands/
-　│　  └ Category Name/
-　│　　　└ Command file (below)
-　└ Main file (below)
-```
 ### メインファイル (Main file)
 ```js main.js
 const Ecstar = require("ecstar");
 
-const client = new Ecstar.client({
-    prefix: "!",
-    command: `${__dirname}/commands`,
-    log: true,
-});
+const options = {
+    prefix: "e!",
+};
 
-client.login("TOKEN");
+const client = new Ecstar.Client(options);
+
+client.login("Your token here");
 ```
 
 ### コマンドファイル (Command file)
 ```js
 const { command } = require("ecstar");
 
-module.exports = class extends command {
+module.exports = class extends Command {
     constructor(client) {
         super(client, {
-            name: "コマンド名(Command name here)",
+            name: "command name",
         });
     }
+
     run(message) {
+        //実行する内容 (What to do)
+    }
+};
+
+```
+
+### イベントファイル(event file)
+```js
+const { Event } = require("ecstar");
+
+module.exports = class extends Event {
+    constructor(client) {
+        super(client, "受け取るイベント名(Receive event name)");
+    }
+
+    run(/* callback here */) {
         //実行する内容 (What to do)
     }
 };
 ```
 
 ## おわりに (In conclusion)
-まだ作成中で問題しかないと思います。  
-問題や意見等は気軽に下記のどこかに送ってくれるとありがたいです。  
+まだ作成中で問題しかないと思います。
+問題や意見等は気軽に下記のどこかに送ってくれるとありがたいです。
 
 We're still making and we think there are only problems.
 Please feel free to send issues or opinions at following any of link:
