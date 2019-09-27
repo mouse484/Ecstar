@@ -14,6 +14,8 @@ class Dispatcher {
             case "message":
                 this.messageHandle(callback);
                 break;
+            default:
+                break;
         }
         return new EventRun(this.client).run(name, callback);
     }
