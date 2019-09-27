@@ -1,4 +1,3 @@
-const logger = new (require("../lib/logger.js"))();
 class Command {
     constructor(client, info) {
         this.info_check(client, info);
@@ -7,8 +6,8 @@ class Command {
     }
 
     info_check(client, info) {
-        if (!client) logger.error("A client must be specified.");
-        if (!info.name) logger.error("command name must be specified.");
+        if (!client) client.logger.error("A client must be specified.");
+        if (!info.name) client.logger.error("command name must be specified.");
     }
 }
 
