@@ -46,7 +46,7 @@ client.login("Your token here");
 
 ### コマンドファイル (Command file)
 ```js
-const { command } = require("ecstar");
+const { Command } = require("ecstar");
 
 module.exports = class extends Command {
     constructor(client) {
