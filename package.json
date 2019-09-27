@@ -7,7 +7,8 @@
     "license": "MIT",
     "scripts": {
         "dev": "node --require dotenv/config test/bot",
-        "lint": "eslint --fix src && eslint --fix test"
+        "lint": "eslint src && eslint test",
+        "fix": "eslint --fix src && eslint --fix test"
     },
     "peerDependencies": {
         "discord.js": "^11.5.0"
