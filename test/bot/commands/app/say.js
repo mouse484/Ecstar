@@ -7,6 +7,7 @@ module.exports = class extends Command {
             args: { value: "text" },
         });
     }
+
     run(message, { value }) {
         return message.channel.send(value);
     }

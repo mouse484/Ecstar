@@ -15,7 +15,9 @@ class EventImport {
             .forEach(file => {
                 const file_path = path.join(directory_path, file);
 
+                /* eslint-disable global-require */
                 const inport_file = require(file_path);
+
                 const event = new inport_file(client);
 
                 if (!this.events[event.name]) {

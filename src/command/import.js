@@ -24,20 +24,24 @@ class CommandImport {
                     const command_file = require(file_path);
                     const command = new command_file(client);
 
-                    if (this.commands[command.info.name])
-                        this.commandErroer(client, command.info.name);
-                    this.addCommand(
-                        client,
+                    const name = command.info.name;
+
+                    if (this.commands[name]) this.commandErroer(client, name);
+                    this.addCommand(client, {
                         file_path,
                         command,
-                        command.info.name
-                    );
+                        name,
+                    });
 
                     if (command.info.aliases) {
                         command.info.aliases.forEach(alias => {
                             if (this.commands[alias])
                                 this.commandErroer(client, alias);
-                            this.addCommand(client, file_path, command, alias);
+                            this.addCommand(client, {
+                                file_path,
+                                command,
+                                alias,
+                            });
                         });
                     }
                 });
@@ -49,9 +53,9 @@ class CommandImport {
         return fs.statSync(dir_path).isDirectory();
     }
 
-    addCommand(client, command_file, command, name) {
-        this.commands[name] = command;
-        client.logger.info(`import: ${command_file} - ${name}`);
+    addCommand(client, parms) {
+        this.commands[parms.name] = parms.command;
+        client.logger.info(`import: ${parms.command_file} - ${parms.name}`);
     }
 
     commandErroer(client, name) {

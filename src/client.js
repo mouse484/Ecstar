@@ -24,10 +24,12 @@ class EcstarClient extends Discord.Client {
 
         const that = this;
 
-        client.on("*", function(callback) {
+        client.on("*", function ClientEvents(callback) {
+            /* eslint-disable no-invalid-this */
             that.dispatcher.event(this.event, callback);
         });
     }
+
     imports() {
         new Promise(async resolve => {
             await new CommandImport(this);
@@ -35,8 +37,7 @@ class EcstarClient extends Discord.Client {
             await new EventImport(this);
 
             resolve();
-        })
-
+        });
     }
 
     async login(token) {
