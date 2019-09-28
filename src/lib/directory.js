@@ -1,3 +1,4 @@
+const fs = require("fs");
 const path = require("path");
 
 class Directory {
@@ -9,8 +10,13 @@ class Directory {
 
             this.path = directory;
         }
-        console.log(this.path);
+        this.check(this.path, name);
         return path.join(this.path, name);
+    }
+    check(directory_path, name) {
+        if (!fs.existsSync(directory_path))
+            client.logger.error(`'${name}' directory is required`);
+
     }
 }
 

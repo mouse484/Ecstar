@@ -11,9 +11,6 @@ class CommandImport {
 
         const directory_path = this.directory.get("commands");
 
-        if (!fs.existsSync(directory_path))
-            client.logger.error("'commands' directory is required");
-
         fs.readdirSync(directory_path).forEach(file_or_dir => {
             const command_sub_dir = path.join(directory_path, file_or_dir);
             if (!this.isDir(command_sub_dir))
