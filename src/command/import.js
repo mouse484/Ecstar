@@ -1,12 +1,15 @@
 const fs = require("fs");
 const path = require("path");
 
+const directory = require("../lib/directory.js");
+
 class CommandImport {
     constructor(client) {
         this.client = client;
+        this.directory = new directory();
         this.commands = {};
 
-        const directory_path = path.join(process.argv[1], "commands");
+        const directory_path = this.directory.get("commands");
 
         if (!fs.existsSync(directory_path))
             client.logger.error("'commands' directory is required");
