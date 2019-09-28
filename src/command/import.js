@@ -6,7 +6,7 @@ const directory = require("../lib/directory.js");
 class CommandImport {
     constructor(client) {
         this.client = client;
-        this.directory = new directory();
+        this.directory = new directory(client);
         this.commands = {};
 
         const directory_path = this.directory.get("commands");

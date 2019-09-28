@@ -6,7 +6,7 @@ const directory = require("../lib/directory.js");
 class EventImport {
     constructor(client) {
         this.events = {};
-        this.directory = new directory();
+        this.directory = new directory(client);
 
         const directory_path = this.directory.get("commands");
 
