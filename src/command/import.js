@@ -1,15 +1,15 @@
 const fs = require("fs");
 const path = require("path");
 
+const directory = require("../lib/directory.js");
+
 class CommandImport {
     constructor(client) {
         this.client = client;
+        this.directory = new directory(client);
         this.commands = {};
 
-        const directory_path = path.join(process.argv[1], "commands");
-
-        if (!fs.existsSync(directory_path))
-            client.logger.error("'commands' directory is required");
+        const directory_path = this.directory.get("commands");
 
         fs.readdirSync(directory_path).forEach(file_or_dir => {
             const command_sub_dir = path.join(directory_path, file_or_dir);

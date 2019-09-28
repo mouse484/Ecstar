@@ -1,14 +1,14 @@
 const fs = require("fs");
 const path = require("path");
 
+const directory = require("../lib/directory.js");
+
 class EventImport {
     constructor(client) {
         this.events = {};
+        this.directory = new directory(client);
 
-        const directory_path = path.join(process.argv[1], "events");
-
-        if (!fs.existsSync(directory_path))
-            client.logger.error("'event' directory is required");
+        const directory_path = this.directory.get("commands");
 
         fs.readdirSync(directory_path)
             .filter(file => file.endsWith(".js"))
