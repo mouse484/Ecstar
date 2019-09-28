@@ -5,6 +5,7 @@ class Directory {
     constructor(client) {
         this.client = client;
     }
+
     get(name) {
         this.path = process.argv[1];
         if (this.path.endsWith(".js")) {
