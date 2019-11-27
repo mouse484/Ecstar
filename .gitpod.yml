@@ -1,2 +1,6 @@
 tasks:
 - command: yarn install
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint@1.9.1:YVcwmzKVVl+zZ+wMB02GjQ==

@@ -1,4 +1,4 @@
-const Ecstar = require("../../src/");
+import Ecstar from "../../src";
 
 const options = {
     prefix: "e!",

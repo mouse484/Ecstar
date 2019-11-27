@@ -7,10 +7,10 @@
     "license": "MIT",
     "scripts": {
         "dev": "ts-node --require dotenv/config test/bot",
-        "build": "tsc src/",
+        "build": "tsc",
         "test": "ts-node --require dotenv/config test/bot/index.js",
-        "lint": "eslint src && eslint test",
-        "fix": "eslint --fix src && eslint --fix test"
+        "lint": "eslint .",
+        "fix": "eslint --fix ."
     },
     "peerDependencies": {
         "discord.js": "^11.5.0"
