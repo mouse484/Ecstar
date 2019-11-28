@@ -1,11 +1,14 @@
 const { Event } = require("../../../src");
 
 module.exports = class extends Event {
-    constructor(client) {
+
+    constructor (client) {
+
         super(client, "message");
     }
 
-    run(message) {
+    run (message) {
+
         return console.log(message.content);
     }
 };

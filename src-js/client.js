@@ -14,7 +14,9 @@ const EventEmitter2 = require("eventemitter2");
 const client = new EventEmitter2({ wildcard: true });
 
 class EcstarClient extends Discord.Client {
-    constructor(options = {}) {
+
+    constructor (options = {}) {
+
         super(options);
 
         this.logger = new Logger();
@@ -24,14 +26,17 @@ class EcstarClient extends Discord.Client {
 
         const that = this;
 
-        client.on("*", function ClientEvents(callback) {
+        client.on("*", function ClientEvents (callback) {
+
             /* eslint-disable no-invalid-this */
             that.dispatcher.event(this.event, callback);
         });
     }
 
-    imports() {
-        new Promise(async resolve => {
+    imports () {
+
+        new Promise(async (resolve) => {
+
             await new CommandImport(this);
             await new ArgumenrImport(this);
             await new EventImport(this);
@@ -40,7 +45,8 @@ class EcstarClient extends Discord.Client {
         });
     }
 
-    async login(token) {
+    async login (token) {
+
         this.logger.info("Ready...");
 
         await this.imports();

@@ -1,14 +1,15 @@
 const { Command } = require("../../../../src");
 
 module.exports = class extends Command {
-    constructor(client) {
-        super(client, {
-            name: "test",
-            aliases: ["テスト"],
-        });
+
+    constructor (client) {
+
+        super(client, { name: "test",
+aliases: [ "テスト" ] });
     }
 
-    run(message) {
+    run (message) {
+
         return message.channel.send("test");
     }
 };

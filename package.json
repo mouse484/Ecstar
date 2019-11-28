@@ -9,8 +9,8 @@
         "dev": "ts-node --require dotenv/config test/bot",
         "build": "tsc",
         "test": "ts-node --require dotenv/config test/bot/index.js",
-        "lint": "eslint .",
-        "fix": "eslint --fix ."
+        "lint": "eslint --ext .js,.ts .",
+        "fix": "eslint --fix -ext .js,.ts  ."
     },
     "peerDependencies": {
         "discord.js": "^11.5.0"

@@ -1,5 +1,7 @@
 class Event {
-    constructor(client, name) {
+
+    constructor (client, name) {
+
         this.client = client;
         this.name = name;
     }

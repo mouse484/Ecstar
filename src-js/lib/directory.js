@@ -2,13 +2,17 @@ const fs = require("fs");
 const path = require("path");
 
 class Directory {
-    constructor(client) {
+
+    constructor (client) {
+
         this.client = client;
     }
 
-    get(name) {
+    get (name) {
+
         this.path = process.argv[1];
         if (this.path.endsWith(".js")) {
+
             const slice_last = -1;
             const file_name = this.path.split("/").slice(slice_last)[0];
             const directory = this.path.split(file_name)[0];
@@ -19,9 +23,9 @@ class Directory {
         return path.join(this.path, name);
     }
 
-    check(directory_path, name) {
-        if (!fs.existsSync(directory_path))
-            this.client.logger.error(`'${name}' directory is required`);
+    check (directory_path, name) {
+
+        if (!fs.existsSync(directory_path)) this.client.logger.error(`'${name}' directory is required`);
     }
 }
 
