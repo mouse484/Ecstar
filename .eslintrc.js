@@ -6,7 +6,6 @@ module.exports = {
     },
     extends: [
         "esc",
-        "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "prettier",
     ],

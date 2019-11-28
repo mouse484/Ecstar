@@ -6,8 +6,12 @@ export default (client: any, name: string, callback: any) => {
             print.info(`Go!! ${client.user.tag}`);
             break;
         case "message":
+            if (callback) {
+                return true;
+            }
             break;
         default:
             break;
     }
-}
+    return true;
+};
