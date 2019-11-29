@@ -4,24 +4,22 @@ const path = require("path");
 const directory = require("../lib/directory.js");
 
 class CommandImport {
-
-    constructor (client) {
-
+    constructor(client) {
         this.client = client;
         this.directory = new directory(client);
         this.commands = {};
 
         const directory_path = this.directory.get("commands");
 
-        fs.readdirSync(directory_path).forEach((file_or_dir) => {
-
+        fs.readdirSync(directory_path).forEach(file_or_dir => {
             const command_sub_dir = path.join(directory_path, file_or_dir);
-            if (!this.isDir(command_sub_dir)) client.logger.error(`Files cannot be placed directly under the 'commands' directory (${file_or_dir})`,
+            if (!this.isDir(command_sub_dir))
+                client.logger.error(
+                    `Files cannot be placed directly under the 'commands' directory (${file_or_dir})`
                 );
             fs.readdirSync(command_sub_dir)
-                .filter((file) => file.endsWith(".js"))
-                .forEach((file) => {
-
+                .filter(file => file.endsWith(".js"))
+                .forEach(file => {
                     /* eslint-disable global-require*/
                     const file_path = path.join(command_sub_dir, file);
                     const command_file = require(file_path);
@@ -32,9 +30,10 @@ class CommandImport {
                     if (this.commands[name]) this.commandErroer(client, name);
                     this.addCommand(file_path, command, name);
 
-                    if (command.info.aliases) command.info.aliases.forEach((alias) => {
-
-                            if (this.commands[alias]) this.commandErroer(client, alias);
+                    if (command.info.aliases)
+                        command.info.aliases.forEach(alias => {
+                            if (this.commands[alias])
+                                this.commandErroer(client, alias);
                             this.addCommand(file_path, command, alias);
                         });
                 });
@@ -42,20 +41,18 @@ class CommandImport {
         client.commands = this.commands;
     }
 
-    isDir (dir_path) {
-
+    isDir(dir_path) {
         return fs.statSync(dir_path).isDirectory();
     }
 
-    addCommand (file_path, command, name) {
-
+    addCommand(file_path, command, name) {
         this.commands[name] = command;
         this.client.logger.info(`import: ${file_path} - ${name}`);
     }
 
-    commandErroer (client, name) {
-
-        return client.logger.error(`Can not create a command with the same name. Duplicate command: "${name}"`,
+    commandErroer(client, name) {
+        return client.logger.error(
+            `Can not create a command with the same name. Duplicate command: "${name}"`
         );
     }
 }

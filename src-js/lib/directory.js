@@ -3,12 +3,12 @@ const path = require("path");
 
 class Directory {
 
-    constructor (client) {
+    constructor(client) {
 
         this.client = client;
     }
 
-    get (name) {
+    get(name) {
 
         this.path = process.argv[1];
         if (this.path.endsWith(".js")) {
@@ -23,7 +23,7 @@ class Directory {
         return path.join(this.path, name);
     }
 
-    check (directory_path, name) {
+    check(directory_path, name) {
 
         if (!fs.existsSync(directory_path)) this.client.logger.error(`'${name}' directory is required`);
     }
