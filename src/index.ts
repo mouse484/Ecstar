@@ -1,7 +1,7 @@
 import Client from "./client";
 import Command from "./command";
 
-export const Ecstar = {
+export default {
     Client: Client,
     EcstarClient: Client,
     Command: Command,

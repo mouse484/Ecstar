@@ -1,6 +1,6 @@
 import { Client } from "discord.js";
 
-import * as EventPropagate from "propagate";
+import EventPropagate from "propagate";
 import { EventEmitter2 } from "eventemitter2";
 
 const client = new EventEmitter2({ wildcard: true });
