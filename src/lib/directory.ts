@@ -9,7 +9,7 @@ export default {
         }
         return path.join(root_path, name);
     },
-    is(that_path: string) {
-        fs.statSync(that_path).isDirectory();
+    is(directory_path: string) {
+        return fs.statSync(directory_path).isDirectory();
     },
 };

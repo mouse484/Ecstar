@@ -1,12 +1,9 @@
 class EventRun {
-
-    constructor (client) {
-
+    constructor(client) {
         this.client = client;
     }
 
-    run (name, callback) {
-
+    run(name, callback) {
         if (!this.client.readyAt) return;
         const event = this.client.events[name];
 

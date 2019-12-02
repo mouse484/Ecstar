@@ -302,6 +302,10 @@ eslint-config-esc@Esc-Developer/eslint-config-esc:
   dependencies:
     eslint "^5.16.0"
 
+eslint-config-mouse@mouse484/eslint-config:
+  version "1.0.0"
+  resolved "https://codeload.github.com/mouse484/eslint-config/tar.gz/246c5c27b4b035b1f15faf5b05a68125f37de73f"
+
 eslint-config-prettier@^6.7.0:
   version "6.7.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-6.7.0.tgz#9a876952e12df2b284adbd3440994bf1f39dfbb9"

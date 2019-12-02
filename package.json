@@ -10,7 +10,7 @@
         "build": "tsc",
         "test": "ts-node --require dotenv/config test/bot/index.js",
         "lint": "eslint --ext .js,.ts .",
-        "fix": "eslint --fix -ext .js,.ts  ."
+        "fix": "eslint --fix --ext .js,.ts  ."
     },
     "peerDependencies": {
         "discord.js": "^11.5.0"
@@ -28,6 +28,7 @@
         "dotenv": "^7.0.0",
         "eslint": "^6.7.1",
         "eslint-config-esc": "Esc-Developer/eslint-config-esc",
+        "eslint-config-mouse": "mouse484/eslint-config",
         "eslint-config-prettier": "^6.7.0",
         "eslint-plugin-prettier": "^3.1.1",
         "prettier": "^1.19.1",
