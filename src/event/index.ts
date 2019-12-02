@@ -1,4 +1,4 @@
-import * as print from "../lib/print";
+import print from "../lib/print";
 
 export default (client: any, name: string, callback: any) => {
     switch (name) {

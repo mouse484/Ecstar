@@ -1,7 +1,9 @@
 import Client from "./client";
+import Command from "./command";
 
 export default {
-    /* Ecstar Client */
-    Client,
+    Client: Client,
     EcstarClient: Client,
+    Command: Command,
+    EcstarCommand: Command,
 };
