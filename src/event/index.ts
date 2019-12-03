@@ -1,3 +1,5 @@
+import Message from "./message";
+
 import print from "../lib/print";
 
 export default (client: any, name: string, callback: any) => {
@@ -6,9 +8,7 @@ export default (client: any, name: string, callback: any) => {
             print.info(`Go!! ${client.user.tag}`);
             break;
         case "message":
-            if (callback) {
-                return true;
-            }
+            new Message(client).handle(callback);
             break;
         default:
             break;

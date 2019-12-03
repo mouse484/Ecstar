@@ -4,7 +4,7 @@ import * as path from "path";
 import directory from "../lib/directory";
 import print from "../lib/print";
 
-export default class ImportCommand {
+export default class CommandImport {
     commands: Array<any>;
     constructor(client) {
         this.commands = [];
@@ -42,6 +42,7 @@ export default class ImportCommand {
                     }
                 });
         });
+        client.commands = this.commands;
     }
     commandError(name) {
         print.error(
