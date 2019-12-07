@@ -1,9 +1,9 @@
-import Client from "./client";
-import Command from "./command";
+import Client from './client';
+import Command from './command';
 
 export default {
-    Client: Client,
-    EcstarClient: Client,
-    Command: Command,
-    EcstarCommand: Command,
+  Client,
+  EcstarClient: Client,
+  Command,
+  EcstarCommand: Command,
 };

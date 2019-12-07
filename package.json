@@ -27,7 +27,6 @@
         "@typescript-eslint/parser": "^2.9.0",
         "dotenv": "^7.0.0",
         "eslint": "^6.7.1",
-        "eslint-config-esc": "Esc-Developer/eslint-config-esc",
         "eslint-config-mouse": "mouse484/eslint-config",
         "eslint-config-prettier": "^6.7.0",
         "eslint-plugin-prettier": "^3.1.1",

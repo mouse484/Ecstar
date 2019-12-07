@@ -5,4 +5,5 @@ module.exports = {
         "mouse/typescript",
         "mouse/prettier",
     ],
+    ignorePatterns: ["src-js/"],
 };

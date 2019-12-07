@@ -1,7 +1,7 @@
-import Ecstar from "../../src";
+import Ecstar from '../../src';
 
 const options = {
-    prefix: "e!",
+  prefix: 'e!',
 };
 
 const client = new Ecstar.Client(options);

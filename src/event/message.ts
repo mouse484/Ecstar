@@ -1,28 +1,28 @@
-import print from "../lib/print";
+import print from '../lib/print';
 
 export default class MessageEvent {
-    client: any;
-    constructor(client: any) {
-        this.client = client;
-    }
-    handle(message: any) {
-        if (message.author.bot) return;
-        if (!message.content.startsWith(this.client.options.prefix)) return;
+  client: any;
+  constructor(client: any) {
+    this.client = client;
+  }
+  handle(message: any) {
+    if (message.author.bot) return;
+    if (!message.content.startsWith(this.client.options.prefix)) return;
 
-        const command_name = message.content
-            .slice(this.client.options.prefix.length)
-            .split(" ")
-            .shift();
+    const commandName = message.content
+      .slice(this.client.options.prefix.length)
+      .split(' ')
+      .shift();
 
-        this.commandRun(command_name, message);
-    }
-    commandRun(command_name: string, message: any) {
-        const command = this.client.commands[command_name];
+    this.commandRun(commandName, message);
+  }
+  commandRun(commandName: string, message: any) {
+    const command = this.client.commands[commandName];
 
-        if (!command) {
-            return print.warn(`Non-existent Command(${command_name})`);
-        }
-        command.run(message);
-        print.command(`Running: ${command_name}`);
+    if (!command) {
+      return print.warn(`Non-existent Command(${commandName})`);
     }
+    command.run(message);
+    print.command(`Running: ${commandName}`);
+  }
 }
