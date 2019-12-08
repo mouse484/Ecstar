@@ -5,7 +5,8 @@ export default class MessageEvent {
   constructor(client: any) {
     this.client = client;
   }
-  handle(message: any) {
+  handle(callback: any) {
+    const [message] = callback;
     if (message.author.bot) return;
     if (!message.content.startsWith(this.client.options.prefix)) return;
 

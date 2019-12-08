@@ -7,7 +7,7 @@ export default class Dispatcher {
     this.client = client;
   }
 
-  event(name: string, callback: any) {
-    Event(this.client, name, callback);
+  event(name: string, ...callback: any) {
+    Event(this.client, name, ...callback);
   }
 }
