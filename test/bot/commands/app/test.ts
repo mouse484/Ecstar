@@ -1,6 +1,6 @@
 import Command from '../../../../src/command';
 
-export default class extends Command {
+export = class extends Command {
   constructor(client) {
     super(client, { name: 'test', aliases: ['テスト'] });
   }
@@ -8,4 +8,4 @@ export default class extends Command {
   run(message) {
     return message.channel.send('test');
   }
-}
+};

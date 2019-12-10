@@ -24,12 +24,12 @@ export default class CommandImport {
       }
       fs.readdirSync(subDirectoryPath)
         .filter(fileName => fileName.match(/\.(?<ext>js|ts)$/u))
-        .forEach(async fileName => {
+        .forEach(fileName => {
           const filePath = path.join(subDirectoryPath, fileName);
 
-          const CommandFile = await import(filePath);
+          const CommandFile = require(filePath);
 
-          const command = new CommandFile.default(client);
+          const command = new CommandFile(client);
 
           command.info.aliases.push(command.info.name);
           if (command.info.aliases) {
