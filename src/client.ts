@@ -3,13 +3,13 @@ import { Client as DiscordClient } from 'discord.js';
 import imports from './lib/imports';
 import Dispatcher from './lib/dispatcher';
 
-class Client extends DiscordClient {
+class ExtendClient extends DiscordClient {
   emit(name, ...args) {
     return super.emit('*', name, ...args);
   }
 }
 
-export class EcstarClient extends Client {
+export class EcstarClient extends ExtendClient {
   constructor(options: object) {
     super(options);
 
