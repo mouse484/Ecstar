@@ -31,14 +31,15 @@ export default class CommandImport {
 
           const command = new CommandFile(client);
 
+          if (!command.info.aliases) command.info.aliases = [];
+
           command.info.aliases.push(command.info.name);
-          if (command.info.aliases) {
-            command.info.aliases.forEach(alias => {
-              if (this.commands[alias]) this.commandError(command.info.aliases);
-              this.commands[alias] = command;
-              print.info(`import: ${filePath} - ${alias}`);
-            });
-          }
+
+          command.info.aliases.forEach(alias => {
+            if (this.commands[alias]) this.commandError(command.info.aliases);
+            this.commands[alias] = command;
+            print.info(`import: ${filePath} - ${alias}`);
+          });
         });
     });
     client.commands = this.commands;
