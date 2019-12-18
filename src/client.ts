@@ -1,9 +1,13 @@
-import { Client as DiscordClient } from 'discord.js';
+import { Client as DiscordClient, ClientOptions } from 'discord.js';
 
-import { CommandBase } from './command';
+import { Command } from './';
 
 import imports from './lib/imports';
 import Dispatcher from './lib/dispatcher';
+
+interface optionType extends ClientOptions {
+  prefix: string;
+}
 
 class ExtendClient extends DiscordClient {
   emit(name, ...args) {
@@ -12,8 +16,9 @@ class ExtendClient extends DiscordClient {
 }
 
 export class EcstarClient extends ExtendClient {
-  commands: CommandBase[];
-  constructor(options: object) {
+  commands: Command[];
+  options: optionType;
+  constructor(options: optionType) {
     super(options);
 
     new imports(this);
