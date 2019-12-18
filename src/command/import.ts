@@ -1,15 +1,14 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { EcstarClient } from '../client';
-import { CommandBase } from './';
+import { Client, Command } from '../../src';
 
 import directory from '../lib/directory';
 import print from '../lib/print';
 
 export default class CommandImport {
-  commands: CommandBase[];
-  constructor(client: EcstarClient) {
+  commands: Command[];
+  constructor(client: Client) {
     this.commands = [];
 
     const directoryPath = directory.get('commands');

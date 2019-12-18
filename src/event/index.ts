@@ -2,7 +2,9 @@ import Message from './message';
 
 import print from '../lib/print';
 
-export default (client: any, name: string, ...callback: any) => {
+import { Client } from '../../src';
+
+export default (client: Client, name: string, ...callback: any) => {
   switch (name) {
     case 'ready':
       print.info(`Go!! ${client.user.tag}`);
