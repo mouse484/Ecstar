@@ -1,6 +1,6 @@
 import print from '../lib/print';
 
-export default class Command {
+export class CommandBase {
   client: any;
   info: string;
   constructor(client, info) {

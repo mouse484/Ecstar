@@ -1,4 +1,4 @@
-import Command from '../../../../src/command';
+import { Command } from '../../../../src';
 
 export = class extends Command {
   constructor(client) {

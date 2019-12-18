@@ -1,7 +1,7 @@
 import { Client as DiscordClient } from 'discord.js';
 
-import imports from '../lib/imports';
-import Dispatcher from '../lib/dispatcher';
+import imports from './lib/imports';
+import Dispatcher from './lib/dispatcher';
 
 class Client extends DiscordClient {
   emit(name, ...args) {
@@ -9,7 +9,7 @@ class Client extends DiscordClient {
   }
 }
 
-export default class EcstarClient extends Client {
+export class EcstarClient extends Client {
   constructor(options: object) {
     super(options);
 

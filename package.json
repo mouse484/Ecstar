@@ -1,35 +1,35 @@
 {
-    "name": "ecstar",
-    "version": "2.0.5",
-    "main": "src/index.js",
-    "repository": "https://github.com/mouse484/Ecstar.git",
-    "author": "mouse_484",
-    "license": "MIT",
-    "scripts": {
-        "dev": "ts-node --require dotenv/config test/bot",
-        "build": "tsc",
-        "test": "ts-node --require dotenv/config test/bot/index.js",
-        "lint": "eslint --ext .js,.ts .",
-        "fix": "eslint --fix --ext .js,.ts  ."
-    },
-    "peerDependencies": {
-        "discord.js": "^11.5.0"
-    },
-    "dependencies": {
-        "chalk": "^2.4.2",
-        "discord.js": "^11.5.0"
-    },
-    "devDependencies": {
-        "@types/node": "^12.12.14",
-        "@typescript-eslint/eslint-plugin": "^2.9.0",
-        "@typescript-eslint/parser": "^2.9.0",
-        "dotenv": "^7.0.0",
-        "eslint": "^6.7.1",
-        "eslint-config-mouse": "mouse484/eslint-config",
-        "eslint-config-prettier": "^6.7.0",
-        "eslint-plugin-prettier": "^3.1.1",
-        "prettier": "^1.19.1",
-        "ts-node": "^8.5.2",
-        "typescript": "^3.7.2"
-    }
+  "name": "ecstar",
+  "version": "2.0.5",
+  "main": "src/index.js",
+  "repository": "https://github.com/mouse484/Ecstar.git",
+  "author": "mouse_484",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node -r dotenv/config test/ts-bot",
+    "build": "tsc",
+    "test": "yarn build && node -r dotenv/config test/js-bot/index.js",
+    "lint": "eslint --ext .js,.ts .",
+    "fix": "eslint --fix --ext .js,.ts  ."
+  },
+  "peerDependencies": {
+    "discord.js": "^11.5.0"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "discord.js": "^11.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.14",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
+    "dotenv": "^7.0.0",
+    "eslint": "^6.7.1",
+    "eslint-config-mouse": "mouse484/eslint-config",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2"
+  }
 }
