@@ -1,13 +1,17 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
+import { EcstarClient } from '../client';
+import { CommandBase } from './';
+
 import directory from '../lib/directory';
 import print from '../lib/print';
 
 export default class CommandImport {
-  commands: Array<any>;
-  constructor(client) {
+  commands: CommandBase[];
+  constructor(client: EcstarClient) {
     this.commands = [];
+
     const directoryPath = directory.get('commands');
 
     try {
@@ -15,6 +19,7 @@ export default class CommandImport {
     } catch {
       print.info('Loading command...');
     }
+
     fs.readdirSync(directoryPath).forEach(thatPath => {
       const subDirectoryPath = path.join(directoryPath, thatPath);
       if (!directory.is(subDirectoryPath)) {

@@ -1,5 +1,7 @@
 import { Client as DiscordClient } from 'discord.js';
 
+import { CommandBase } from './command';
+
 import imports from './lib/imports';
 import Dispatcher from './lib/dispatcher';
 
@@ -10,6 +12,7 @@ class ExtendClient extends DiscordClient {
 }
 
 export class EcstarClient extends ExtendClient {
+  commands: CommandBase[];
   constructor(options: object) {
     super(options);
 
