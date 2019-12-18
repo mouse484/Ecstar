@@ -1,7 +1,7 @@
 import Client from './client';
 import Command from './command';
 
-export default {
+export = {
   Client,
   EcstarClient: Client,
   Command,
