@@ -1,9 +1,10 @@
+import { Client } from '../../src';
+
 import Event from '../event';
 
 export default class Dispatcher {
-  private client: any;
-
-  constructor(client: any) {
+  client: Client;
+  constructor(client: Client) {
     this.client = client;
   }
 

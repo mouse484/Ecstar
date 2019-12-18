@@ -1,11 +1,14 @@
+import { Message } from 'discord.js';
+import { Client } from '../../src';
+
 import print from '../lib/print';
 
 export default class MessageEvent {
-  client: any;
-  constructor(client: any) {
+  client: Client;
+  constructor(client: Client) {
     this.client = client;
   }
-  handle(callback: any) {
+  handle(callback: Message[]) {
     const [message] = callback;
     if (message.author.bot) return;
     if (!message.content.startsWith(this.client.options.prefix)) return;
