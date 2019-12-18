@@ -24,6 +24,6 @@ export default class MessageEvent {
       return print.warn(`Non-existent Command(${commandName})`);
     }
     command.run(message);
-    print.command(`Running: ${commandName}`);
+    print.command(`Running: ${command.info.name} (${commandName})`);
   }
 }
