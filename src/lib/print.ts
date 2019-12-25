@@ -1,22 +1,31 @@
 import chalk from 'chalk';
-const { log } = console;
+import figures from 'figures';
 const { exit } = process;
 
-export default {
+const log = (args: string) => {
+  console.log(`${new Date().toLocaleTimeString()}  ${args}`);
+};
+
+export = {
   info(args: string) {
-    return log(`${chalk.blue('[info]')} ${args}`);
+    return log(chalk`{blue ${figures.info} info} ${args}`);
+  },
+  import(type: 'command', name: string, path: string) {
+    return log(
+      chalk`{magenta ${figures.circleCircle} import} ${name} {gray ${path}}`
+    );
   },
   command(args: string) {
-    return log(`${chalk.green('[command]')} ${args}`);
+    return log(`${chalk.green('[command]')} ${args} `);
   },
   error(args: string) {
-    log(`${chalk.red('[error]')} ${args}`);
+    log(`${chalk.red('[error]')} ${args} `);
     return exit();
   },
   warn(args: string) {
-    return log(`${chalk.yellow('[warn]')} ${args}`);
+    return log(`${chalk.yellow('[warn]')} ${args} `);
   },
   dev(args: string) {
-    return log(`${chalk.black('[dev]')} ${args}`);
+    return log(`${chalk.black('[dev]')} ${args} `);
   },
 };

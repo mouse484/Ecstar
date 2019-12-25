@@ -42,7 +42,7 @@ export default class CommandImport {
           command.info.aliases.forEach(alias => {
             if (this.commands[alias]) this.commandError(command.info.aliases);
             this.commands[alias] = command;
-            print.info(`import: ${filePath} - ${alias}`);
+            print.import('command', alias, filePath);
           });
         });
     });

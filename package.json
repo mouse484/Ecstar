@@ -17,7 +17,8 @@
   },
   "dependencies": {
     "chalk": "^2.4.2",
-    "discord.js": "^11.5.0"
+    "discord.js": "^11.5.0",
+    "figures": "^3.1.0"
   },
   "devDependencies": {
     "@types/node": "^12.12.14",
