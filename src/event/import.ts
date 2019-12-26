@@ -33,5 +33,6 @@ export default class EventImport {
         print.import("event", event.name, filePath);
       }
     });
+    client.events = this.events;
   }
 }

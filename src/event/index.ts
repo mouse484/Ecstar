@@ -20,8 +20,9 @@ export default (client: Client, name: string, ...callback: any) => {
     case 'message':
       new Message(client).handle(callback);
       break;
-    default:
-      break;
   }
-  return true;
+  const event = client.events[name];
+  if (event) {
+    event.run(...callback);
+  }
 };
