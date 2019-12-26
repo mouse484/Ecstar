@@ -19,20 +19,20 @@ export default class EventImport {
       print.info('Loading events...');
     }
 
-    fs.readdirSync(directoryPath).filter(fileName =>
-      fileName.match(/\.(?<ext>js|ts)$/u)
-    ).forEach(fileName => {
-      const filePath = path.join(directoryPath, fileName);
+    fs.readdirSync(directoryPath)
+      .filter(fileName => fileName.match(/\.(?<ext>js|ts)$/u))
+      .forEach(fileName => {
+        const filePath = path.join(directoryPath, fileName);
 
-      const EventFile = require(filePath);
+        const EventFile = require(filePath);
 
-      const event = new EventFile(client);
+        const event = new EventFile(client);
 
-      if (!this.events[event.name]) {
-        this.events[event.name] = event;
-        print.import("event", event.name, filePath);
-      }
-    });
+        if (!this.events[event.name]) {
+          this.events[event.name] = event;
+          print.import('event', event.name, filePath);
+        }
+      });
     client.events = this.events;
   }
 }
