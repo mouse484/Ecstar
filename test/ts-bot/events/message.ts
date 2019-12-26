@@ -1,4 +1,4 @@
-const { Event } = require('../../../src');
+import { Event } from '../../../src';
 
 module.exports = class extends Event {
   constructor(client) {

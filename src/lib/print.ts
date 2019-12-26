@@ -10,10 +10,10 @@ export = {
   info(args: string) {
     return log(chalk.blue(figures.info, 'info'), args);
   },
-  import(type: 'command', name: string, path: string) {
+  import(type: 'command' | "event", name: string, path: string) {
     return log(
       chalk.magenta(figures.circleCircle, 'import'),
-      name,
+      `${type} ${name} ` +
       chalk.gray(path)
     );
   },
