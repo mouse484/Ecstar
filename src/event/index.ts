@@ -1,6 +1,6 @@
 import { Client } from '../../src';
 
-import Message from './message';
+import Message from './default/message';
 import print from '../lib/print';
 
 export default (client: Client, name: string, ...callback: any) => {

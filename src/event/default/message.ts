@@ -1,7 +1,7 @@
 import { Message } from 'discord.js';
-import { Client } from '../../src';
+import { Client } from '../../../src';
 
-import print from '../lib/print';
+import print from '../../lib/print';
 
 export default class MessageEvent {
   client: Client;
