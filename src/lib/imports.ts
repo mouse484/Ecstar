@@ -1,9 +1,11 @@
 import { Client } from '../../src';
 
-import command from '../command/import';
+import Command from '../command/import';
+import Event from '../event/import';
 
 export default class Imports {
   constructor(client: Client) {
-    new command(client);
+    new Command(client);
+    new Event(client);
   }
 }
