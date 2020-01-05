@@ -10,7 +10,8 @@
     "build": "tsc",
     "test": "yarn build && node -r dotenv/config test/js-bot/index.js",
     "lint": "eslint --ext .js,.ts .",
-    "fix": "eslint --fix --ext .js,.ts  ."
+    "fix": "eslint --fix --ext .js,.ts  .",
+    "md": "yarn prettier README.md --write"
   },
   "peerDependencies": {
     "discord.js": "^11.5.0"
