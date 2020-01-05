@@ -1,9 +1,5 @@
 import * as Ecstar from '../../src';
 
-const options = {
-  prefix: 'e!',
-};
-
-const client = new Ecstar.Client(options);
+const client = new Ecstar.Client({ prefix: 'e!', owner: '444754554517454848' });
 
 client.login(process.env.TOKEN);

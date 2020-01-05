@@ -1,5 +1,4 @@
-import { Message } from 'discord.js';
-import { Client } from '../../../src';
+import { Client, Message } from '../../../src';
 
 import print from '../../lib/print';
 
@@ -20,12 +19,20 @@ export default class MessageEvent {
 
     this.commandRun(commandName, message);
   }
-  commandRun(commandName: string, message: any) {
+  commandRun(commandName: string, message: Message) {
     const command = this.client.commands[commandName];
 
     if (!command) {
       return print.warn(`Non-existent Command(${commandName})`);
     }
+
+    if (
+      command.info.ownerOnly &&
+      this.client.options.owner !== message.author.id
+    ) {
+      return message.channel.send('sorry owner only command');
+    }
+
     command.run(message);
     print.command(`${command.info.name} (${commandName})`);
   }

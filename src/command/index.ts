@@ -6,6 +6,7 @@ interface infoType {
   name: string;
   aliases?: string[];
   description?: string;
+  ownerOnly?: boolean;
 }
 
 export class CommandBase {
