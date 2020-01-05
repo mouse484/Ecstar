@@ -1,4 +1,4 @@
-import { Client as DiscordClient, ClientOptions } from 'discord.js';
+import { Client as DiscordClient, ClientOptions, Snowflake } from 'discord.js';
 
 import { Command, Event } from './';
 
@@ -7,6 +7,7 @@ import Dispatcher from './lib/dispatcher';
 
 interface optionType extends ClientOptions {
   prefix: string;
+  owner?: Snowflake;
 }
 
 class ExtendClient extends DiscordClient {
