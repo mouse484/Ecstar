@@ -16,13 +16,17 @@ export const commandRun = (
   }
 
   if (command.info.args) {
-    const args = {};
+    let args = {};
     let count = 1;
     Object.keys(command.info.args).forEach(key => {
       args[key] = message.content.split(' ')[count];
       count = count + 1;
     });
-    args["all"] = message.content.split(commandName)[1];
+    args = {
+      ...args,
+      all: message.content.split(commandName)[1],
+    };
+
     command.run(message, args);
   } else {
     command.run(message);
