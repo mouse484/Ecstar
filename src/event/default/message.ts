@@ -1,7 +1,5 @@
 import { Client, Message } from '../../../src';
 
-import print from '../../lib/print';
-
 import { commandRun } from '../../command/run';
 
 export default class MessageEvent {

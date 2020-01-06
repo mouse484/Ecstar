@@ -7,7 +7,7 @@ interface Info {
   aliases?: string[];
   description?: string;
   ownerOnly?: boolean;
-  args?: { [argsName: string]: string };
+  args?: { [argsName: string]: string } | boolean;
 }
 
 export class CommandBase {
