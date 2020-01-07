@@ -35,16 +35,25 @@ export default class CommandImport {
 
           const command = new CommandFile(client);
 
-          if (!command.info.aliases) command.info.aliases = [];
+          const list = [];
 
-          command.info.aliases.push(command.info.name);
+          list.push(command.info.name);
 
-          command.info.aliases.forEach(alias => {
-            if (this.commands[alias]) this.commandError(command.info.aliases);
+          list.forEach(alias => {
+            if (this.commands[alias]) this.commandError(list);
             this.commands[alias] = command;
             print.import('command', alias, filePath);
           });
         });
+    });
+    const defaultCommandPath = path.join(__dirname, 'defaults');
+    fs.readdirSync(defaultCommandPath).forEach(fileName => {
+      const filePath = path.join(defaultCommandPath, fileName);
+      const CommandFile = require(filePath);
+      const command = new CommandFile(client);
+      if (!this.commands[command.info.name]) {
+        this.commands[command.info.name] = command;
+      }
     });
     client.commands = this.commands;
   }
