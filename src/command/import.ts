@@ -46,6 +46,15 @@ export default class CommandImport {
           });
         });
     });
+    const defaultCommandPath = path.join(__dirname, 'defaults');
+    fs.readdirSync(defaultCommandPath).forEach(fileName => {
+      const filePath = path.join(defaultCommandPath, fileName);
+      const CommandFile = require(filePath);
+      const command = new CommandFile(client);
+      if (!this.commands[command.info.name]) {
+        this.commands[command.info.name] = command;
+      }
+    });
     client.commands = this.commands;
   }
   commandError(name) {
