@@ -11,12 +11,15 @@ export = class extends Command {
     let help: string | object = 'help';
 
     if (type === 'all') {
-      // Object.keys(commands)
-      //   .filter(commandName => commandName === commands[commandName].info.name)
-      //   .forEach(commandName => {
-      //     const comand
-      //     help[commandName] = { name: commandName }
-      //   });
+      Object.keys(commands)
+        .filter(commandName => commandName === commands[commandName].info.name)
+        .forEach(commandName => {
+          const command = commands[commandName];
+          help = `${help}
+          name: ${commandName}
+          alias: ${command.info.aliases ? command.info.aliases.join() : 'none'}
+          `;
+        });
     } else {
       const command = commands[type];
       if (command) {
