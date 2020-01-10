@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/38714187/72127796-1e145400-33b4-11ea-90db-24104cecf16a.png)
+![image](https://user-images.githubusercontent.com/38714187/72132993-bb2ab900-33c3-11ea-9ddc-c3dd7feba787.png)
 
 <p align="center">
   <a href="https://badge.fury.io/js/ecstar">
