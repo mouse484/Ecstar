@@ -17,7 +17,7 @@
 
 ## 📃Introduction
 
-Ecstar is the simplest framework [Discord.js](https://github.com/discordjs/discord.js).
+Ecstar is the easiest framework [Discord.js](https://github.com/discordjs/discord.js).
 
 ## 💬 Usage
 
