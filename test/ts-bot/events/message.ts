@@ -6,6 +6,6 @@ module.exports = class extends Event {
   }
 
   run(message) {
-    // return console.log(message.content);
+    return message.content;
   }
 };
