@@ -8,7 +8,10 @@ export = class extends Command {
   run(message, { type }) {
     const { commands } = this.client;
 
-    const help = new RichEmbed({ title: 'help' });
+    const help = new RichEmbed({
+      title: 'help',
+      description: `this bot prefix is \`${this.client.options.prefix}\``,
+    });
 
     const command = commands[type];
     if (command) {
@@ -27,10 +30,9 @@ export = class extends Command {
           const command = commands[commandName];
 
           help.addField(
-            commandName,
-            command.info.aliases ? command.info.aliases.join() : 'none'
+            this.client.options.prefix + commandName,
+            command.info.aliases ? `alias:${command.info.aliases.join()}` : '-'
           );
-          console.log('a');
         });
     }
 
