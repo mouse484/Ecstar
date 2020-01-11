@@ -59,7 +59,7 @@ export default class CommandImport {
       if (!this.commands[command.info.name]) {
         this.commands[command.info.name] = command;
       }
-      print.import('command', command.info.name, default);
+      print.import('command', command.info.name, 'default');
     });
 
     client.commands = this.commands;
