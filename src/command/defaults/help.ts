@@ -1,4 +1,4 @@
-import { Command } from '../../../src';
+import { Command, RichEmbed } from '../../../src';
 
 export = class extends Command {
   constructor(client) {
@@ -8,39 +8,32 @@ export = class extends Command {
   run(message, { type }) {
     const { commands } = this.client;
 
-    let help: string | object = 'help';
+    const help = new RichEmbed({
+      title: 'help',
+      description: `this bot prefix is \`${this.client.options.prefix}\``,
+    });
 
-    if (type === 'all') {
+    const command = commands[type];
+    if (command) {
+      help.fields = [
+        { name: 'name', value: command.info.name, inline: true },
+        {
+          name: 'alias',
+          value: command.info.aliases ? command.info.aliases.join() : 'none',
+          inline: true,
+        },
+      ];
+    } else {
       Object.keys(commands)
         .filter(commandName => commandName === commands[commandName].info.name)
         .forEach(commandName => {
           const command = commands[commandName];
-          help = `${help}
-          name: ${commandName}
-          alias: ${command.info.aliases ? command.info.aliases.join() : 'none'}
-          `;
+
+          help.addField(
+            this.client.options.prefix + commandName,
+            command.info.aliases ? `alias:${command.info.aliases.join()}` : '-'
+          );
         });
-    } else {
-      const command = commands[type];
-      if (command) {
-        help = {
-          embed: {
-            title: 'help',
-            fields: [
-              { name: 'name', value: command.info.name, inline: true },
-              {
-                name: 'alias',
-                value: command.info.aliases
-                  ? command.info.aliases.join()
-                  : 'none',
-                inline: true,
-              },
-            ],
-          },
-        };
-      } else {
-        help = 'no command';
-      }
     }
 
     return message.channel.send(help);
