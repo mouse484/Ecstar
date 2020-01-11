@@ -1,5 +1,5 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import fs from 'fs';
+import path from 'path';
 
 import { Client, Command } from '../../src';
 
@@ -46,15 +46,22 @@ export default class CommandImport {
           });
         });
     });
+
     const defaultCommandPath = path.join(__dirname, 'defaults');
+
     fs.readdirSync(defaultCommandPath).forEach(fileName => {
       const filePath = path.join(defaultCommandPath, fileName);
+
       const CommandFile = require(filePath);
+
       const command = new CommandFile(client);
+
       if (!this.commands[command.info.name]) {
         this.commands[command.info.name] = command;
       }
+      print.import('command', command.info.name, default);
     });
+
     client.commands = this.commands;
   }
   commandError(name) {
