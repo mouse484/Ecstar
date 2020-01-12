@@ -1,30 +1,37 @@
 {
-    "name": "ecstar",
-    "version": "2.0.4",
-    "main": "src/index.js",
-    "repository": "https://github.com/mouse484/Ecstar.git",
-    "author": "mouse_484",
-    "license": "MIT",
-    "scripts": {
-        "dev": "node --require dotenv/config test/bot",
-        "lint": "eslint src && eslint test",
-        "fix": "eslint --fix src && eslint --fix test"
-    },
-    "peerDependencies": {
-        "discord.js": "^11.5.0"
-    },
-    "dependencies": {
-        "chalk": "^2.4.2",
-        "discord.js": "^11.5.0",
-        "eventemitter2": "^5.0.1",
-        "propagate": "^2.0.1"
-    },
-    "devDependencies": {
-        "dotenv": "^7.0.0",
-        "eslint": "^5.16.0",
-        "eslint-config-esc": "Esc-Developer/eslint-config-esc",
-        "eslint-config-prettier": "^4.1.0",
-        "eslint-plugin-prettier": "^3.0.1",
-        "prettier": "^1.16.4"
-    }
+  "name": "ecstar",
+  "version": "3.0.0",
+  "main": "dist/index.js",
+  "repository": "https://github.com/mouse484/Ecstar.git",
+  "author": "mouse_484",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node -r dotenv/config test/ts-bot",
+    "build": "tsc",
+    "test": "yarn build && node -r dotenv/config test/js-bot/index.js",
+    "lint": "eslint --ext .js,.ts .",
+    "fix": "eslint --fix --ext .js,.ts  .",
+    "md": "yarn prettier README.md --write"
+  },
+  "peerDependencies": {
+    "discord.js": "^11.5.0"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "discord.js": "^11.5.0",
+    "figures": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.14",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
+    "dotenv": "^7.0.0",
+    "eslint": "^6.7.1",
+    "eslint-config-mouse": "mouse484/eslint-config",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2"
+  }
 }

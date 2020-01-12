@@ -1,87 +1,103 @@
-# Ecstar
+![image](https://user-images.githubusercontent.com/38714187/72132993-bb2ab900-33c3-11ea-9ddc-c3dd7feba787.png)
 
-## Ecstarとは (What's Ecstar)
-[Discord.js](https://github.com/discordjs/discord.js)のフレームワークです。
+<p align="center">
+  <a href="https://badge.fury.io/js/ecstar">
+    <img src="https://badge.fury.io/js/ecstar.svg" alt="npm version">
+  </a>
+  <img src="https://github.com/mouse484/Ecstar/workflows/ESLint/badge.svg" alt="ESLint ">
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
+  </a>
+  <a href="https://devtoken.rocks/package/ecstar">
+    <img src="https://badge.devtoken.rocks/ecstar" alt="ecstar Dev Token"/>
+  </a >
+</p>
 
-Discord.jsで作るには大変な部分をこの"Ecstar"を使えば解消~~できるようにしたいです~~。
+<h1 align="center">Ecstar</h1>
 
+## 📃Introduction
 
-Framework of [discord.js](https://github.com/discordjs/discord.js).
+Ecstar is the easiest framework [Discord.js](https://github.com/discordjs/discord.js).
 
-~~We'd like to~~ Improve hard part at discord.js with this "Ecstar".
+## 💬 Usage
 
-## 使い方 (How to use)
+### 📥install
 
-### インストール (Installation)
+- stable
+  `npm install ecstar` or `yarn add ecstar`
+
+- mastar
+  `npm install mouse484/Ecstar#mastar` or `yarn add mouse484/Ecstar#mastar`
+
+### 📁Directory Tree
+
 ```
-// npm
-npm install ecstar
-
-// yarn
-yarn add ecstar
-```
-### フォルダ構成 (Directory Tree)
-```md
-Development Folder/
+Development Directory/
 ├ commands/
-│ └ command-type/
-│ 　 　 └ command-name.js(command file)
+│ ├ command-type/
+│ │ 　 ├ command-name.js(command file)
+│ │ 　 └ command-name.js(command file)
+| └ command-type/
+|　 　  └ command-name.js(command file)
 ├ events/
 │ └ event-name.js(event file)
 └ index.js(main file)
 ```
 
-### メインファイル (Main file)
+### 📄Main File
+
 ```js main.js
-const Ecstar = require("ecstar");
+import { Client } from 'ecstar';
 
-const options = {
-    prefix: "e!",
-};
+const client = new Client({
+  prefix: 'your prefix', //Required
+  owner: 'your id',
+});
 
-const client = new Ecstar.Client(options);
-
-client.login("Your token here");
+client.login('Your token here');
 ```
 
-### コマンドファイル (Command file)
+### 📄Command File
+
 ```js
-const { Command } = require("ecstar");
+import { Command } from 'ecstar';
 
-module.exports = class extends Command {
-    constructor(client) {
-        super(client, {
-            name: "command name",
-        });
-    }
+export = class extends Command {
+  constructor(client) {
+    super(client, {
+      name: 'command name', //Required
+      aliases: ['alias1', 'alias2'],
+      ownerOnly: false; //or true
+    });
+  }
 
-    run(message) {
-        //実行する内容 (What to do)
-    }
+  run(message) {
+    // What to do
+  }
 };
-
 ```
 
-### イベントファイル(event file)
+### 📄Event File
+
 ```js
-const { Event } = require("ecstar");
+import { Event } from 'ecstar';
 
-module.exports = class extends Event {
-    constructor(client) {
-        super(client, "受け取るイベント名(Receive event name)");
-    }
+export = class extends Event {
+  constructor(client) {
+    super(client, 'Receive event name');
+  }
 
-    run(/* callback here */) {
-        //実行する内容 (What to do)
-    }
+  run(/* callback here */) {
+    // What to do
+  }
 };
 ```
 
-## おわりに (In conclusion)
-まだ作成中で問題しかないと思います。
-問題や意見等は気軽に下記のどこかに送ってくれるとありがたいです。
+## 🎫License
 
-We're still making and we think there are only problems.
-Please feel free to send issues or opinions at following any of link:
+- [MIT](https://github.com/mouse484/Ecstar/blob/master/LICENSE)
 
-[issue](https://github.com/mouse484/Ecstar/issues),[Twitter](https://twitter.com/mouse_484),[Discordサーバー](https://discord.gg/6EhyV5u)
+## 👀Author
+
+- [Twitter](https://twitter.com/mouse_484)
+- [Discord](https://discord.gg/T4e5xbP)

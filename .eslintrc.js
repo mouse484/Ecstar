@@ -1,9 +1,4 @@
-"use strict";
-
 module.exports = {
-    extends: ["esc", "prettier"],
-    plugins: ["prettier"],
-    rules: {
-        "prettier/prettier": ["error", require("./.prettierrc.js")],
-    }
+  extends: ['mouse', 'mouse/node', 'mouse/typescript', 'mouse/prettier'],
+  ignorePatterns: ['src-js/'],
 };
