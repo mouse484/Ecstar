@@ -2,6 +2,9 @@
   "name": "ecstar",
   "version": "3.0.1",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "repository": "https://github.com/mouse484/Ecstar.git",
   "author": "mouse_484",
   "license": "MIT",
