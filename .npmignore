@@ -1,6 +1,6 @@
+.github/
+.vscode/
+
 .eslintrc.js
 .prettierrc.js
-sideci.yml
 .gitignore
-test/
-docs/
