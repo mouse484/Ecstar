@@ -1,16 +1,37 @@
 ![image](https://user-images.githubusercontent.com/38714187/72132993-bb2ab900-33c3-11ea-9ddc-c3dd7feba787.png)
 
 <p align="center">
-  <a href="https://badge.fury.io/js/ecstar">
-    <img src="https://badge.fury.io/js/ecstar.svg" alt="npm version">
+  <img
+    src="https://github.com/mouse484/Ecstar/workflows/ESLint/badge.svg"
+    alt="ESLint badge"
+  />
+  <a href="https://www.npmjs.com/package/ecstar">
+    <img src="https://img.shields.io/npm/v/ecstar" alt="npm version" />
   </a>
-  <img src="https://github.com/mouse484/Ecstar/workflows/ESLint/badge.svg" alt="ESLint ">
-  <a href="https://opensource.org/licenses/MIT">
-    <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
+  <a href="https://www.npmjs.com/package/ecstar">
+    <img src="https://img.shields.io/npm/dw/ecstar" alt="npm download" />
   </a>
-  <a href="https://devtoken.rocks/package/ecstar">
-    <img src="https://badge.devtoken.rocks/ecstar" alt="ecstar Dev Token"/>
-  </a >
+    <a href="https://github.com/mouse484/Ecstar/stargazers">
+    <img src="https://img.shields.io/github/stars/mouse484/Ecstar" alt="github starts">
+  </a>
+  <a href="https://github.com/mouse484/Ecstar/blob/master/LICENSE">
+    <img src="https://img.shields.io/npm/l/ecstar" alt="LICENC" />
+  </a>
+  <a href="https://github.com/discordjs/discord.js">
+    <img
+      src="https://img.shields.io/npm/dependency-version/ecstar/peer/discord.js"
+      alt="discord.js version"
+    />
+  </a>
+  <a href="https://discord.gg/T4e5xbP">
+    <img
+      src="https://img.shields.io/discord/443320971609374721"
+      alt="discord"
+    />
+  </a>
+    <a href="https://devtoken.rocks/package/ecstar">
+    <img src="https://badge.devtoken.rocks/ecstar" alt="ecstar Dev Token" />
+  </a>
 </p>
 
 <h1 align="center">Ecstar</h1>
