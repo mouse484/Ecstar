@@ -1,10 +1,9 @@
 name: npm publish dev
 
 on:
-  pull_request:
-    branches:
-      - develop
-
+  release:
+    types: [prereleased]
+    
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
