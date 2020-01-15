@@ -1,11 +1,11 @@
-import { Client, Message, print } from '../../src';
+import { Client, Message, Command, print } from '../../src';
 
 export const commandRun = (
   client: Client,
   commandName: string,
   message: Message
 ) => {
-  const command = client.commands[commandName];
+  const command: Command = client.commands[commandName];
 
   if (!command) {
     return print.warn(`Non-existent Command(${commandName})`);
@@ -13,6 +13,10 @@ export const commandRun = (
 
   if (command.info.ownerOnly && client.options.owner !== message.author.id) {
     return message.channel.send('sorry owner only command');
+  }
+
+  if (command.info.guildOnly && !message.guild) {
+    return message.channel.send('this command is guil only.');
   }
 
   if (command.info.args) {
