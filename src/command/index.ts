@@ -1,16 +1,15 @@
-import print from '../lib/print';
-
-import { Client } from '../../src';
+import { Client, Message, print } from '../../src';
 
 interface Info {
   name: string;
   aliases?: string[];
   description?: string;
   ownerOnly?: boolean;
+  guildOnly?: boolean;
   args?: { [argsName: string]: string } | boolean;
 }
 
-export class CommandBase {
+export abstract class CommandBase {
   client: Client;
   info: Info;
   constructor(client: Client, info: Info) {
@@ -19,4 +18,5 @@ export class CommandBase {
     this.client = client;
     this.info = info;
   }
+  abstract run(message: Message, args?: any): void;
 }
