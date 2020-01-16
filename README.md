@@ -11,8 +11,11 @@
   <a href="https://www.npmjs.com/package/ecstar">
     <img src="https://img.shields.io/npm/dw/ecstar" alt="npm download" />
   </a>
-    <a href="https://github.com/mouse484/Ecstar/stargazers">
-    <img src="https://img.shields.io/github/stars/mouse484/Ecstar" alt="github starts">
+  <a href="https://github.com/mouse484/Ecstar/stargazers">
+    <img
+      src="https://img.shields.io/github/stars/mouse484/Ecstar"
+      alt="github starts"
+    />
   </a>
   <a href="https://github.com/mouse484/Ecstar/blob/master/LICENSE">
     <img src="https://img.shields.io/npm/l/ecstar" alt="LICENC" />
@@ -29,8 +32,14 @@
       alt="discord"
     />
   </a>
-    <a href="https://devtoken.rocks/package/ecstar">
+  <a href="https://devtoken.rocks/package/ecstar">
     <img src="https://badge.devtoken.rocks/ecstar" alt="ecstar Dev Token" />
+  </a>
+  <a href="https://gitpod.io/#https://github.com/mouse484/Ecstar">
+    <img
+      src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod"
+      alt="Gitpod Ready-to-Code"
+    />
   </a>
 </p>
 
