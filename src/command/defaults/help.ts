@@ -1,4 +1,4 @@
-import { Client, Command, Message, RichEmbed } from '../../../src';
+import { Client, Command, Message, RichEmbed } from '../../index';
 
 export = class extends Command {
   constructor(client: Client) {
