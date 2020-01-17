@@ -1,15 +1,15 @@
 import fs from 'fs';
 import path from 'path';
 
-import { Client, Command } from '../../src';
+import { Client, Command } from '../index';
 
 import directory from '../lib/directory';
 import print from '../lib/print';
 
 export default class CommandImport {
-  commands: Command[];
+  commands: { [commandName: string]: Command } = {};
   constructor(client: Client) {
-    this.commands = [];
+    this.commands = {};
 
     const directoryPath = directory.get('commands');
 
@@ -35,12 +35,12 @@ export default class CommandImport {
 
           const command = new CommandFile(client);
 
-          const list = [];
+          const list: string[] = [];
 
           list.push(command.info.name);
 
           list.forEach(alias => {
-            if (this.commands[alias]) this.commandError(list);
+            if (this.commands[alias]) this.commandError(alias);
             this.commands[alias] = command;
             print.import('command', alias, filePath);
           });
@@ -64,7 +64,7 @@ export default class CommandImport {
 
     client.commands = this.commands;
   }
-  commandError(name) {
+  commandError(name: string) {
     print.error(
       `Can not create a command with the same name. Duplicate command: "${name}"`
     );

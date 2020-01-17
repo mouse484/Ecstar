@@ -1,4 +1,4 @@
-import { Client, Message, Command, print } from '../../src';
+import { Client, Message, Command, print } from './../index';
 
 export const commandRun = (
   client: Client,
@@ -20,7 +20,7 @@ export const commandRun = (
   }
 
   if (command.info.args) {
-    let args = {};
+    let args: { [key: string]: string } = {};
     let count = 1;
     Object.keys(command.info.args).forEach(key => {
       args[key] = message.content.split(' ')[count];

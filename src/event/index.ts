@@ -1,18 +1,18 @@
-import { Client } from '../../src';
+import { Client, print } from '../index';
 
 import Message from './default/message';
-import print from '../lib/print';
 
-export class EventBase {
+export abstract class EventBase {
   client: Client;
   name: string;
   constructor(client: Client, name: string) {
     this.client = client;
     this.name = name;
   }
+  abstract run(...callback: any[]): void;
 }
 
-export default (client: Client, name: string, ...callback: any) => {
+export default (client: Client, name: string, ...callback: [any, ...any[]]) => {
   switch (name) {
     case 'ready':
       print.info(`Go!! ${client.user.tag}`);
@@ -21,7 +21,7 @@ export default (client: Client, name: string, ...callback: any) => {
       new Message(client).handle(callback);
       break;
   }
-  const event = client.events[name];
+  const event: EventBase = client.events[name];
   if (event) {
     event.run(...callback);
   }

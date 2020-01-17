@@ -1,4 +1,4 @@
-import { Client } from '../../src';
+import { Client } from '../index';
 
 import Command from '../command/import';
 import Event from '../event/import';

@@ -1,11 +1,11 @@
-import { Event } from '../../../src';
+import { Event, Client, Message } from '../../../src';
 
-module.exports = class extends Event {
-  constructor(client) {
+export = class extends Event {
+  constructor(client: Client) {
     super(client, 'message');
   }
 
-  run(message) {
+  run(message: Message) {
     return message.content;
   }
 };

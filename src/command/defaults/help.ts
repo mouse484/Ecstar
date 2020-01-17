@@ -1,12 +1,12 @@
-import { Command, RichEmbed } from '../../../src';
+import { Client, Command, Message, RichEmbed } from '../../index';
 
 export = class extends Command {
-  constructor(client) {
+  constructor(client: Client) {
     super(client, { name: 'help', args: { type: 'text' } });
   }
 
-  run(message, { type }) {
-    const { commands } = this.client;
+  run(message: Message, { type }: { type: string }) {
+    const { commands }: { commands: { [key: string]: Command } } = this.client;
 
     const help = new RichEmbed({
       title: 'help',

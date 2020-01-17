@@ -1,15 +1,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import directory from '../lib/directory';
-import print from '../lib/print';
-
-import { Client, Event } from '../../src';
+import { Client, Event, print, directory } from '../index';
 
 export default class EventImport {
-  events: Event[];
+  events: { [eventName: string]: Event } = {};
   constructor(client: Client) {
-    this.events = [];
+    this.events = {};
 
     const directoryPath = directory.get('events');
 

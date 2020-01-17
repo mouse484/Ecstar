@@ -1,11 +1,11 @@
-import { Command } from '../../../../src';
+import { Command, Client, Message } from '../../../../src';
 
-module.exports = class extends Command {
-  constructor(client) {
+export = class extends Command {
+  constructor(client: Client) {
     super(client, { name: 'say', args: true });
   }
 
-  run(message, { all }) {
+  run(message: Message, { all }: { all: string }) {
     return message.channel.send(all);
   }
 };
