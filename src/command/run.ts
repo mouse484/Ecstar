@@ -20,7 +20,7 @@ export const commandRun = (
   }
 
   if (command.info.args) {
-    let args = {};
+    let args: { [key: string]: string } = {};
     let count = 1;
     Object.keys(command.info.args).forEach(key => {
       args[key] = message.content.split(' ')[count];

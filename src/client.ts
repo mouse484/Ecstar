@@ -5,29 +5,29 @@ import { Command, Event } from './';
 import imports from './lib/imports';
 import Dispatcher from './lib/dispatcher';
 
-interface optionType extends ClientOptions {
+interface Ioption extends ClientOptions {
   prefix: string;
   owner?: Snowflake;
 }
 
 class ExtendClient extends DiscordClient {
-  emit(name, ...args) {
+  emit(name: string, ...args: any) {
     return super.emit('*', name, ...args);
   }
 }
 
 export class EcstarClient extends ExtendClient {
-  options: optionType;
-  commands: Command[];
-  events: Event[];
-  constructor(options: optionType) {
+  options: Ioption = { prefix: 'ec!' };
+  commands: { [commandName: string]: Command } = {};
+  events: { [eventName: string]: Event } = {};
+  constructor(options: Ioption) {
     super(options);
 
     new imports(this);
 
     const dispatcher: Dispatcher = new Dispatcher(this);
 
-    this.on('*', (name, ...callback) => {
+    this.on('*', (name: string, ...callback: [any, ...any[]]) => {
       dispatcher.event(name, ...callback);
     });
   }
