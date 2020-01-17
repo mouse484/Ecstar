@@ -17,11 +17,13 @@ class ExtendClient extends DiscordClient {
 }
 
 export class EcstarClient extends ExtendClient {
-  options: Ioption = { prefix: 'ec!' };
+  options: Ioption;
   commands: { [commandName: string]: Command } = {};
   events: { [eventName: string]: Event } = {};
   constructor(options: Ioption) {
     super(options);
+
+    this.options = options;
 
     new imports(this);
 
