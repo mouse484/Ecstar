@@ -1,7 +1,6 @@
-import { Client } from '../../src';
+import { Client, print } from '../index';
 
 import Message from './default/message';
-import print from '../lib/print';
 
 export abstract class EventBase {
   client: Client;

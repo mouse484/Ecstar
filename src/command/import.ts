@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import { Client, Command } from '../../src';
+import { Client, Command } from '../index';
 
 import directory from '../lib/directory';
 import print from '../lib/print';

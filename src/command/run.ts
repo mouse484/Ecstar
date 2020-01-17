@@ -1,4 +1,4 @@
-import { Client, Message, Command, print } from '../../src';
+import { Client, Message, Command, print } from './../index';
 
 export const commandRun = (
   client: Client,

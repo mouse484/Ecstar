@@ -1,4 +1,4 @@
-import { Client, Message, print } from '../../src';
+import { Client, Message, print } from '../index';
 
 interface Iinfo {
   name: string;
