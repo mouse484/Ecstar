@@ -1,13 +1,13 @@
 import { Client, Message, print } from '../index';
 
-interface Iinfo {
+type Iinfo = {
   name: string;
   aliases?: string[];
   description?: string;
   ownerOnly?: boolean;
   guildOnly?: boolean;
   args?: { [argsName: string]: string } | boolean;
-}
+};
 
 export abstract class CommandBase {
   client: Client;
