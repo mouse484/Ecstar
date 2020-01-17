@@ -7,9 +7,9 @@ import print from '../lib/print';
 import { Client, Event } from '../../src';
 
 export default class EventImport {
-  events: Event[];
+  events: { [eventName: string]: Event } = {};
   constructor(client: Client) {
-    this.events = [];
+    this.events = {};
 
     const directoryPath = directory.get('events');
 

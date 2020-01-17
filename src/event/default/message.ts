@@ -12,10 +12,12 @@ export default class MessageEvent {
     if (message.author.bot) return;
     if (!message.content.startsWith(this.client.options.prefix)) return;
 
-    const commandName = message.content
-      .slice(this.client.options.prefix.length)
-      .split(' ')
-      .shift();
+    const commandName: string = String(
+      message.content
+        .slice(this.client.options.prefix.length)
+        .split(' ')
+        .shift()
+    );
 
     commandRun(this.client, commandName, message);
   }

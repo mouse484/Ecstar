@@ -1,6 +1,6 @@
 import { Client, Message, print } from '../../src';
 
-interface Info {
+interface Iinfo {
   name: string;
   aliases?: string[];
   description?: string;
@@ -11,12 +11,12 @@ interface Info {
 
 export abstract class CommandBase {
   client: Client;
-  info: Info;
-  constructor(client: Client, info: Info) {
+  info: Iinfo;
+  constructor(client: Client, info: Iinfo) {
     if (!client) print.error('A client must be specified.');
     if (!info.name) print.error('command name must be specified.');
     this.client = client;
     this.info = info;
   }
-  abstract run(message: Message, args?: any): void;
+  abstract run(message: Message, args?: { [argsName: string]: string }): void;
 }

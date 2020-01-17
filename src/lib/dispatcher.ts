@@ -8,7 +8,7 @@ export default class Dispatcher {
     this.client = client;
   }
 
-  event(name: string, ...callback: any) {
+  event(name: string, ...callback: [any, ...any[]]) {
     Event(this.client, name, ...callback);
   }
 }
