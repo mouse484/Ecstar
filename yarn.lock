@@ -29,9 +29,9 @@
   integrity sha512-8+KAKzEvSUdeo+kmqnKrqgeE+LcA0tjYWFY7RPProVYwnqDjukzO+3b6dLD56rYX5TdWejnEOLJYOIeh4CXKuA==
 
 "@types/node@^12.12.14":
-  version "12.12.24"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.24.tgz#d4606afd8cf6c609036b854360367d1b2c78931f"
-  integrity sha512-1Ciqv9pqwVtW6FsIUKSZNB82E5Cu1I2bBTj1xuIHXLe/1zYLl3956Nbhg2MzSYHVfl9/rmanjbQIb7LibfCnug==
+  version "12.12.25"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.25.tgz#792c0afb798f1dd681dce9c4b4c431f7245a0a42"
+  integrity sha512-nf1LMGZvgFX186geVZR1xMZKKblJiRfiASTHw85zED2kI1yDKHDwTKMdkaCbTlXoRKlGKaDfYywt+V0As30q3w==
 
 "@typescript-eslint/eslint-plugin@^2.9.0":
   version "2.16.0"
@@ -284,6 +284,14 @@ escape-string-regexp@^1.0.5:
 eslint-config-mouse@mouse484/eslint-config:
   version "1.0.0"
   resolved "https://codeload.github.com/mouse484/eslint-config/tar.gz/9795183490e45632c7a9399b2b16c79d0037cdeb"
+  dependencies:
+    "@typescript-eslint/eslint-plugin" "^2.9.0"
+    "@typescript-eslint/parser" "^2.9.0"
+    eslint "^6.7.1"
+    eslint-config-prettier "^6.7.0"
+    eslint-plugin-jest "^23.1.1"
+    eslint-plugin-prettier "^3.1.1"
+    prettier "^1.19.1"
 
 eslint-config-prettier@^6.7.0:
   version "6.9.0"
