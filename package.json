@@ -3,9 +3,7 @@
   "version": "3.0.4",
   "description": "The easiest JavaScript/TypeScript Discord bot framework.",
   "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
+  "types": "dist/types/index.d.ts",
   "repository": "https://github.com/mouse484/Ecstar.git",
   "author": "mouse_484",
   "license": "MIT",
@@ -38,6 +36,9 @@
     "ts-node": "^8.5.2",
     "typescript": "^3.7.2"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "discord",
     "discord.js",
