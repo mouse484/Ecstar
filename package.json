@@ -1,6 +1,7 @@
 {
   "name": "ecstar",
   "version": "3.0.4",
+  "description": "The easiest JavaScript/TypeScript Discord bot framework.",
   "main": "dist/index.js",
   "files": [
     "dist"
