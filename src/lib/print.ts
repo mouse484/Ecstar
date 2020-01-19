@@ -13,7 +13,7 @@ export = {
   import(type: 'command' | 'event', name: string, path: string) {
     return log(
       chalk.magenta(figures.circleCircle, 'import'),
-      `${type} ${name} ${chalk.gray(path)}`
+      `${type} : ${name} ${chalk.gray(path)}`
     );
   },
   command(args: string) {

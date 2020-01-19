@@ -13,7 +13,7 @@ export default class EventImport {
     try {
       fs.mkdirSync(directoryPath);
     } catch {
-      print.info('Loading events...');
+      print.info(client.lang.LOADING_EVENTS);
     }
 
     fs.readdirSync(directoryPath)
