@@ -8,7 +8,7 @@
   "author": "mouse_484",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node -r dotenv/config test/ts-bot",
+    "dev": "nodemon --watch 'src' --ext 'ts' --exec 'ts-node -r dotenv/config test/ts-bot'",
     "build": "tsc",
     "test": "yarn build && node -r dotenv/config test/js-bot/index.js",
     "lint": "eslint --ext .js,.ts .",
@@ -32,6 +32,7 @@
     "eslint-config-mouse": "mouse484/eslint-config",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
+    "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "ts-node": "^8.5.2",
     "typescript": "^3.7.2"
