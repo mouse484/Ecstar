@@ -16,7 +16,7 @@ export default class CommandImport {
     try {
       fs.mkdirSync(directoryPath);
     } catch {
-      print.info('Loading command...');
+      print.info(client.lang.LOADING_COMMANDS);
     }
 
     fs.readdirSync(directoryPath).forEach(thatPath => {

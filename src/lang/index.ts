@@ -1,0 +1,7 @@
+/* Langage Base English US  */
+
+export class LangBase {
+  LOADING_COMMANDS = 'Loading commands...';
+  LOADING_EVENTS = 'Loading events...';
+  BOT_READY = 'Ready to Go!';
+}

@@ -82,6 +82,7 @@ import { Client } from 'ecstar';
 const client = new Client({
   prefix: 'your prefix', //Required
   owner: 'your id',
+  lang: new LangFile(),
 });
 
 client.login('Your token here');
@@ -122,6 +123,18 @@ export = class extends Event {
   }
 };
 ```
+
+### 📄Lang File
+
+```ts
+import { Lang } from 'ecstar';
+
+export = class extends Lang {
+   LOADING_COMMANDS = '';
+   ...
+};
+```
+See [Here](https://github.com/mouse484/Ecstar/tree/master/src/lang)
 
 ## 🎫License
 
