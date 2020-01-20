@@ -15,9 +15,7 @@ export default class CommandImport {
     fs.readdirSync(directoryPath).forEach(thatPath => {
       const subDirectoryPath = path.join(directoryPath, thatPath);
       if (!directory.is(subDirectoryPath)) {
-        return print.warn(
-          `Files cannot be placed directly under the 'commands' directory (${thatPath})`
-        );
+        return print.warn(`${client.lang.COMMAND_DIR_FILE_WARN} (${thatPath})`);
       }
       fs.readdirSync(subDirectoryPath)
         .filter(fileName => fileName.match(/\.(?<ext>js|ts)$/u))
