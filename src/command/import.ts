@@ -1,10 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import { Client, Command } from '../index';
-
-import directory from '../lib/directory';
-import print from '../lib/print';
+import { Client, Command, print, directory } from '../index';
 
 export default class CommandImport {
   commands: { [commandName: string]: Command } = {};
