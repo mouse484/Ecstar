@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import path from 'path';
 
-import { print, Client } from '../index';
+import { print } from '../index';
 
 export default {
   getPath(name: string): string {
