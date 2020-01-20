@@ -1,30 +1,21 @@
 import fs from 'fs';
 import path from 'path';
 
-import { Client, Command } from '../index';
-
-import directory from '../lib/directory';
-import print from '../lib/print';
+import { Client, Command, print, directory } from '../index';
 
 export default class CommandImport {
   commands: { [commandName: string]: Command } = {};
   constructor(client: Client) {
     this.commands = {};
 
-    const directoryPath = directory.get('commands');
+    const directoryPath = directory.getPath('commands');
 
-    try {
-      fs.mkdirSync(directoryPath);
-    } catch {
-      print.info(client.lang.LOADING_COMMANDS);
-    }
+    directory.exists(directoryPath, client.lang.LOADING_COMMANDS);
 
     fs.readdirSync(directoryPath).forEach(thatPath => {
       const subDirectoryPath = path.join(directoryPath, thatPath);
       if (!directory.is(subDirectoryPath)) {
-        return print.warn(
-          `Files cannot be placed directly under the 'commands' directory (${thatPath})`
-        );
+        return print.warn(`${client.lang.COMMAND_DIR_FILE_WARN} (${thatPath})`);
       }
       fs.readdirSync(subDirectoryPath)
         .filter(fileName => fileName.match(/\.(?<ext>js|ts)$/u))
