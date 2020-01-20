@@ -8,7 +8,7 @@ export default class CommandImport {
   constructor(client: Client) {
     this.commands = {};
 
-    const directoryPath = directory.get('commands');
+    const directoryPath = directory.getPath('commands');
 
     try {
       fs.mkdirSync(directoryPath);
