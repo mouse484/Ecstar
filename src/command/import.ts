@@ -10,11 +10,7 @@ export default class CommandImport {
 
     const directoryPath = directory.getPath('commands');
 
-    try {
-      fs.mkdirSync(directoryPath);
-    } catch {
-      print.info(client.lang.LOADING_COMMANDS);
-    }
+    directory.exists(directoryPath, client.lang.LOADING_COMMANDS);
 
     fs.readdirSync(directoryPath).forEach(thatPath => {
       const subDirectoryPath = path.join(directoryPath, thatPath);

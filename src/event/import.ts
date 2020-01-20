@@ -10,11 +10,7 @@ export default class EventImport {
 
     const directoryPath = directory.getPath('events');
 
-    try {
-      fs.mkdirSync(directoryPath);
-    } catch {
-      print.info(client.lang.LOADING_EVENTS);
-    }
+    directory.exists(directoryPath, client.lang.LOADING_EVENTS);
 
     fs.readdirSync(directoryPath)
       .filter(fileName => fileName.match(/\.(?<ext>js|ts)$/u))

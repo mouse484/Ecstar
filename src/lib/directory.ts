@@ -1,5 +1,7 @@
 import * as fs from 'fs';
-import * as path from 'path';
+import path from 'path';
+
+import { print, Client } from '../index';
 
 export default {
   getPath(name: string): string {
@@ -8,6 +10,13 @@ export default {
       rootPath = path.parse(rootPath).dir;
     }
     return path.join(rootPath, name);
+  },
+  exists(directoryPath: string, message: string): void {
+    try {
+      fs.mkdirSync(directoryPath);
+    } catch {
+      print.info(message);
+    }
   },
   is(directoryPath: string): boolean {
     return fs.statSync(directoryPath).isDirectory();
