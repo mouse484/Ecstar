@@ -18,6 +18,10 @@ export = class extends Command {
       help.fields = [
         { name: 'name', value: command.info.name, inline: true },
         {
+          name: 'description',
+          value: command.info.description ? command.info.description : 'none',
+        },
+        {
           name: 'alias',
           value: command.info.aliases ? command.info.aliases.join() : 'none',
           inline: true,
@@ -29,10 +33,17 @@ export = class extends Command {
         .forEach(commandName => {
           const command = commands[commandName];
 
-          help.addField(
-            this.client.options.prefix + commandName,
-            command.info.aliases ? `alias:${command.info.aliases.join()}` : '-'
-          );
+          let commandInfo = '';
+
+          if (command.info.aliases) {
+            commandInfo += `alias: ${command.info.aliases.join()}`;
+          }
+          if (command.info.description) {
+            commandInfo += `description: ${command.info.description}`;
+          }
+          if (!commandInfo) commandInfo = '-';
+
+          help.addField(this.client.options.prefix + commandName, commandInfo);
         });
     }
 
