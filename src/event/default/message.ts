@@ -3,7 +3,7 @@ import { Client, Message } from '../../../src';
 import { commandRun } from '../../command/run';
 
 export default class MessageEvent {
-  client: Client;
+  readonly client: Client;
   constructor(client: Client) {
     this.client = client;
   }
