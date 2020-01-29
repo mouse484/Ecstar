@@ -3,7 +3,7 @@ import { Client } from '../index';
 import Event from '../event';
 
 export default class Dispatcher {
-  client: Client;
+  readonly client: Client;
   constructor(client: Client) {
     this.client = client;
   }

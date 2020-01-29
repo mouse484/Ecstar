@@ -18,10 +18,10 @@ class ExtendClient extends DiscordClient {
 }
 
 export class EcstarClient extends ExtendClient {
-  options: Ioption;
+  readonly options: Ioption;
   commands: { [commandName: string]: Command } = {};
   events: { [eventName: string]: Event } = {};
-  lang: Lang;
+  readonly lang: Lang;
   constructor(options: Ioption) {
     super(options);
 
