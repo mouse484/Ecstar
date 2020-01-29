@@ -30,7 +30,7 @@
     "dotenv": "^7.0.0",
     "eslint": "^6.7.1",
     "eslint-config-mouse": "mouse484/eslint-config",
-    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.1",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
