@@ -1,15 +1,14 @@
 {
   "name": "ecstar",
   "version": "3.0.4",
+  "description": "The easiest JavaScript/TypeScript Discord bot framework.",
   "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
+  "types": "dist/types/index.d.ts",
   "repository": "https://github.com/mouse484/Ecstar.git",
   "author": "mouse_484",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node -r dotenv/config test/ts-bot",
+    "dev": "nodemon --watch src --watch test/ts-bot --ext ts --exec ts-node -r dotenv/config test/ts-bot",
     "build": "tsc",
     "test": "yarn build && node -r dotenv/config test/js-bot/index.js",
     "lint": "eslint --ext .js,.ts .",
@@ -20,21 +19,31 @@
     "discord.js": "^11.5.0"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
+    "chalk": "^3.0.0",
     "discord.js": "11.5.1",
     "figures": "^3.1.0"
   },
   "devDependencies": {
-    "@types/node": "^12.12.14",
-    "@typescript-eslint/eslint-plugin": "^2.9.0",
-    "@typescript-eslint/parser": "^2.9.0",
-    "dotenv": "^7.0.0",
+    "@types/node": "^13.7.0",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "dotenv": "^8.2.0",
     "eslint": "^6.7.1",
     "eslint-config-mouse": "mouse484/eslint-config",
-    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.1",
+    "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "ts-node": "^8.5.2",
     "typescript": "^3.7.2"
-  }
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "discord",
+    "discord.js",
+    "framework",
+    "ecstar"
+  ]
 }

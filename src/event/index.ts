@@ -3,8 +3,8 @@ import { Client, print } from '../index';
 import Message from './default/message';
 
 export abstract class EventBase {
-  client: Client;
-  name: string;
+  readonly client: Client;
+  readonly name: string;
   constructor(client: Client, name: string) {
     this.client = client;
     this.name = name;
@@ -15,7 +15,7 @@ export abstract class EventBase {
 export default (client: Client, name: string, ...callback: [any, ...any[]]) => {
   switch (name) {
     case 'ready':
-      print.info(`Go!! ${client.user.tag}`);
+      print.info(`${client.lang.BOT_READY} ${client.user.tag}`);
       break;
     case 'message':
       new Message(client).handle(callback);
