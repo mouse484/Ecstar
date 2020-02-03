@@ -11,7 +11,7 @@ interface optionType extends ClientOptions {
   lang?: Lang;
 }
 
-class ExtendClient extends DiscordClient {
+export class ExtendClient extends DiscordClient {
   emit(name: string, ...args: any) {
     return super.emit('*', name, ...args);
   }

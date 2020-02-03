@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "nodemon --watch src --watch test/ts-bot --ext ts --exec ts-node -r dotenv/config test/ts-bot",
     "build": "tsc",
-    "test": "yarn build && node -r dotenv/config test/js-bot/index.js",
+    "test": "jest --watch",
+    "test:js": "yarn build && node -r dotenv/config test/js-bot/index.js",
     "lint": "eslint --ext .js,.ts .",
     "fix": "eslint --fix --ext .js,.ts  .",
     "md": "yarn prettier README.md --write"
@@ -24,6 +25,7 @@
     "figures": "^3.1.0"
   },
   "devDependencies": {
+    "@types/jest": "^25.1.1",
     "@types/node": "^13.7.0",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/parser": "^2.18.0",
@@ -32,8 +34,10 @@
     "eslint-config-mouse": "mouse484/eslint-config",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^25.1.0",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
+    "ts-jest": "^25.1.0",
     "ts-node": "^8.5.2",
     "typescript": "^3.7.2"
   },
