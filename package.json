@@ -33,6 +33,7 @@
     "eslint-config-mouse": "mouse484/eslint-config",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^25.1.0",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "ts-jest": "^25.1.0",
