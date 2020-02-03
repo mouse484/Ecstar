@@ -5,7 +5,7 @@ import { Command, Event, Lang } from './index';
 import imports from './lib/imports';
 import Dispatcher from './lib/dispatcher';
 
-interface Ioption extends ClientOptions {
+interface optionType extends ClientOptions {
   prefix: string;
   owner?: Snowflake;
   lang?: Lang;
@@ -18,11 +18,11 @@ class ExtendClient extends DiscordClient {
 }
 
 export class EcstarClient extends ExtendClient {
-  readonly options: Ioption;
+  readonly options: optionType;
   commands: { [commandName: string]: Command } = {};
   events: { [eventName: string]: Event } = {};
   readonly lang: Lang;
-  constructor(options: Ioption) {
+  constructor(options: optionType) {
     super(options);
 
     this.options = options;
