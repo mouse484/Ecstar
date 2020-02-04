@@ -11,4 +11,11 @@ describe('get path', () => {
   });
 });
 
-
+describe('is directory', () => {
+  test('true', () => {
+    expect(directory.is(__dirname)).toBeTruthy();
+  });
+  test('false', () => {
+    expect(directory.is(__filename)).toBeFalsy();
+  });
+});
