@@ -6,7 +6,7 @@ const log = (type: string, ...args: string[]) => {
   console.log(`${new Date().toLocaleTimeString()} | ${type}\t${args}`);
 };
 
-export = {
+export default {
   info(args: string) {
     return log(chalk.blue(figures.info, 'info'), args);
   },
