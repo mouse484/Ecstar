@@ -1314,8 +1314,8 @@ escodegen@^1.11.1:
 
 eslint-config-mouse@mouse484/eslint-config:
   version "1.0.0"
-  uid c8db6d08d2dc6b15e1da0878a3a49ce1c60f5bed
-  resolved "https://codeload.github.com/mouse484/eslint-config/tar.gz/c8db6d08d2dc6b15e1da0878a3a49ce1c60f5bed"
+  uid "9146ba4d85ad237d0fc36de45b3b9bb31dda6906"
+  resolved "https://codeload.github.com/mouse484/eslint-config/tar.gz/9146ba4d85ad237d0fc36de45b3b9bb31dda6906"
 
 eslint-config-prettier@^6.10.0:
   version "6.10.0"
