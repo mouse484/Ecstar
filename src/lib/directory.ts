@@ -3,13 +3,23 @@ import path from 'path';
 
 import { print } from '../index';
 
+interface oRequire extends NodeJS.Require {
+  main: any;
+}
+
+interface Require extends oRequire {
+  main: {
+    filename: string;
+  };
+}
+
+declare let require: Require;
+
 export default {
   getPath(name: string): string {
-    let [, rootPath] = process.argv;
-    if (rootPath.match(/\.(?<ext>js|ts)$/u)) {
-      rootPath = path.parse(rootPath).dir;
-    }
-    return path.join(rootPath, name);
+    const rootPath = require.main.filename;
+    const rootDir = path.dirname(rootPath);
+    return path.join(rootDir, name);
   },
   exists(directoryPath: string, message: string): void {
     try {

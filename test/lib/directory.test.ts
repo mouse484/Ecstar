@@ -1,13 +1,13 @@
+import path from 'path';
+
 import directory from '../../src/lib/directory';
 
 describe('get path', () => {
-  test('node .', () => {
-    process.argv[1] = 'get/path';
-    expect(directory.getPath('test')).toBe('get/path/test');
+  test('path test 1', () => {
+    expect(directory.getPath('test')).toBe(path.resolve(__dirname, 'test'));
   });
-  test('node file.ts', () => {
-    process.argv[1] = 'path/file.ts';
-    expect(directory.getPath('test')).toBe('path/test');
+  test('path test 2', () => {
+    expect(directory.getPath('abc')).toBe(path.resolve(__dirname, 'abc'));
   });
 });
 
