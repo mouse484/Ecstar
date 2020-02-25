@@ -13,7 +13,7 @@ interface Require extends oRequire {
   };
 }
 
-declare var require: Require;
+declare let require: Require;
 
 export default {
   getPath(name: string): string {
