@@ -8,10 +8,10 @@
   "author": "mouse_484",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --watch src --watch test/ts-bot --ext ts --exec ts-node -r dotenv/config test/ts-bot",
+    "dev": "nodemon --watch src --watch examples/TypeScript --ext ts --exec ts-node -r dotenv/config examples/TypeScript",
     "build": "tsc",
     "test": "jest --watch",
-    "test:js": "yarn build && node -r dotenv/config test/js-bot/index.js",
+    "test:js": "yarn build && node -r dotenv/config examples/Node",
     "lint": "eslint --ext .js,.ts .",
     "fix": "eslint --fix --ext .js,.ts  .",
     "md": "yarn prettier README.md --write"
