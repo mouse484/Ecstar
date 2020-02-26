@@ -1,3 +1,4 @@
+import { exCallback } from '../src';
 import { ExtendClient } from '../src/client';
 
 const ee = new ExtendClient();
@@ -5,7 +6,7 @@ const ee = new ExtendClient();
 describe('Event Emitter test', () => {
   const spy = jest
     .spyOn(ee, 'emit')
-    .mockImplementation((name: string, ...args: any): any => {
+    .mockImplementation((name: string, ...args: exCallback): any => {
       return ['*', name, args];
     });
   test('emit hey', () => {
