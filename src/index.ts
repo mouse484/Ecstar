@@ -1,8 +1,13 @@
+export {
+  Client as DiscordClient,
+  ClientOptions as DiscordClientOptions,
+  Snowflake,
+  Message,
+  RichEmbed,
+} from 'discord.js';
 export { EcstarClient as Client } from './client';
 export { CommandBase as Command } from './command';
 export { EventBase as Event } from './event';
 export { LangBase as Lang } from './lang';
-export { default as print } from './lib/print';
-export { default as directory } from './lib/directory';
+export * from './lib';
 export * from './types';
-export * from 'discord.js';

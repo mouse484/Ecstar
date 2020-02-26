@@ -1,13 +1,17 @@
-import { Client as DiscordClient } from 'discord.js';
+import {
+  DiscordClient,
+  Command,
+  Event,
+  Lang,
+  Imports,
+  Dispatcher,
+  EcstarOptions,
+  exCallback,
+} from './index';
 
-import { Command, Event, Lang, EcstarOptions } from './index';
-
-import imports from './lib/imports';
-import Dispatcher from './lib/dispatcher';
-
-export class ExtendClient extends DiscordClient {
-  emit(name: string, ...args: any) {
-    return super.emit('*', name, ...args);
+class ExtendClient extends DiscordClient {
+  emit(name: string, ...callback: exCallback) {
+    return super.emit('*', name, ...callback);
   }
 }
 
@@ -22,11 +26,11 @@ export class EcstarClient extends ExtendClient {
     this.options = options;
     this.lang = options.lang || new Lang();
 
-    new imports(this);
+    new Imports(this);
 
     const dispatcher: Dispatcher = new Dispatcher(this);
 
-    this.on('*', (name: string, ...callback: [any, ...any[]]) => {
+    this.on('*', (name: string, ...callback: exCallback) => {
       dispatcher.event(name, ...callback);
     });
   }

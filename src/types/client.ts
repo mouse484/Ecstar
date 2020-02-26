@@ -1,9 +1,9 @@
-import { ClientOptions, Snowflake } from 'discord.js';
+import { Lang, DiscordClientOptions, Snowflake } from '../index';
 
-import { Lang } from '../index';
-
-export interface EcstarOptions extends ClientOptions {
+export interface EcstarOptions extends DiscordClientOptions {
   prefix: string;
   owner?: Snowflake;
   lang?: Lang;
 }
+
+export type exCallback = [any, ...any[]];
