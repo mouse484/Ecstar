@@ -1,15 +1,9 @@
-import { Client as DiscordClient, ClientOptions, Snowflake } from 'discord.js';
+import { Client as DiscordClient } from 'discord.js';
 
-import { Command, Event, Lang } from './index';
+import { Command, Event, Lang, EcstarOptions } from './index';
 
 import imports from './lib/imports';
 import Dispatcher from './lib/dispatcher';
-
-interface optionType extends ClientOptions {
-  prefix: string;
-  owner?: Snowflake;
-  lang?: Lang;
-}
 
 export class ExtendClient extends DiscordClient {
   emit(name: string, ...args: any) {
@@ -18,11 +12,11 @@ export class ExtendClient extends DiscordClient {
 }
 
 export class EcstarClient extends ExtendClient {
-  readonly options: optionType;
+  readonly options: EcstarOptions;
   commands: { [commandName: string]: Command } = {};
   events: { [eventName: string]: Event } = {};
   readonly lang: Lang;
-  constructor(options: optionType) {
+  constructor(options: EcstarOptions) {
     super(options);
 
     this.options = options;
