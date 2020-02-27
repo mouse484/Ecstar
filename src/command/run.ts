@@ -11,18 +11,18 @@ export const commandRun = (
     return print.warn(`Non-existent Command(${commandName})`);
   }
 
-  if (command.info.ownerOnly && client.options.owner !== message.author.id) {
+  if (command.options.ownerOnly && client.options.owner !== message.author.id) {
     return message.channel.send('sorry owner only command');
   }
 
-  if (command.info.guildOnly && !message.guild) {
+  if (command.options.guildOnly && !message.guild) {
     return message.channel.send('this command is guil only.');
   }
 
-  if (command.info.args) {
+  if (command.options.args) {
     let args: { [key: string]: string } = {};
     let count = 1;
-    Object.keys(command.info.args).forEach(key => {
+    Object.keys(command.options.args).forEach(key => {
       args[key] = message.content.split(' ')[count];
       count = count + 1;
     });
@@ -36,5 +36,5 @@ export const commandRun = (
     command.run(message);
   }
 
-  print.command(`${command.info.name} (${commandName})`);
+  print.command(`${command.options.name} (${commandName})`);
 };
