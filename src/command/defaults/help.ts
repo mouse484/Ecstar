@@ -16,30 +16,36 @@ export = class extends Command {
     const command = commands[type];
     if (command) {
       help.fields = [
-        { name: 'name', value: command.info.name, inline: true },
+        { name: 'name', value: command.options.name, inline: true },
         {
           name: 'description',
-          value: command.info.description ? command.info.description : 'none',
+          value: command.options.description
+            ? command.options.description
+            : 'none',
         },
         {
           name: 'alias',
-          value: command.info.aliases ? command.info.aliases.join() : 'none',
+          value: command.options.aliases
+            ? command.options.aliases.join()
+            : 'none',
           inline: true,
         },
       ];
     } else {
       Object.keys(commands)
-        .filter(commandName => commandName === commands[commandName].info.name)
+        .filter(
+          commandName => commandName === commands[commandName].options.name
+        )
         .forEach(commandName => {
           const command = commands[commandName];
 
           let commandInfo = '';
 
-          if (command.info.aliases) {
-            commandInfo += `alias: ${command.info.aliases.join()}`;
+          if (command.options.aliases) {
+            commandInfo += `alias: ${command.options.aliases.join()}`;
           }
-          if (command.info.description) {
-            commandInfo += `description: ${command.info.description}`;
+          if (command.options.description) {
+            commandInfo += `description: ${command.options.description}`;
           }
           if (!commandInfo) commandInfo = '-';
 

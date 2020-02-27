@@ -28,7 +28,7 @@ export default class CommandImport {
 
           const list: string[] = [];
 
-          list.push(command.info.name);
+          list.push(command.options.name);
 
           list.forEach(alias => {
             if (this.commands[alias]) this.commandError(alias);
@@ -47,10 +47,10 @@ export default class CommandImport {
 
       const command = new CommandFile(client);
 
-      if (!this.commands[command.info.name]) {
-        this.commands[command.info.name] = command;
+      if (!this.commands[command.options.name]) {
+        this.commands[command.options.name] = command;
       }
-      print.import('command', command.info.name, 'default');
+      print.import('command', command.options.name, 'default');
     });
 
     client.commands = this.commands;
