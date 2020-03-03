@@ -17,6 +17,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
-    - run: yarn run jest
+    - run: yarn run jest --ci
       env:
         CI: true
