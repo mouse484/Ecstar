@@ -3,7 +3,6 @@ export {
   ClientOptions as DiscordClientOptions,
   Snowflake,
   Message,
-  RichEmbed,
 } from 'discord.js';
 export { EcstarClient as Client } from './client';
 export { CommandBase as Command } from './command';

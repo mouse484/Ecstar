@@ -1,4 +1,5 @@
-import { Client, Command, Message, RichEmbed } from '../../index';
+import { Client, Command, Message } from '../../index';
+import { MessageEmbed } from 'discord.js';
 
 export = class extends Command {
   constructor(client: Client) {
@@ -8,14 +9,14 @@ export = class extends Command {
   run(message: Message, { type }: { type: string }) {
     const { commands }: { commands: { [key: string]: Command } } = this.client;
 
-    const help = new RichEmbed({
+    const help = new MessageEmbed({
       title: 'help',
       description: `this bot prefix is \`${this.client.options.prefix}\``,
     });
 
     const command = commands[type];
     if (command) {
-      help.fields = [
+      help.addFields([
         { name: 'name', value: command.options.name, inline: true },
         {
           name: 'description',
@@ -30,7 +31,7 @@ export = class extends Command {
             : 'none',
           inline: true,
         },
-      ];
+      ]);
     } else {
       Object.keys(commands)
         .filter(

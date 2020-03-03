@@ -15,7 +15,7 @@ export abstract class EventBase {
 export default (client: Client, name: string, ...callback: [any, ...any[]]) => {
   switch (name) {
     case 'ready':
-      print.info(`${client.lang.BOT_READY} ${client.user.tag}`);
+      print.info(`${client.lang.BOT_READY} ${client.user?.tag}`);
       break;
     case 'message':
       new Message(client).handle(callback);
