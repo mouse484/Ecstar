@@ -1,6 +1,8 @@
+image:
+  file: .gitpod.Dockerfile
+
 tasks:
-  - init: nvm install 12 && npm install -g yarn
-    command: yarn install
+  - command: yarn install
 
 vscode:
   extensions:
