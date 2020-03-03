@@ -1,5 +1,6 @@
 tasks:
-- command: yarn install
+  - init: nvm install 12
+  - command: yarn install
 
 vscode:
   extensions:
