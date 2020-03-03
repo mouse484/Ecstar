@@ -16,14 +16,13 @@ export class ExtendClient extends DiscordClient {
 }
 
 export class EcstarClient extends ExtendClient {
-  readonly options: EcstarOptions;
+  readonly options!: EcstarOptions;
   commands: { [commandName: string]: Command } = {};
   events: { [eventName: string]: Event } = {};
   readonly lang: Lang;
   constructor(options: EcstarOptions) {
     super(options);
 
-    this.options = options;
     this.lang = options.lang || new Lang();
 
     new Imports(this);
