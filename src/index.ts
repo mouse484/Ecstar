@@ -2,8 +2,7 @@ export {
   Client as DiscordClient,
   ClientOptions as DiscordClientOptions,
   Snowflake,
-  Message,
-  RichEmbed,
+  Message
 } from 'discord.js';
 export { EcstarClient as Client } from './client';
 export { CommandBase as Command } from './command';
