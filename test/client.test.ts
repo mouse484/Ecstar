@@ -3,6 +3,11 @@ import { ExtendClient } from '../src/client';
 
 const ee = new ExtendClient();
 
+afterAll(done => {
+  ee.destroy();
+  done();
+});
+
 describe('Event Emitter test', () => {
   const spy = jest
     .spyOn(ee, 'emit')
