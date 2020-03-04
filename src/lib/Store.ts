@@ -5,7 +5,7 @@ import path from 'path';
 export class Store<T extends File> {
   store: Map<string, T> = new Map();
   constructor(public client: Client, public type: 'commands' | 'events') {
-    this.import(directory.getPath(type));
+    this.import(directory.getPath(client, type));
   }
   async import(directoryPath: string) {
     const dirents = await fs.readdir(directoryPath, {
