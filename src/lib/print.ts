@@ -10,7 +10,7 @@ export default {
   info(args: string): void {
     return log(chalk.blue(figures.info, 'info'), args);
   },
-  import(type: 'command' | 'event', name: string, path: string): void {
+  import(type: 'commands' | 'events', name: string, path: string): void {
     return log(
       chalk.magenta(figures.circleCircle, 'import'),
       `${type} : ${name} ${chalk.gray(path)}`

@@ -4,7 +4,7 @@ import path from 'path';
 
 export class Store<T extends File> {
   store: Map<string, T> = new Map();
-  constructor(public client: Client, public type: string) {
+  constructor(public client: Client, public type: 'commands' | 'events') {
     this.import(directory.getPath(type));
   }
   async import(directoryPath: string) {
@@ -18,8 +18,8 @@ export class Store<T extends File> {
         this.import(direntPath);
       } else {
         const file: T = new (require(direntPath))();
-        print.import('event', file.name, direntPath);
-        this.store.set(file.name, file);
+        print.import(this.type, file.options.name, direntPath);
+        this.store.set(file.options.name, file);
       }
     }
   }
