@@ -1,4 +1,4 @@
-import { Client, Message, print, commandOptions } from '../index';
+import { Client, Message, commandOptions } from '../index';
 
 export abstract class CommandBase {
   constructor(public client: Client, public options: commandOptions) {}
