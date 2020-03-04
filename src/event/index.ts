@@ -2,11 +2,6 @@ import { Client, print, Event } from '../index';
 
 import Message from './default/message';
 
-export abstract class EventBase {
-  constructor(public client: Client, public name: string) {}
-  abstract run(...callback: any[]): void;
-}
-
 export default (client: Client, name: string, ...callback: [any, ...any[]]) => {
   switch (name) {
     case 'ready':

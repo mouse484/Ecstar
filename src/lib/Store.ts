@@ -1,9 +1,9 @@
-import { Client, directory, Event, print } from '../index';
+import { Client, directory, print, File } from '../index';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-export class Store {
-  store: Map<string, Event> = new Map();
+export class Store<T extends File> {
+  store: Map<string, T> = new Map();
   constructor(public client: Client, public type: string) {
     this.import(directory.getPath(type));
   }
@@ -17,7 +17,7 @@ export class Store {
       if (dirent.isDirectory()) {
         this.import(direntPath);
       } else {
-        const file: Event = new (require(direntPath))();
+        const file: T = new (require(direntPath))();
         print.import('event', file.name, direntPath);
         this.store.set(file.name, file);
       }
