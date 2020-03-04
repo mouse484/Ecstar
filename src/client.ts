@@ -3,7 +3,6 @@ import {
   Command,
   Event,
   Lang,
-  Imports,
   Dispatcher,
   EcstarOptions,
   exCallback,
@@ -24,8 +23,6 @@ export class EcstarClient extends ExtendClient {
     super(options);
 
     this.lang = options.lang || new Lang();
-
-    new Imports(this);
 
     const dispatcher: Dispatcher = new Dispatcher(this);
 
