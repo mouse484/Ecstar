@@ -2,9 +2,10 @@ import { Client, directory, print, File } from '../index';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-export class Store<T extends File> {
+export class Store<T extends File> extends Map<string, T> {
   store: Map<string, T> = new Map();
   constructor(public client: Client, public type: 'commands' | 'events') {
+    super();
     this.import(directory.getPath(client, type));
   }
   async import(directoryPath: string) {
