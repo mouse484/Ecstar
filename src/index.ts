@@ -10,3 +10,4 @@ export { EventBase as Event } from './event';
 export { LangBase as Lang } from './lang';
 export * from './lib';
 export * from './types';
+export { EventStore } from './event/EventStore';

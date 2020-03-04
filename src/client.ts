@@ -2,6 +2,7 @@ import {
   DiscordClient,
   Command,
   Event,
+  EventStore,
   Lang,
   Dispatcher,
   EcstarOptions,
@@ -17,7 +18,7 @@ export class ExtendClient extends DiscordClient {
 export class EcstarClient extends ExtendClient {
   readonly options!: EcstarOptions;
   commands: { [commandName: string]: Command } = {};
-  events: { [eventName: string]: Event } = {};
+  events: Map<string, Event> = new EventStore(this).store;
   readonly lang: Lang;
   constructor(options: EcstarOptions) {
     super(options);

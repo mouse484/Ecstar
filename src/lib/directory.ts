@@ -19,14 +19,14 @@ export default {
   getPath(name: string): string {
     const rootPath = require.main.filename;
     const rootDir = path.dirname(rootPath);
-    return path.join(rootDir, name);
+    const thatDir = path.join(rootDir, name);
+    this.exists(thatDir);
+    return thatDir;
   },
-  exists(directoryPath: string, message: string): void {
+  exists(directoryPath: string, message?: string): void {
     try {
       fs.mkdirSync(directoryPath);
-    } catch {
-      print.info(message);
-    }
+    } catch {}
   },
   is(directoryPath: string): boolean {
     return fs.statSync(directoryPath).isDirectory();
