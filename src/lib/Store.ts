@@ -2,7 +2,6 @@ import { Client, directory, print, File } from '../index';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-
 export class Store<T extends File> extends Map<string, T> {
   constructor(public client: Client, public type: 'commands' | 'events') {
     super();
@@ -13,7 +12,7 @@ export class Store<T extends File> extends Map<string, T> {
       withFileTypes: true,
     });
 
-    for (const dirent of dirents) {
+    dirents.forEach(dirent => {
       const direntPath = path.join(directoryPath, dirent.name);
       if (dirent.isDirectory()) {
         this.import(direntPath);
@@ -22,6 +21,6 @@ export class Store<T extends File> extends Map<string, T> {
         print.import(this.type, file.options.name, direntPath);
         this.set(file.options.name, file);
       }
-    }
+    });
   }
 }
