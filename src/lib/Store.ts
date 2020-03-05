@@ -2,6 +2,7 @@ import { Client, directory, print, File } from '../index';
 import { promises as fs } from 'fs';
 import path from 'path';
 
+
 export class Store<T extends File> extends Map<string, T> {
   constructor(public client: Client, public type: 'commands' | 'events') {
     super();
@@ -19,7 +20,7 @@ export class Store<T extends File> extends Map<string, T> {
       } else {
         const file: T = new (require(direntPath))();
         print.import(this.type, file.options.name, direntPath);
-        super.set(file.options.name, file);
+        this.set(file.options.name, file);
       }
     }
   }
