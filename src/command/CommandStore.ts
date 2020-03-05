@@ -6,7 +6,7 @@ export class CommandStore extends Store<Command> {
   }
   set(key: string, value: Command): this {
     super.set(key, value);
-    const aliases = value.options.aliases;
+    const { aliases } = value.options;
     if (aliases) {
       aliases.forEach(alias => {
         super.set(alias, value);
