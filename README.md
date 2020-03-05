@@ -63,15 +63,19 @@ Ecstar is the easiest framework [Discord.js](https://github.com/discordjs/discor
 
 ```
 Development Directory/
-├ commands/
-│ ├ command-type/
-│ │ 　 ├ command-name.js(command file)
-│ │ 　 └ command-name.js(command file)
-| └ command-type/
-|　 　  └ command-name.js(command file)
-├ events/
-│ └ event-name.js(event file)
-└ index.js(main file)
+Development Directory
+├ commands
+│ ├ command file
+│ ├ directory
+│ │ └ command file
+│ └ directory
+│ 　 └ directory
+│ 　 　 └ command file
+├ events
+│ ├ event file
+│ └ directory
+│ 　 └ event file
+└ Main file
 ```
 
 ### 📄Main File
