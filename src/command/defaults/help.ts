@@ -7,14 +7,14 @@ export = class extends Command {
   }
 
   run(message: Message, { type }: { type: string }) {
-    const { commands }: { commands: { [key: string]: Command } } = this.client;
+    const { commands }: { commands: Map<string, Command> } = this.client;
 
     const help = new MessageEmbed({
       title: 'help',
       description: `this bot prefix is \`${this.client.options.prefix}\``,
     });
 
-    const command = commands[type];
+    const command = commands.get(type);
     if (command) {
       help.addFields([
         { name: 'name', value: command.options.name, inline: true },
@@ -35,12 +35,14 @@ export = class extends Command {
     } else {
       Object.keys(commands)
         .filter(
-          commandName => commandName === commands[commandName].options.name
+          commandName => commandName === commands.get(commandName)?.options.name
         )
         .forEach(commandName => {
-          const command = commands[commandName];
+          const command = commands.get(commandName);
 
           let commandInfo = '';
+
+          if (!command) return;
 
           if (command.options.aliases) {
             commandInfo += `alias: ${command.options.aliases.join()}`;

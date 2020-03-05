@@ -5,7 +5,7 @@ export const commandRun = (
   commandName: string,
   message: Message
 ) => {
-  const command: Command = client.commands[commandName];
+  const command: Command | undefined = client.commands.get(commandName);
 
   if (!command) {
     return print.warn(`Non-existent Command(${commandName})`);

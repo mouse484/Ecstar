@@ -1,9 +1,8 @@
 import {
   DiscordClient,
-  Command,
-  Event,
+  CommandStore,
+  EventStore,
   Lang,
-  Imports,
   Dispatcher,
   EcstarOptions,
   exCallback,
@@ -17,15 +16,11 @@ export class ExtendClient extends DiscordClient {
 
 export class EcstarClient extends ExtendClient {
   readonly options!: EcstarOptions;
-  commands: { [commandName: string]: Command } = {};
-  events: { [eventName: string]: Event } = {};
-  readonly lang: Lang;
+  readonly lang = this.options.lang || new Lang();
+  commands = new CommandStore(this);
+  events = new EventStore(this);
   constructor(options: EcstarOptions) {
     super(options);
-
-    this.lang = options.lang || new Lang();
-
-    new Imports(this);
 
     const dispatcher: Dispatcher = new Dispatcher(this);
 

@@ -1,8 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 
-import { print } from '../index';
-
 interface oRequire extends NodeJS.Require {
   main: any;
 }
@@ -16,16 +14,18 @@ interface Require extends oRequire {
 declare let require: Require;
 
 export default {
-  getPath(name: string): string {
+  getPath(name: string): string | undefined {
     const rootPath = require.main.filename;
     const rootDir = path.dirname(rootPath);
-    return path.join(rootDir, name);
-  },
-  exists(directoryPath: string, message: string): void {
+    const thatDir = path.join(rootDir, name);
     try {
-      fs.mkdirSync(directoryPath);
+      fs.mkdirSync(thatDir);
+      if (this.is(thatDir)) {
+        return thatDir;
+      }
+      return undefined;
     } catch {
-      print.info(message);
+      return thatDir;
     }
   },
   is(directoryPath: string): boolean {

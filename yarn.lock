@@ -1326,7 +1326,7 @@ escodegen@^1.11.1:
 
 eslint-config-mouse@mouse484/eslint-config:
   version "1.0.0"
-  resolved "https://codeload.github.com/mouse484/eslint-config/tar.gz/bf58d353831ef4c29962f159039c6f56c164a6ad"
+  resolved "https://codeload.github.com/mouse484/eslint-config/tar.gz/d9b0110bfc6daaf5a83b552a7deff7053846206c"
   dependencies:
     confusing-browser-globals "^1.0.9"
 
