@@ -1,6 +1,7 @@
 import { Client, directory, print, File } from '../index';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { watch } from 'chokidar';
 
 export class Store<T extends File> extends Map<string, T> {
   constructor(public client: Client, public type: 'commands' | 'events') {
@@ -8,23 +9,29 @@ export class Store<T extends File> extends Map<string, T> {
     const thatdirectory = directory.getPath(type);
     if (thatdirectory) {
       print.info(client.lang.LOADING(type));
-      this.import(thatdirectory);
+      watch(thatdirectory)
+        .on('change', (path: string) => this.update(path))
+        .on('add', (path: string) => this.import(path))
+        .on('unlink', (path: string) => this.remove(path));
     }
   }
-  async import(directoryPath: string) {
-    const dirents = await fs.readdir(directoryPath, {
-      withFileTypes: true,
-    });
-
-    dirents.forEach(dirent => {
-      const direntPath = path.join(directoryPath, dirent.name);
-      if (dirent.isDirectory()) {
-        this.import(direntPath);
-      } else {
-        const file: T = new (require(direntPath))();
-        print.import(this.type, file.options.name, direntPath);
-        this.set(file.options.name, file);
-      }
-    });
+  getFile(path: string): T {
+    const file = require(path);
+    const instantiated: T = new file();
+    return instantiated;
+  }
+  import(path: string): void {
+    const file: T = this.getFile(path);
+    print.import(this.type, file.options.name, path);
+    this.set(file.options.name, file);
+  }
+  remove(path: string): void {
+    const file: T = this.getFile(path);
+    this.delete(file.options.name);
+    delete require.cache[path];
+  }
+  update(path: string): void {
+    this.remove(path);
+    this.import(path);
   }
 }
