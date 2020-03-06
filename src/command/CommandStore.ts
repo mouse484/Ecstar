@@ -10,7 +10,7 @@ export class CommandStore extends Store<Command> {
     if (aliases) {
       aliases.forEach(alias => {
         super.set(alias, value);
-        print.import('commands', alias, `alias(${key})`);
+        print.store('commands', 'import', alias, `alias(${key})`);
       });
     }
     return this;

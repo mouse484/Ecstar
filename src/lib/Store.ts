@@ -11,8 +11,7 @@ export class Store<T extends File> extends Map<string, T> {
       print.info(client.lang.LOADING(type));
       watch(thatdirectory)
         .on('change', (path: string) => this.update(path))
-        .on('add', (path: string) => this.import(path))
-        .on('unlink', (path: string) => this.remove(path));
+        .on('add', (path: string) => this.import(path));
     }
   }
   getFile(path: string): T {
@@ -20,18 +19,21 @@ export class Store<T extends File> extends Map<string, T> {
     const instantiated: T = new file();
     return instantiated;
   }
-  import(path: string): void {
+  import(path: string): T {
     const file: T = this.getFile(path);
-    print.import(this.type, file.options.name, path);
+    print.store(this.type, 'import', file.options.name, path);
     this.set(file.options.name, file);
-  }
-  remove(path: string): void {
-    const file: T = this.getFile(path);
-    this.delete(file.options.name);
-    delete require.cache[path];
+    return file;
   }
   update(path: string): void {
-    this.remove(path);
-    this.import(path);
+    let file: T = this.getFile(path);
+
+    this.delete(file.options.name);
+    delete require.cache[path];
+
+    file = this.getFile(path);
+    this.set(file.options.name, file);
+
+    print.store(this.type, 'update', file.options.name, path);
   }
 }

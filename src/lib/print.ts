@@ -10,10 +10,19 @@ export default {
   info(args: string): void {
     return log(chalk.blue(figures.info, 'info'), args);
   },
-  import(type: 'commands' | 'events', name: string, path: string): void {
+  store(
+    storetype: 'commands' | 'events',
+    type: 'import' | 'update',
+    name: string,
+    path: string
+  ): void {
+    const list = {
+      import: figures.circleCircle,
+      update: figures.circleDotted,
+    };
     return log(
-      chalk.magenta(figures.circleCircle, 'import'),
-      `${type} : ${name} ${chalk.gray(path)}`
+      chalk.magenta(list[type], type),
+      `${storetype} : ${name} ${chalk.gray(path)}`
     );
   },
   command(args: string): void {
