@@ -15,4 +15,15 @@ export class CommandStore extends Store<Command> {
     }
     return this;
   }
+  delete(key: string): boolean {
+    const command: Command | undefined = super.get(key);
+    if (!command) return false;
+    const { aliases } = command.options;
+    if (aliases) {
+      aliases.forEach(alias => {
+        super.delete(alias);
+      });
+    }
+    return true;
+  }
 }
