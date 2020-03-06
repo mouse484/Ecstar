@@ -1,6 +1,4 @@
 import { Client, directory, print, File } from '../index';
-import { promises as fs } from 'fs';
-import path from 'path';
 import { watch } from 'chokidar';
 
 export class Store<T extends File> extends Map<string, T> {
