@@ -8,7 +8,7 @@
   "author": "mouse_484",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --watch src --watch examples/TypeScript --ext ts --exec ts-node -r dotenv/config examples/TypeScript",
+    "dev": "nodemon --watch src --ext ts --exec ts-node -r dotenv/config examples/TypeScript",
     "build": "tsc",
     "test": "jest --watch",
     "test:js": "yarn build && node -r dotenv/config examples/Node",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "chalk": "^3.0.0",
+    "chokidar": "^3.3.1",
     "discord.js": "12.0.1",
     "figures": "^3.1.0"
   },
