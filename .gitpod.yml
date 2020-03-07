@@ -1,7 +1,21 @@
+image:
+  file: .gitpod.Dockerfile
+
 tasks:
-  - init: nvm install v12 && nvm use 12 && npm install -g yarn && yarn install
+  - init: yarn install
 
 vscode:
   extensions:
     - dbaeumer.vscode-eslint@1.9.1:YVcwmzKVVl+zZ+wMB02GjQ==
     - esbenp.prettier-vscode@3.18.0:SpDMXXww8cAUOXaBCNECgQ==
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addCheck: true
+    addComment: true
+    addBadge: false
+    addLabel: false
