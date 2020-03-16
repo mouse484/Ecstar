@@ -1,7 +1,7 @@
-import { Client, directory, print, File } from '../index';
+import { Client, directory, print, EcstarFile } from '../index';
 import { watch } from 'chokidar';
 
-export class Store<T extends File> extends Map<string, T> {
+export class Store<T extends EcstarFile> extends Map<string, T> {
   constructor(public client: Client, public type: 'commands' | 'events') {
     super();
     const thatdirectory = directory.getPath(type);

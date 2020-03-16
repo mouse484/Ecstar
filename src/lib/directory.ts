@@ -1,21 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 
-interface oRequire extends NodeJS.Require {
-  main: any;
-}
-
-interface Require extends oRequire {
-  main: {
-    filename: string;
-  };
-}
-
-declare let require: Require;
-
-export default {
-  getPath(name: string): string | undefined {
-    const rootPath = require.main.filename;
+export class directory {
+  static getPath(name: string): string | undefined {
+    const rootPath = require.main?.filename;
+    if (!rootPath) return undefined;
     const rootDir = path.dirname(rootPath);
     const thatDir = path.join(rootDir, name);
     try {
@@ -27,8 +16,8 @@ export default {
     } catch {
       return thatDir;
     }
-  },
-  is(directoryPath: string): boolean {
+  }
+  static is(directoryPath: string): boolean {
     return fs.statSync(directoryPath).isDirectory();
-  },
-};
+  }
+}

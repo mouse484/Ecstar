@@ -1,6 +1,6 @@
-import { Client, File } from '../index';
+import { Client, EcstarFile } from '../index';
 
-export abstract class EventBase extends File {
+export abstract class EventBase extends EcstarFile {
   constructor(client: Client, name: string) {
     super(client, { name });
   }

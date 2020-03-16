@@ -4,12 +4,21 @@ import {
   EventStore,
   Lang,
   Dispatcher,
-  EcstarOptions,
-  exCallback,
+  DiscordClientOptions,
+  Snowflake,
 } from './index';
 
-export class ExtendClient extends DiscordClient {
+interface EcstarOptions extends DiscordClientOptions {
+  prefix: string;
+  owner?: Snowflake;
+  lang?: Lang;
+}
+
+type exCallback = [any, ...any[]];
+
+class ExtendClient extends DiscordClient {
   emit(name: string, ...callback: exCallback) {
+    super.emit(name, ...callback);
     return super.emit('*', name, ...callback);
   }
 }
