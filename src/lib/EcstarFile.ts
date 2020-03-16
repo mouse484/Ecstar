@@ -1,5 +1,5 @@
 import { Client } from '../index';
 
-export class File {
+export class EcstarFile {
   constructor(public client: Client, public options: { name: string }) {}
 }
