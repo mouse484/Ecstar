@@ -4,7 +4,7 @@ export {
   Snowflake,
   Message,
 } from 'discord.js';
-export { EcstarClient as Client } from './client';
+export { EcstarClient as Client } from './Client';
 export * from './lib';
 export { CommandBase as Command } from './command/Base';
 export { EventBase as Event } from './event/Base';
