@@ -6,11 +6,11 @@ const log = (type: string, ...args: string[]): void => {
   console.log(`${new Date().toLocaleTimeString()} | ${type}\t${args}`);
 };
 
-export default {
-  info(args: string): void {
+export class print {
+  static info(args: string): void {
     return log(chalk.blue(figures.info, 'info'), args);
-  },
-  store(
+  }
+  static store(
     storetype: 'commands' | 'events',
     type: 'import' | 'update',
     name: string,
@@ -24,15 +24,15 @@ export default {
       chalk.magenta(list[type], type),
       `${storetype} : ${name} ${chalk.gray(path)}`
     );
-  },
-  command(args: string): void {
+  }
+  static command(args: string): void {
     return log(chalk.green(figures.play, 'command'), args);
-  },
-  error(args: string): void {
+  }
+  static error(args: string): void {
     log(chalk.red(figures.cross, 'error'), args);
     return exit();
-  },
-  warn(args: string): void {
+  }
+  static warn(args: string): void {
     return log(chalk.yellow(figures.warning, 'warn'), args);
-  },
-};
+  }
+}
