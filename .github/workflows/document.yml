@@ -1,6 +1,8 @@
 name: document
 
-on: [push]
+on:
+  release:
+    types: [created]
 
 jobs:
   publish-document:
