@@ -18,6 +18,7 @@ type exCallback = [any, ...any[]];
 
 class ExtendClient extends DiscordClient {
   emit(name: string, ...callback: exCallback) {
+    super.emit(name, ...callback);
     return super.emit('*', name, ...callback);
   }
 }
