@@ -16,7 +16,7 @@ interface EcstarOptions extends DiscordClientOptions {
 
 type exCallback = [any, ...any[]];
 
-export class ExtendClient extends DiscordClient {
+class ExtendClient extends DiscordClient {
   emit(name: string, ...callback: exCallback) {
     return super.emit('*', name, ...callback);
   }
