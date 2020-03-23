@@ -9,7 +9,7 @@ export class EventStore extends Store<Event> {
   async getDefault() {
     const dirpath = path.join(__dirname, 'default');
     const files = await fs.readdir(dirpath);
-    files.forEach(file => {
+    files.forEach((file) => {
       super.import(path.join(dirpath, file));
     });
   }

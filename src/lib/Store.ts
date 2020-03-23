@@ -1,6 +1,5 @@
 import { Client, directory, print, EcstarFile } from '../index';
 import { watch } from 'chokidar';
-import path from 'path';
 
 export class Store<T extends EcstarFile> extends Map<string, T> {
   constructor(public client: Client, public type: 'commands' | 'events') {
