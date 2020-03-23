@@ -1,4 +1,4 @@
-import { Client, Event, Message } from '../../../src';
+import { Client, Event, Message } from '../../index';
 
 import { commandRun } from '../../command/run';
 
