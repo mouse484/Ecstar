@@ -8,7 +8,7 @@ export class CommandStore extends Store<Command> {
     super.set(key, value);
     const { aliases } = value.options;
     if (aliases) {
-      aliases.forEach(alias => {
+      aliases.forEach((alias) => {
         super.set(alias, value);
         print.store('commands', 'import', alias, `alias(${key})`);
       });
@@ -20,7 +20,7 @@ export class CommandStore extends Store<Command> {
     if (!command) return false;
     const { aliases } = command.options;
     if (aliases) {
-      aliases.forEach(alias => {
+      aliases.forEach((alias) => {
         super.delete(alias);
       });
     }
