@@ -22,7 +22,7 @@ export const commandRun = (
   if (command.options.args) {
     let args: { [key: string]: string } = {};
     let count = 1;
-    Object.keys(command.options.args).forEach(key => {
+    Object.keys(command.options.args).forEach((key) => {
       args[key] = message.content.split(' ')[count];
       count = count + 1;
     });
