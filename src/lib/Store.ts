@@ -1,5 +1,6 @@
 import { Client, directory, print, EcstarFile } from '../index';
 import { watch } from 'chokidar';
+import path from 'path';
 
 export class Store<T extends EcstarFile> extends Map<string, T> {
   constructor(public client: Client, public type: 'commands' | 'events') {
@@ -10,6 +11,7 @@ export class Store<T extends EcstarFile> extends Map<string, T> {
       watch(thatdirectory)
         .on('change', (path: string) => this.update(path))
         .on('add', (path: string) => this.import(path));
+      this.getDefault();
     }
   }
   getFile(path: string): T {
@@ -17,6 +19,7 @@ export class Store<T extends EcstarFile> extends Map<string, T> {
     const instantiated: T = new file();
     return instantiated;
   }
+  getDefault() {}
   import(path: string): T {
     const file: T = this.getFile(path);
     print.store(this.type, 'import', file.options.name, path);
