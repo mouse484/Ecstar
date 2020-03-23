@@ -5,8 +5,8 @@ import {
   Lang,
   DiscordClientOptions,
   Snowflake,
+  eventHandler,
 } from './index';
-import { event } from './event';
 
 interface EcstarOptions extends DiscordClientOptions {
   prefix: string;
@@ -32,7 +32,7 @@ export class EcstarClient extends ExtendClient {
     super(options);
 
     this.on('*', (name: string, ...callback: exCallback) => {
-      event(this, name, ...callback);
+      eventHandler(this, name, ...callback);
     });
   }
 }

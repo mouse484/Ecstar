@@ -2,7 +2,7 @@ import { Client, print, Event } from '../index';
 
 import Message from './default/message';
 
-export const event = (
+export const eventHandler = (
   client: Client,
   name: string,
   ...callback: [any, ...any[]]
@@ -12,7 +12,7 @@ export const event = (
       print.info(`${client.lang.BOT_READY} ${client.user?.tag}`);
       break;
     case 'message':
-      new Message(client).handle(callback);
+      new Message(client).run(callback);
       break;
   }
   const event: Event | undefined = client.events.get(name);

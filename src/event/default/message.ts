@@ -1,13 +1,12 @@
-import { Client, Message } from '../../../src';
+import { Client, Event, Message } from '../../../src';
 
 import { commandRun } from '../../command/run';
 
-export default class MessageEvent {
-  readonly client: Client;
+export = class extends Event {
   constructor(client: Client) {
-    this.client = client;
+    super(client, 'message');
   }
-  handle(callback: Message[]) {
+  run(callback: Message[]) {
     const [message] = callback;
     if (message.author.bot) return;
     if (!message.content.startsWith(this.client.options.prefix)) return;
@@ -21,4 +20,4 @@ export default class MessageEvent {
 
     commandRun(this.client, commandName, message);
   }
-}
+};

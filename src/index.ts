@@ -9,5 +9,6 @@ export * from './lib';
 export { CommandBase as Command } from './command/Base';
 export { EventBase as Event } from './event/Base';
 export { LangBase as Lang } from './lang';
-export { EventStore } from './event/EventStore';
+export { EventStore } from './event/Store';
 export { CommandStore } from './command/CommandStore';
+export { eventHandler } from './event/handler';
