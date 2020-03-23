@@ -3,10 +3,10 @@ import {
   CommandStore,
   EventStore,
   Lang,
-  Dispatcher,
   DiscordClientOptions,
   Snowflake,
 } from './index';
+import { event } from './event';
 
 interface EcstarOptions extends DiscordClientOptions {
   prefix: string;
@@ -31,10 +31,8 @@ export class EcstarClient extends ExtendClient {
   constructor(options: EcstarOptions) {
     super(options);
 
-    const dispatcher: Dispatcher = new Dispatcher(this);
-
     this.on('*', (name: string, ...callback: exCallback) => {
-      dispatcher.event(name, ...callback);
+      event(this, name, ...callback);
     });
   }
 }

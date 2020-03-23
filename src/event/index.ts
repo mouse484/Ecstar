@@ -2,7 +2,11 @@ import { Client, print, Event } from '../index';
 
 import Message from './default/message';
 
-export default (client: Client, name: string, ...callback: [any, ...any[]]) => {
+export const event = (
+  client: Client,
+  name: string,
+  ...callback: [any, ...any[]]
+) => {
   switch (name) {
     case 'ready':
       print.info(`${client.lang.BOT_READY} ${client.user?.tag}`);
