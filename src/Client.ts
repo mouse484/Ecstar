@@ -3,7 +3,6 @@ import {
   CommandStore,
   EventStore,
   Lang,
-  Dispatcher,
   DiscordClientOptions,
   Snowflake,
 } from './index';
@@ -31,8 +30,6 @@ export class EcstarClient extends ExtendClient {
   events = new EventStore(this);
   constructor(options: EcstarOptions) {
     super(options);
-
-    const dispatcher: Dispatcher = new Dispatcher(this);
 
     this.on('*', (name: string, ...callback: exCallback) => {
       event(this, name, ...callback);
