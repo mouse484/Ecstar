@@ -10,5 +10,5 @@ export { CommandBase as Command } from './command/Base';
 export { EventBase as Event } from './event/Base';
 export { LangBase as Lang } from './lang';
 export { EventStore } from './event/Store';
-export { CommandStore } from './command/CommandStore';
+export { CommandStore } from './command/Store';
 export { eventHandler } from './event/handler';
