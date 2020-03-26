@@ -21,16 +21,15 @@ export const commandRun = (
 
   if (command.options.args) {
     let args: { [key: string]: string } = {};
-    let count = 1;
-    Object.keys(command.options.args).forEach((key) => {
-      args[key] = message.content.split(' ')[count];
-      count = count + 1;
-    });
-    args = {
-      ...args,
-      all: message.content.split(commandName)[1],
-    };
+    const parse = message.content
+      .split(/(?:(?:"|')([^"']+)(?:"|')|([^ ]+)) ?/)
+      .filter((value: string) => value);
 
+    Object.keys(command.options.args).forEach(
+      (value: string, index: number) => {
+        args[value] = parse[index + 1];
+      }
+    );
     command.run(message, args);
   } else {
     command.run(message);
