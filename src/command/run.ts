@@ -1,4 +1,5 @@
 import { Client, Message, Command, print } from './../index';
+import split from 'split-string';
 
 export const commandRun = (
   client: Client,
@@ -20,17 +21,21 @@ export const commandRun = (
   }
 
   if (command.options.args) {
-    let args: { [key: string]: string } = {};
-    let count = 1;
-    Object.keys(command.options.args).forEach((key) => {
-      args[key] = message.content.split(' ')[count];
-      count = count + 1;
+    const args: { [key: string]: string } = {};
+    const parsed = split(message.content, {
+      separator: ' ',
+      quotes: ['"', "'"],
     });
-    args = {
-      ...args,
-      all: message.content.split(commandName)[1],
-    };
 
+    Object.keys(command.options.args).forEach(
+      (value: string, index: number) => {
+        if (command.options.args) {
+          args[value] = client.args
+            .get(command.options.args[value])
+            ?.run(parsed[index + 1]);
+        }
+      }
+    );
     command.run(message, args);
   } else {
     command.run(message);
