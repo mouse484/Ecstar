@@ -20,7 +20,7 @@ export const commandRun = (
   }
 
   if (command.options.args) {
-    let args: { [key: string]: string } = {};
+    const args: { [key: string]: string } = {};
     const parse = message.content
       .split(/(?:(?:"|')([^"']+)(?:"|')|([^ ]+)) ?/)
       .filter((value: string) => value);
