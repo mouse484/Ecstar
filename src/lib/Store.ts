@@ -2,7 +2,7 @@ import { Client, directory, print, EcstarFile } from '../index';
 import { watch } from 'chokidar';
 
 export class Store<T extends EcstarFile> extends Map<string, T> {
-  constructor(public client: Client, public type: 'commands' | 'events') {
+  constructor(public client: Client, public type: string) {
     super();
     const thatdirectory = directory.getPath(type);
     if (thatdirectory) {

@@ -11,7 +11,7 @@ export class print {
     return log(chalk.blue(figures.info, 'info'), args);
   }
   static store(
-    storetype: 'commands' | 'events',
+    storetype: string,
     type: 'import' | 'update',
     name: string,
     path: string
