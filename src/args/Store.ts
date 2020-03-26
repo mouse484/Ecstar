@@ -1,8 +1,8 @@
-import { Client, Store, Event } from '../index';
+import { Client, Store, Args } from '../index';
 import path from 'path';
 import { promises as fs } from 'fs';
 
-export class ArgsStore extends Store<Event> {
+export class ArgsStore extends Store<Args> {
   constructor(client: Client) {
     super(client, 'args');
   }

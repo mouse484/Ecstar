@@ -6,10 +6,10 @@ export type commandOptions = {
   readonly description?: string;
   readonly ownerOnly?: boolean;
   readonly guildOnly?: boolean;
-  readonly args?: { [argsName: string]: string } | boolean;
+  readonly args?: { [argsName: string]: string };
 };
 
 export abstract class CommandBase {
   constructor(public client: Client, public options: commandOptions) {}
-  abstract run(message: Message, args?: { [argsName: string]: string }): void;
+  abstract run(message: Message, args?: { [argsName: string]: any }): void;
 }

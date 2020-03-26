@@ -2,6 +2,7 @@ import {
   DiscordClient,
   CommandStore,
   EventStore,
+  ArgsStore,
   Lang,
   DiscordClientOptions,
   Snowflake,
@@ -28,6 +29,7 @@ export class EcstarClient extends ExtendClient {
   readonly lang = this.options.lang || new Lang();
   commands = new CommandStore(this);
   events = new EventStore(this);
+  args = new ArgsStore(this);
   constructor(options: EcstarOptions) {
     super(options);
 

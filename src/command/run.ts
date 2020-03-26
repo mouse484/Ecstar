@@ -21,13 +21,17 @@ export const commandRun = (
 
   if (command.options.args) {
     const args: { [key: string]: string } = {};
-    const parse = message.content
+    const parsed = message.content
       .split(/(?:(?:"|')([^"']+)(?:"|')|([^ ]+)) ?/)
       .filter((value: string) => value);
 
     Object.keys(command.options.args).forEach(
       (value: string, index: number) => {
-        args[value] = parse[index + 1];
+        if (command.options.args) {
+          args[value] = client.args
+            .get(command.options.args[value])
+            ?.run(parsed[index + 1]);
+        }
       }
     );
     command.run(message, args);
