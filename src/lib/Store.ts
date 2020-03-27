@@ -15,7 +15,7 @@ export class Store<T extends EcstarFile> extends Map<string, T> {
   }
   getFile(path: string): T {
     const file = require(path);
-    const instantiated: T = new file();
+    const instantiated: T = new file(this.client);
     return instantiated;
   }
   getDefault() {}
