@@ -5,13 +5,7 @@ import {
   isTextChannel,
   isVoiceChannel,
 } from '../../../../src';
-import {
-  Channel,
-  TextChannel,
-  VoiceChannel,
-  DMChannel,
-  MessageEmbed,
-} from 'discord.js';
+import { Channel, MessageEmbed } from 'discord.js';
 
 export = class extends Command {
   constructor(client: Client) {
