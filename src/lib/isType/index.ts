@@ -1,0 +1,1 @@
+export { isTextChannel } from './TextChannel';
