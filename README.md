@@ -63,7 +63,6 @@ Ecstar is the easiest framework [Discord.js](https://github.com/discordjs/discor
 
 ```
 Development Directory/
-Development Directory
 ├ commands
 │ ├ command file
 │ ├ directory
@@ -75,6 +74,8 @@ Development Directory
 │ ├ event file
 │ └ directory
 │ 　 └ event file
+├ args
+│ └ args file
 └ Main file
 ```
 
@@ -128,6 +129,22 @@ export = class extends Event {
 };
 ```
 
+### 📄Args File
+
+```js
+import { Args } from 'ecstar';
+
+export = class extends Args {
+  constructor(client) {
+    super(client, 'string');
+  }
+  run(message){
+    // What to do
+  }
+};
+
+```
+
 ### 📄Lang File
 
 ```ts
@@ -138,6 +155,7 @@ export = class extends Lang {
    ...
 };
 ```
+
 See [Here](https://github.com/mouse484/Ecstar/tree/master/src/lang)
 
 ## 🎫License
