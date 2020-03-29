@@ -130,7 +130,6 @@
 					<h3>📁Directory Tree</h3>
 				</a>
 				<pre><code>Development Directory/
-Development Directory
 ├ commands
 │ ├ <span class="hljs-keyword">command</span> <span class="hljs-title">file</span>
 │ ├ <span class="hljs-built_in">directory</span>
@@ -142,6 +141,8 @@ Development Directory
 │ ├ event <span class="hljs-built_in">file</span>
 │ └ <span class="hljs-built_in">directory</span>
 │ 　 └ event <span class="hljs-built_in">file</span>
+├ args
+│ └ args <span class="hljs-built_in">file</span>
 └ Main <span class="hljs-built_in">file</span></code></pre>
 				<a href="#📄main-file" id="📄main-file" style="color: inherit; text-decoration: none;">
 					<h3>📄Main File</h3>
@@ -187,6 +188,20 @@ client.login(<span class="hljs-string">'Your token here'</span>);</code></pre>
     <span class="hljs-comment">// What to do</span>
   }
 };</code></pre>
+				<a href="#📄args-file" id="📄args-file" style="color: inherit; text-decoration: none;">
+					<h3>📄Args File</h3>
+				</a>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> { Args } <span class="hljs-keyword">from</span> <span class="hljs-string">'ecstar'</span>;
+
+<span class="hljs-keyword">export</span> = <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Args</span> </span>{
+  <span class="hljs-keyword">constructor</span>(client) {
+    <span class="hljs-keyword">super</span>(client, <span class="hljs-string">'string'</span>);
+  }
+  run(message){
+    <span class="hljs-comment">// What to do</span>
+  }
+};
+</code></pre>
 				<a href="#📄lang-file" id="📄lang-file" style="color: inherit; text-decoration: none;">
 					<h3>📄Lang File</h3>
 				</a>
@@ -222,13 +237,28 @@ client.login(<span class="hljs-string">'Your token here'</span>);</code></pre>
 						<a href="modules/_client_.html">&quot;<wbr>Client&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/_args_base_.html">&quot;args/<wbr>Base&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_args_store_.html">&quot;args/<wbr>Store&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_args_default_channel_.html">&quot;args/default/channel&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_args_default_number_.html">&quot;args/default/number&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_args_default_string_.html">&quot;args/default/string&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/_command_base_.html">&quot;command/<wbr>Base&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_command_commandstore_.html">&quot;command/<wbr>Command<wbr>Store&quot;</a>
+						<a href="modules/_command_store_.html">&quot;command/<wbr>Store&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_command_defaults_help_.html">&quot;command/defaults/help&quot;</a>
+						<a href="modules/_command_default_help_.html">&quot;command/default/help&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_command_run_.html">&quot;command/run&quot;</a>
@@ -237,13 +267,13 @@ client.login(<span class="hljs-string">'Your token here'</span>);</code></pre>
 						<a href="modules/_event_base_.html">&quot;event/<wbr>Base&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_event_eventstore_.html">&quot;event/<wbr>Event<wbr>Store&quot;</a>
+						<a href="modules/_event_store_.html">&quot;event/<wbr>Store&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_event_default_message_.html">&quot;event/default/message&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_event_index_.html">&quot;event/index&quot;</a>
+						<a href="modules/_event_handler_.html">&quot;event/handler&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_index_.html">&quot;index&quot;</a>
@@ -253,9 +283,6 @@ client.login(<span class="hljs-string">'Your token here'</span>);</code></pre>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_lang_ja_.html">&quot;lang/ja&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_lib_dispatcher_.html">&quot;lib/<wbr>Dispatcher&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_lib_ecstarfile_.html">&quot;lib/<wbr>Ecstar<wbr>File&quot;</a>
@@ -268,6 +295,15 @@ client.login(<span class="hljs-string">'Your token here'</span>);</code></pre>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_lib_index_.html">&quot;lib/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_lib_istype_textchannel_.html">&quot;lib/is<wbr>Type/<wbr>Text<wbr>Channel&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_lib_istype_voicechannel_.html">&quot;lib/is<wbr>Type/<wbr>Voice<wbr>Channel&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_lib_istype_index_.html">&quot;lib/is<wbr>Type/index&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_lib_print_.html">&quot;lib/print&quot;</a>
@@ -285,6 +321,18 @@ client.login(<span class="hljs-string">'Your token here'</span>);</code></pre>
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
 		</div>
 	</div>
 </footer>

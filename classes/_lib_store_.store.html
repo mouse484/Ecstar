@@ -87,10 +87,13 @@
 								<span class="target">Store</span>
 								<ul class="tsd-hierarchy">
 									<li>
-										<a href="_event_eventstore_.eventstore.html" class="tsd-signature-type">EventStore</a>
+										<a href="_event_store_.eventstore.html" class="tsd-signature-type">EventStore</a>
 									</li>
 									<li>
-										<a href="_command_commandstore_.commandstore.html" class="tsd-signature-type">CommandStore</a>
+										<a href="_command_store_.commandstore.html" class="tsd-signature-type">CommandStore</a>
+									</li>
+									<li>
+										<a href="_args_store_.argsstore.html" class="tsd-signature-type">ArgsStore</a>
 									</li>
 								</ul>
 							</li>
@@ -127,6 +130,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lib_store_.store.html#entries" class="tsd-kind-icon">entries</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lib_store_.store.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lib_store_.store.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lib_store_.store.html#getdefault" class="tsd-kind-icon">get<wbr>Default</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lib_store_.store.html#getfile" class="tsd-kind-icon">get<wbr>File</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lib_store_.store.html#has" class="tsd-kind-icon">has</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lib_store_.store.html#import" class="tsd-kind-icon">import</a></li>
@@ -145,13 +149,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Store<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="../modules/_index_.html#client" class="tsd-signature-type">Client</a>, type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"commands"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"events"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lib_store_.store.html" class="tsd-signature-type">Store</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Store<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="../modules/_index_.html#client" class="tsd-signature-type">Client</a>, type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lib_store_.store.html" class="tsd-signature-type">Store</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/9e516c9/src/lib/Store.ts#L4">src/lib/Store.ts:4</a></li>
+									<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/3cc13ad/src/lib/Store.ts#L4">src/lib/Store.ts:4</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -160,7 +164,7 @@
 									<h5>client: <a href="../modules/_index_.html#client" class="tsd-signature-type">Client</a></h5>
 								</li>
 								<li>
-									<h5>type: <span class="tsd-signature-type">"commands"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"events"</span></h5>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_lib_store_.store.html" class="tsd-signature-type">Store</a></h4>
@@ -187,7 +191,7 @@
 					<div class="tsd-signature tsd-kind-icon">client<span class="tsd-signature-symbol">:</span> <a href="../modules/_index_.html#client" class="tsd-signature-type">Client</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/9e516c9/src/lib/Store.ts#L5">src/lib/Store.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/3cc13ad/src/lib/Store.ts#L5">src/lib/Store.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -205,10 +209,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="type" class="tsd-anchor"></a>
 					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"commands"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"events"</span></div>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/9e516c9/src/lib/Store.ts#L5">src/lib/Store.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/3cc13ad/src/lib/Store.ts#L5">src/lib/Store.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -389,6 +393,23 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getdefault" class="tsd-anchor"></a>
+					<h3>get<wbr>Default</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Default<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/3cc13ad/src/lib/Store.ts#L21">src/lib/Store.ts:21</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getfile" class="tsd-anchor"></a>
 					<h3>get<wbr>File</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -398,7 +419,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/9e516c9/src/lib/Store.ts#L15">src/lib/Store.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/3cc13ad/src/lib/Store.ts#L16">src/lib/Store.ts:16</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -445,7 +466,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/9e516c9/src/lib/Store.ts#L20">src/lib/Store.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/3cc13ad/src/lib/Store.ts#L22">src/lib/Store.ts:22</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -518,7 +539,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/9e516c9/src/lib/Store.ts#L26">src/lib/Store.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/3cc13ad/src/lib/Store.ts#L28">src/lib/Store.ts:28</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -566,13 +587,28 @@
 						<a href="../modules/_client_.html">&quot;<wbr>Client&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="../modules/_args_base_.html">&quot;args/<wbr>Base&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_args_store_.html">&quot;args/<wbr>Store&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_args_default_channel_.html">&quot;args/default/channel&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_args_default_number_.html">&quot;args/default/number&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_args_default_string_.html">&quot;args/default/string&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="../modules/_command_base_.html">&quot;command/<wbr>Base&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/_command_commandstore_.html">&quot;command/<wbr>Command<wbr>Store&quot;</a>
+						<a href="../modules/_command_store_.html">&quot;command/<wbr>Store&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/_command_defaults_help_.html">&quot;command/defaults/help&quot;</a>
+						<a href="../modules/_command_default_help_.html">&quot;command/default/help&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_command_run_.html">&quot;command/run&quot;</a>
@@ -581,13 +617,13 @@
 						<a href="../modules/_event_base_.html">&quot;event/<wbr>Base&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/_event_eventstore_.html">&quot;event/<wbr>Event<wbr>Store&quot;</a>
+						<a href="../modules/_event_store_.html">&quot;event/<wbr>Store&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_event_default_message_.html">&quot;event/default/message&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/_event_index_.html">&quot;event/index&quot;</a>
+						<a href="../modules/_event_handler_.html">&quot;event/handler&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_index_.html">&quot;index&quot;</a>
@@ -597,9 +633,6 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_lang_ja_.html">&quot;lang/ja&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_lib_dispatcher_.html">&quot;lib/<wbr>Dispatcher&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_lib_ecstarfile_.html">&quot;lib/<wbr>Ecstar<wbr>File&quot;</a>
@@ -612,6 +645,15 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_lib_index_.html">&quot;lib/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_lib_istype_textchannel_.html">&quot;lib/is<wbr>Type/<wbr>Text<wbr>Channel&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_lib_istype_voicechannel_.html">&quot;lib/is<wbr>Type/<wbr>Voice<wbr>Channel&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_lib_istype_index_.html">&quot;lib/is<wbr>Type/index&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_lib_print_.html">&quot;lib/print&quot;</a>
@@ -662,6 +704,9 @@
 								<a href="_lib_store_.store.html#get" class="tsd-kind-icon">get</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lib_store_.store.html#getdefault" class="tsd-kind-icon">get<wbr>Default</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_lib_store_.store.html#getfile" class="tsd-kind-icon">get<wbr>File</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -696,13 +741,23 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>MessageEvent | ecstar</title>
+	<title>ArgsBase | ecstar</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_event_default_message_.html">&quot;event/default/message&quot;</a>
+					<a href="../modules/_args_base_.html">&quot;args/Base&quot;</a>
 				</li>
 				<li>
-					<a href="_event_default_message_.messageevent.html">MessageEvent</a>
+					<a href="_args_base_.argsbase.html">ArgsBase</a>
 				</li>
 			</ul>
-			<h1>Class MessageEvent</h1>
+			<h1>Class ArgsBase</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">MessageEvent</span>
+						<a href="_lib_ecstarfile_.ecstarfile.html" class="tsd-signature-type">EcstarFile</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">ArgsBase</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -84,19 +89,20 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_event_default_message_.messageevent.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_args_base_.argsbase.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_event_default_message_.messageevent.html#client" class="tsd-kind-icon">client</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_args_base_.argsbase.html#client" class="tsd-kind-icon">client</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_args_base_.argsbase.html#options" class="tsd-kind-icon">options</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_event_default_message_.messageevent.html#handle" class="tsd-kind-icon">handle</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_args_base_.argsbase.html#run" class="tsd-kind-icon">run</a></li>
 							</ul>
 						</section>
 					</div>
@@ -104,17 +110,18 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Message<wbr>Event<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="../modules/_index_.html#client" class="tsd-signature-type">Client</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_event_default_message_.messageevent.html" class="tsd-signature-type">MessageEvent</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Args<wbr>Base<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><a href="../modules/_index_.html#client" class="tsd-signature-type">Client</a>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_args_base_.argsbase.html" class="tsd-signature-type">ArgsBase</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overrides <a href="_lib_ecstarfile_.ecstarfile.html">EcstarFile</a>.<a href="_lib_ecstarfile_.ecstarfile.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/9e516c9/src/event/default/message.ts#L6">src/event/default/message.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/3cc13ad/src/args/Base.ts#L3">src/args/Base.ts:3</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -122,47 +129,70 @@
 								<li>
 									<h5>client: <a href="../modules/_index_.html#client" class="tsd-signature-type">Client</a></h5>
 								</li>
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_event_default_message_.messageevent.html" class="tsd-signature-type">MessageEvent</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_args_base_.argsbase.html" class="tsd-signature-type">ArgsBase</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="client" class="tsd-anchor"></a>
 					<h3>client</h3>
 					<div class="tsd-signature tsd-kind-icon">client<span class="tsd-signature-symbol">:</span> <a href="../modules/_index_.html#client" class="tsd-signature-type">Client</a></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="_lib_ecstarfile_.ecstarfile.html">EcstarFile</a>.<a href="_lib_ecstarfile_.ecstarfile.html#client">client</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/9e516c9/src/event/default/message.ts#L6">src/event/default/message.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/3cc13ad/src/lib/EcstarFile.ts#L4">src/lib/EcstarFile.ts:4</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="options" class="tsd-anchor"></a>
+					<h3>options</h3>
+					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_lib_ecstarfile_.ecstarfile.html">EcstarFile</a>.<a href="_lib_ecstarfile_.ecstarfile.html#options">options</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/3cc13ad/src/lib/EcstarFile.ts#L4">src/lib/EcstarFile.ts:4</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="handle" class="tsd-anchor"></a>
-					<h3>handle</h3>
+					<a name="run" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> run</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">handle<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Message</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">run<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/9e516c9/src/event/default/message.ts#L10">src/event/default/message.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/3cc13ad/src/args/Base.ts#L7">src/args/Base.ts:7</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>callback: <span class="tsd-signature-type">Message</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>message: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -177,14 +207,29 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_client_.html">&quot;<wbr>Client&quot;</a>
 					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/_args_base_.html">&quot;args/<wbr>Base&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_args_store_.html">&quot;args/<wbr>Store&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_args_default_channel_.html">&quot;args/default/channel&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_args_default_number_.html">&quot;args/default/number&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_args_default_string_.html">&quot;args/default/string&quot;</a>
+					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_command_base_.html">&quot;command/<wbr>Base&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/_command_commandstore_.html">&quot;command/<wbr>Command<wbr>Store&quot;</a>
+						<a href="../modules/_command_store_.html">&quot;command/<wbr>Store&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/_command_defaults_help_.html">&quot;command/defaults/help&quot;</a>
+						<a href="../modules/_command_default_help_.html">&quot;command/default/help&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_command_run_.html">&quot;command/run&quot;</a>
@@ -193,13 +238,13 @@
 						<a href="../modules/_event_base_.html">&quot;event/<wbr>Base&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/_event_eventstore_.html">&quot;event/<wbr>Event<wbr>Store&quot;</a>
+						<a href="../modules/_event_store_.html">&quot;event/<wbr>Store&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/_event_default_message_.html">&quot;event/default/message&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/_event_index_.html">&quot;event/index&quot;</a>
+						<a href="../modules/_event_handler_.html">&quot;event/handler&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_index_.html">&quot;index&quot;</a>
@@ -209,9 +254,6 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_lang_ja_.html">&quot;lang/ja&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_lib_dispatcher_.html">&quot;lib/<wbr>Dispatcher&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/_lib_ecstarfile_.html">&quot;lib/<wbr>Ecstar<wbr>File&quot;</a>
@@ -226,6 +268,15 @@
 						<a href="../modules/_lib_index_.html">&quot;lib/index&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="../modules/_lib_istype_textchannel_.html">&quot;lib/is<wbr>Type/<wbr>Text<wbr>Channel&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_lib_istype_voicechannel_.html">&quot;lib/is<wbr>Type/<wbr>Voice<wbr>Channel&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/_lib_istype_index_.html">&quot;lib/is<wbr>Type/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="../modules/_lib_print_.html">&quot;lib/print&quot;</a>
 					</li>
 				</ul>
@@ -235,16 +286,19 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="_event_default_message_.messageevent.html" class="tsd-kind-icon">Message<wbr>Event</a>
+						<a href="_args_base_.argsbase.html" class="tsd-kind-icon">Args<wbr>Base</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_event_default_message_.messageevent.html#constructor" class="tsd-kind-icon">constructor</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_args_base_.argsbase.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_event_default_message_.messageevent.html#client" class="tsd-kind-icon">client</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_args_base_.argsbase.html#client" class="tsd-kind-icon">client</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_args_base_.argsbase.html#options" class="tsd-kind-icon">options</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_event_default_message_.messageevent.html#handle" class="tsd-kind-icon">handle</a>
+								<a href="_args_base_.argsbase.html#run" class="tsd-kind-icon">run</a>
 							</li>
 						</ul>
 					</li>
@@ -260,9 +314,21 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
 			</ul>
 		</div>
 	</div>
