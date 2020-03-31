@@ -1,13 +1,16 @@
 import {
-  DiscordClient,
   CommandStore,
   EventStore,
   ArgsStore,
   Lang,
-  DiscordClientOptions,
-  Snowflake,
   eventHandler,
 } from './index';
+
+import {
+  Client as DiscordClient,
+  ClientOptions as DiscordClientOptions,
+  Snowflake,
+} from 'discord.js';
 
 interface EcstarOptions extends DiscordClientOptions {
   prefix: string;
@@ -16,6 +19,12 @@ interface EcstarOptions extends DiscordClientOptions {
 }
 
 type exCallback = [any, ...any[]];
+
+declare module 'discord.js' {
+  interface ClientEvents {
+    '*': exCallback;
+  }
+}
 
 class ExtendClient extends DiscordClient {
   emit(name: string, ...callback: exCallback) {

@@ -1,4 +1,5 @@
-import { Command, Client, Message } from '../../../../src';
+import { Command, Client } from '../../../../src';
+import { Message } from 'discord.js';
 
 export = class extends Command {
   constructor(client: Client) {

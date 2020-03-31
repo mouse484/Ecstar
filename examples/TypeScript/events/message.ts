@@ -1,4 +1,5 @@
-import { Event, Client, Message } from '../../../src';
+import { Event, Client } from '../../../src';
+import { Message } from 'discord.js';
 
 export = class extends Event {
   constructor(client: Client) {

@@ -1,4 +1,5 @@
-import { Client, Message, Command, print } from './../index';
+import { Client, Command, print } from './../index';
+import { Message } from 'discord.js';
 import split from 'split-string';
 
 export const commandRun = (

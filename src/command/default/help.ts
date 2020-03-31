@@ -1,5 +1,5 @@
-import { Client, Command, Message } from '../../index';
-import { MessageEmbed } from 'discord.js';
+import { Client, Command } from '../../index';
+import { Message, MessageEmbed } from 'discord.js';
 
 export = class extends Command {
   constructor(client: Client) {

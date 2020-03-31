@@ -1,4 +1,5 @@
-import { Client, Message } from '../index';
+import { Client } from '../index';
+import { Message } from 'discord.js';
 
 export type commandOptions = {
   readonly name: string;

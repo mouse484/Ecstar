@@ -1,10 +1,3 @@
-export {
-  Client as DiscordClient,
-  ClientOptions as DiscordClientOptions,
-  Snowflake,
-  Message,
-} from 'discord.js';
-
 export { EcstarClient as Client } from './Client';
 
 export * from './lib';
