@@ -1,5 +1,5 @@
-import { Client, Command, Message } from '../../index';
-import { MessageEmbed } from 'discord.js';
+import { Client, Command } from '../../index';
+import { Message, MessageEmbed } from 'discord.js';
 
 export = class extends Command {
   constructor(client: Client) {
@@ -35,10 +35,9 @@ export = class extends Command {
     } else {
       Object.keys(commands)
         .filter(
-          (commandName) =>
-            commandName === commands.get(commandName)?.options.name
+          commandName => commandName === commands.get(commandName)?.options.name
         )
-        .forEach((commandName) => {
+        .forEach(commandName => {
           const command = commands.get(commandName);
 
           let commandInfo = '';
