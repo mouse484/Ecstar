@@ -17,7 +17,7 @@
     "md": "yarn prettier README.md --write"
   },
   "peerDependencies": {
-    "discord.js": "^11.5.0"
+    "discord.js": "12.1.1"
   },
   "dependencies": {
     "chalk": "^3.0.0",
