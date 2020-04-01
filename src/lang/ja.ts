@@ -1,4 +1,4 @@
-import { Lang } from '../index';
+import { Lang } from '@/ecstar';
 
 export = class extends Lang {
   LOADING(type: string): string {

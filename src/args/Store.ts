@@ -1,4 +1,4 @@
-import { Client, Store, Args } from '../index';
+import { Client, Store, Args } from '@/ecstar';
 import path from 'path';
 import { promises as fs } from 'fs';
 

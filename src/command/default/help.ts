@@ -1,4 +1,4 @@
-import { Client, Command } from '../../index';
+import { Client, Command } from '@/ecstar';
 import { Message, MessageEmbed } from 'discord.js';
 
 export = class extends Command {

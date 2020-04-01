@@ -1,4 +1,4 @@
-import { Client, EcstarFile } from '../index';
+import { Client, EcstarFile } from '@/ecstar';
 
 export abstract class ArgsBase extends EcstarFile {
   constructor(client: Client, name: string) {
