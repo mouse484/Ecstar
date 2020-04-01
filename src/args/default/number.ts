@@ -1,4 +1,4 @@
-import { Client, Args } from '@/ecstar';
+import { Client, Args } from 'ecstar';
 
 export = class extends Args {
   constructor(client: Client) {

@@ -1,4 +1,4 @@
-import { Client, Args } from '@/ecstar';
+import { Client, Args } from 'ecstar';
 import { Channel } from 'discord.js';
 
 export = class extends Args {
