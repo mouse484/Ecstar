@@ -8,8 +8,8 @@
   "author": "mouse_484",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --watch src --ext ts --exec ts-node -r dotenv/config examples/TypeScript",
-    "build": "tsc",
+    "dev": "nodemon --watch src --ext ts --exec ts-node --compiler ttypescript -r dotenv/config examples/TypeScript",
+    "build": "ttsc",
     "test": "jest --watch",
     "test:js": "yarn build && node -r dotenv/config examples/Node",
     "lint": "eslint --ext .js,.ts .",
@@ -42,8 +42,10 @@
     "prettier": "^2.0.1",
     "ts-jest": "^25.1.0",
     "ts-node": "^8.5.2",
+    "ttypescript": "^1.5.10",
     "typedoc": "^0.17.0",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.2",
+    "typescript-transform-paths": "^1.1.14"
   },
   "engines": {
     "node": ">=12.0.0"
