@@ -10,7 +10,7 @@
     "declaration": true,
     "baseUrl": ".",
     "paths": {
-      "@/ecstar": ["src"]
+      "ecstar": ["src"]
     },
     "plugins": [
       {

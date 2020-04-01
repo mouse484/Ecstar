@@ -1,4 +1,4 @@
-import { Client, EcstarFile } from '@/ecstar';
+import { Client, EcstarFile } from 'ecstar';
 
 export abstract class EventBase extends EcstarFile {
   constructor(client: Client, name: string) {
