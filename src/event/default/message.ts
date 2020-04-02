@@ -1,4 +1,4 @@
-import { Client, Event } from '../../index';
+import { Client, Event } from 'ecstar';
 import { Message } from 'discord.js';
 
 import { commandRun } from '../../command/run';

@@ -1,4 +1,4 @@
-import { Client, Store, Command, print } from '../index';
+import { Client, Store, Command, print } from 'ecstar';
 import path from 'path';
 import { promises as fs } from 'fs';
 

@@ -1,4 +1,4 @@
-import { Client } from '../index';
+import { Client } from 'ecstar';
 import { Message } from 'discord.js';
 
 export type commandOptions = {

@@ -4,7 +4,7 @@ import {
   ArgsStore,
   Lang,
   eventHandler,
-} from './index';
+} from 'ecstar';
 
 import {
   Client as DiscordClient,

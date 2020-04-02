@@ -1,4 +1,4 @@
-import { Client, print, Event } from '../index';
+import { Client, print, Event } from 'ecstar';
 
 import Message from './default/message';
 

@@ -1,4 +1,4 @@
-import { Client, directory, print, EcstarFile } from '../index';
+import { Client, directory, print, EcstarFile } from 'ecstar';
 import { watch } from 'chokidar';
 
 export class Store<T extends EcstarFile> extends Map<string, T> {

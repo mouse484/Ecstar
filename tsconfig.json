@@ -8,7 +8,15 @@
     "moduleResolution": "node",
     "strict": true,
     "declaration": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "ecstar": ["src"]
+    },
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      }
+    ]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
