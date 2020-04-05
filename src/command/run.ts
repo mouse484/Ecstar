@@ -1,4 +1,4 @@
-import { Client, Command, print } from 'ecstar';
+import { Client, Command, print, ArgsReturn } from 'ecstar';
 import { Message } from 'discord.js';
 import split from 'split-string';
 
@@ -31,9 +31,24 @@ export const commandRun = (
     Object.keys(command.options.args).forEach(
       (value: string, index: number) => {
         if (command.options.args) {
-          args[value] = client.args
-            .get(command.options.args[value])
-            ?.run(parsed[index + 1]);
+          const type = command.options.args[value];
+          const ArgsParser = async (string: string | undefined) => {
+            if (!string) return;
+            const parsedArgs = client.args.get(type)?.run(string);
+            if (parsedArgs.parsed) {
+              args[value] = parsedArgs.parsed;
+            } else {
+              message.channel.send(
+                `${client.lang.WRONG_ARGGUMENT(type)}(${type})`
+              );
+              const awaitMessage = await message.channel.awaitMessages(
+                msg => msg.author.id === message.author.id,
+                { max: 1, time: 60000, errors: ['time'] }
+              );
+              ArgsParser(awaitMessage.first()?.content);
+            }
+          };
+          ArgsParser(parsed[index + 1]);
         }
       }
     );
