@@ -8,8 +8,7 @@ export = class extends Args {
     const parsed = parseInt(message);
     if (parsed) {
       return { parsed, error: false };
-    } else {
-      return { parsed, error: true };
     }
+    return { parsed, error: true };
   }
 };

@@ -1,4 +1,4 @@
-import { Client, Command, print, ArgsReturn } from 'ecstar';
+import { Client, Command, print } from 'ecstar';
 import { Message } from 'discord.js';
 import split from 'split-string';
 
