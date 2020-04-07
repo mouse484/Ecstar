@@ -23,35 +23,20 @@ export const commandRun = (
 
   if (command.options.args) {
     const args: { [key: string]: string } = {};
-    const parsed = split(message.content, {
+    const splitedMessage = split(message.content, {
       separator: ' ',
       quotes: ['"', "'"],
     });
 
-    Object.keys(command.options.args).forEach(
-      (value: string, index: number) => {
-        if (command.options.args) {
-          const type = command.options.args[value];
-          const ArgsParser = async (string: string | undefined) => {
-            if (!string) return;
-            const parsedArgs = client.args.get(type)?.run(string);
-            if (parsedArgs.parsed) {
-              args[value] = parsedArgs.parsed;
-            } else {
-              message.channel.send(
-                `${client.lang.WRONG_ARGGUMENT(type)}(${type})`
-              );
-              const awaitMessage = await message.channel.awaitMessages(
-                msg => msg.author.id === message.author.id,
-                { max: 1, time: 60000, errors: ['time'] }
-              );
-              ArgsParser(awaitMessage.first()?.content);
-            }
-          };
-          ArgsParser(parsed[index + 1]);
-        }
-      }
-    );
+    Object.keys(command.options.args).forEach((argsName, index) => {
+      if (!command.options.args) return;
+      const argsType = command.options.args[argsName];
+
+      args[argsName] = client.args
+        .get(argsType)
+        ?.run(splitedMessage[index + 1]);
+    });
+
     command.run(message, args);
   } else {
     command.run(message);
