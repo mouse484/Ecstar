@@ -28,12 +28,11 @@ export const commandRun = (
       quotes: ['"', "'"],
     });
 
-    Object.keys(command.options.args).forEach((argsName, index) => {
+    command.options.args.forEach((value, index) => {
       if (!command.options.args) return;
-      const argsType = command.options.args[argsName];
 
-      args[argsName] = client.args
-        .get(argsType)
+      args[value.name] = client.args
+        .get(value.type)
         ?.run(splitedMessage[index + 1]);
     });
 
