@@ -34,10 +34,10 @@ export = class extends Command {
       ]);
     } else {
       Object.keys(commands)
-        .filter(
-          commandName => commandName === commands.get(commandName)?.options.name
-        )
-        .forEach(commandName => {
+        .filter((commandName) => {
+          return commandName === commands.get(commandName)?.options.name;
+        })
+        .forEach((commandName) => {
           const command = commands.get(commandName);
 
           let commandInfo = '';
