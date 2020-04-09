@@ -1,7 +1,7 @@
 import { Client, directory, print, EcstarFile } from 'ecstar';
 import { watch } from 'chokidar';
 
-export class Store<T extends EcstarFile> extends Map<string, T> {
+export abstract class Store<T extends EcstarFile> extends Map<string, T> {
   constructor(public client: Client, public type: string) {
     super();
     const thatdirectory = directory.getPath(type);
@@ -13,12 +13,12 @@ export class Store<T extends EcstarFile> extends Map<string, T> {
       this.getDefault();
     }
   }
+  abstract getDefault(): void;
   getFile(path: string): T {
     const file = require(path);
     const instantiated: T = new file(this.client);
     return instantiated;
   }
-  getDefault() {}
   import(path: string): T {
     const file: T = this.getFile(path);
     print.store(this.type, 'import', file.options.name, path);
