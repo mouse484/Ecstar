@@ -36,9 +36,9 @@ class ExtendClient extends DiscordClient {
 export class EcstarClient extends ExtendClient {
   readonly options!: EcstarOptions;
   readonly lang = this.options.lang || new Lang();
-  commands = new CommandStore(this);
-  events = new EventStore(this);
-  args = new ArgsStore(this);
+  readonly commands = new CommandStore(this);
+  readonly events = new EventStore(this);
+  readonly args = new ArgsStore(this);
   constructor(options: EcstarOptions) {
     super(options);
 
