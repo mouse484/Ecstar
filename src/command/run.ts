@@ -30,21 +30,21 @@ export const commandRun = async (
 
     for (const [index, value] of command.options.args.entries()) {
       const perse = async (string: string | undefined): Promise<string> => {
-        const parsed = string && client.args.get(value.type)?.run(string);
-        if (parsed) return parsed;
-        message.channel.send(
-          `${client.lang.WRONG_ARGGUMENT(value.type)}(${value.type})`
-        );
-        const collected = await message.channel.awaitMessages(
-          (msg) => msg.author.id === message.author.id,
-          { max: 1, time: 60000, errors: ['time'] }
-        );
-        return perse(collected.first()?.content);
+        try {
+          if (!string) throw client.lang.MISSING_ARGUMENT;
+          return client.args.get(value.type)?.run(string);
+        } catch (error) {
+          if (typeof error !== 'string') throw error;
+          message.channel.send(client.lang.WRONG_ARGGUMENT(value.type, error));
+          const collected = await message.channel.awaitMessages(
+            (msg) => msg.author.id === message.author.id,
+            { max: 1, time: 60000, errors: ['time'] }
+          );
+          return perse(collected.first()?.content);
+        }
       };
       args[value.name] = await perse(splitedMessage[index + 1]);
     }
-
-    console.log(args)
 
     command.run(message, args);
   } else {
