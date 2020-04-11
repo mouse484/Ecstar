@@ -7,7 +7,7 @@ export = class extends Args {
   run(message: string): number {
     const parsed = parseInt(message);
 
-    console.log(parsed);
+    if (Number.isNaN(parsed)) throw this.client.lang.ARGUMENT_INVALID_NUMBER;
 
     return parsed;
   }
