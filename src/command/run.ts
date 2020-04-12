@@ -28,38 +28,48 @@ export const commandRun = async (
       quotes: ['"', "'"],
     });
 
-    for (const [index, type] of command.options.args.entries()) {
-      const perse = async (string: string | undefined): Promise<string> => {
-        try {
-          if (!string) throw client.lang.MISSING_ARGUMENT;
-          return client.args.get(type)?.run(string);
-        } catch (error) {
-          if (typeof error !== 'string') throw error;
+    try {
+      for (const [index, type] of command.options.args.entries()) {
+        const perse = async (string: string | undefined): Promise<string> => {
+          try {
+            if (!string) throw client.lang.MISSING_ARGUMENT;
+            return client.args.get(type)?.run(string);
+          } catch (error) {
+            if (typeof error !== 'string') throw error;
 
-          (
-            await message.channel.send(client.lang.WRONG_ARGGUMENT(type, error))
-          ).delete({ timeout: 10000 });
+            (
+              await message.channel.send(
+                client.lang.WRONG_ARGGUMENT(type, error)
+              )
+            ).delete({ timeout: 10000 });
 
-          const collected = await message.channel
-            .awaitMessages((msg) => msg.author.id === message.author.id, {
-              max: 1,
-              time: 10000,
-              errors: ['time'],
-            })
-            .catch(async (error) => {
-              (
-                await message.channel.send(client.lang.TIME_OUT_ARGUMENT)
-              ).delete({ timeout: 5000 });
-              throw error;
-            });
+            const collected = await message.channel
+              .awaitMessages((msg) => msg.author.id === message.author.id, {
+                max: 1,
+                time: 10000,
+                errors: ['time'],
+              })
+              .catch((error) => {
+                throw client.lang.TIME_OUT_ARGUMENT;
+              });
 
-          return perse(collected.first()?.content);
-        }
-      };
-      args.push(await perse(splitedMessage[index + 1]));
+            return perse(collected.first()?.content);
+          }
+        };
+
+        args.push(await perse(splitedMessage[index + 1]));
+
+        command.run(message, args);
+      }
+    } catch (error) {
+      if (error === client.lang.TIME_OUT_ARGUMENT) {
+        (await message.channel.send(client.lang.TIME_OUT_ARGUMENT)).delete({
+          timeout: 5000,
+        });
+      } else {
+        print.error(error);
+      }
     }
-
-    command.run(message, args);
   } else {
     command.run(message);
   }
