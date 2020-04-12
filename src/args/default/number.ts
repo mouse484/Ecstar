@@ -5,6 +5,12 @@ export = class extends Args {
     super(client, 'number');
   }
   run(message: string): number {
-    return parseInt(message);
+    const parsed = parseInt(message);
+
+    if (Number.isNaN(parsed)) {
+      throw this.client.lang.INVALID_ARGUMENT(this.options.name);
+    }
+
+    return parsed;
   }
 };
