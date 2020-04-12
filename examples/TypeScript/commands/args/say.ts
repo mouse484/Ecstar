@@ -5,12 +5,12 @@ export = class extends Command {
   constructor(client: Client) {
     super(client, {
       name: 'say',
-      args: [{ name: 'text', type: 'string' }],
+      args: ['string'],
       description: 'Reply message',
     });
   }
 
-  run(message: Message, { text }: { text: string }) {
+  run(message: Message, [text]: [string]) {
     return message.channel.send(text);
   }
 };
