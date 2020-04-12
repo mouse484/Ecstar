@@ -5,7 +5,7 @@ export = class extends Command {
   constructor(client: Client) {
     super(client, {
       name: 'say',
-      args: [{ name: 'text', type: 'string' }],
+      args: { text: 'string' },
       description: 'Reply message',
     });
   }

@@ -3,7 +3,7 @@ import { Message, MessageEmbed } from 'discord.js';
 
 export = class extends Command {
   constructor(client: Client) {
-    super(client, { name: 'help', args: [{ name: 'type', type: 'text' }] });
+    super(client, { name: 'help', args: { type: 'text' } });
   }
 
   run(message: Message, { type }: { type: string }) {
@@ -34,9 +34,10 @@ export = class extends Command {
       ]);
     } else {
       Object.keys(commands)
-        .filter((commandName) => {
-          return commandName === commands.get(commandName)?.options.name;
-        })
+        .filter(
+          (commandName) =>
+            commandName === commands.get(commandName)?.options.name
+        )
         .forEach((commandName) => {
           const command = commands.get(commandName);
 

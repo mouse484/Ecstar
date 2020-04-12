@@ -5,10 +5,7 @@ export = class extends Command {
   constructor(client: Client) {
     super(client, {
       name: 'plus',
-      args: [
-        { name: 'variablesA', type: 'number' },
-        { name: 'variablesB', type: 'number' },
-      ],
+      args: { variablesA: 'number', variablesB: 'number' },
     });
   }
 
