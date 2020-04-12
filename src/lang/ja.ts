@@ -11,5 +11,7 @@ export = class extends Lang {
     return `${message}\n${type}をもう一度入力してください`;
   }
   MISSING_ARGUMENT = '引数が不足しています';
-  ARGUMENT_INVALID_NUMBER = '引数で渡された数値が正しくありません';
+  INVALID_ARGUMENT = (type: string) => {
+    `引数に渡された値は${type}ではありません。`;
+  };
 };
