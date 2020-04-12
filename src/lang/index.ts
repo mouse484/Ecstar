@@ -11,5 +11,7 @@ export class LangBase {
     return `${message}\nPlease enter the ${type} again`;
   }
   MISSING_ARGUMENT = 'Missing argument';
-  ARGUMENT_INVALID_NUMBER = 'The number passed in the argument is invalid';
+  INVALID_ARGUMENT = (type: string) => {
+    `The ${type} passed in the argument is invalid`;
+  };
 }
