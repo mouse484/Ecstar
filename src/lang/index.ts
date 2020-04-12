@@ -14,4 +14,5 @@ export class LangBase {
   INVALID_ARGUMENT = (type: string) => {
     `The ${type} passed in the argument is invalid`;
   };
+  TIME_OUT_ARGUMENT = 'Accepting arguments has timed out';
 }

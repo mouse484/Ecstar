@@ -35,11 +35,26 @@ export const commandRun = async (
           return client.args.get(value.type)?.run(string);
         } catch (error) {
           if (typeof error !== 'string') throw error;
-          message.channel.send(client.lang.WRONG_ARGGUMENT(value.type, error));
-          const collected = await message.channel.awaitMessages(
-            (msg) => msg.author.id === message.author.id,
-            { max: 1, time: 60000, errors: ['time'] }
-          );
+
+          (
+            await message.channel.send(
+              client.lang.WRONG_ARGGUMENT(value.type, error)
+            )
+          ).delete({ timeout: 10000 });
+
+          const collected = await message.channel
+            .awaitMessages((msg) => msg.author.id === message.author.id, {
+              max: 1,
+              time: 10000,
+              errors: ['time'],
+            })
+            .catch(async (error) => {
+              (
+                await message.channel.send(client.lang.TIME_OUT_ARGUMENT)
+              ).delete({ timeout: 5000 });
+              throw error;
+            });
+
           return perse(collected.first()?.content);
         }
       };

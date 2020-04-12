@@ -14,4 +14,5 @@ export = class extends Lang {
   INVALID_ARGUMENT = (type: string) => {
     `引数に渡された値は${type}ではありません。`;
   };
+  TIME_OUT_ARGUMENT = '引数の受付はタイムアウトしました';
 };
