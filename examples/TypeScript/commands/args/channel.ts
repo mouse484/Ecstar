@@ -10,7 +10,7 @@ export = class extends Command {
   constructor(client: Client) {
     super(client, {
       name: 'channel',
-      args: { channel: 'channel' },
+      args: [{ name: 'channel', type: 'channel' }],
     });
   }
 

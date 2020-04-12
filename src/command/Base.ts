@@ -7,7 +7,7 @@ export type commandOptions = {
   readonly description?: string;
   readonly ownerOnly?: boolean;
   readonly guildOnly?: boolean;
-  readonly args?: { [argsName: string]: string };
+  readonly args?: Array<{ name: string; type: string }>;
 };
 
 export abstract class CommandBase {

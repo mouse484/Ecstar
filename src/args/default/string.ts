@@ -5,6 +5,7 @@ export = class extends Args {
     super(client, 'string');
   }
   run(message: string): string {
+    if (!String) throw this.client.lang.INVALID_ARGUMENT(this.options.name);
     return message;
   }
 };
