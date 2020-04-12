@@ -22,24 +22,22 @@ export const commandRun = async (
   }
 
   if (command.options.args) {
-    const args: { [key: string]: string } = {};
+    const args: string[] = [];
     const splitedMessage = split(message.content, {
       separator: ' ',
       quotes: ['"', "'"],
     });
 
-    for (const [index, value] of command.options.args.entries()) {
+    for (const [index, type] of command.options.args.entries()) {
       const perse = async (string: string | undefined): Promise<string> => {
         try {
           if (!string) throw client.lang.MISSING_ARGUMENT;
-          return client.args.get(value.type)?.run(string);
+          return client.args.get(type)?.run(string);
         } catch (error) {
           if (typeof error !== 'string') throw error;
 
           (
-            await message.channel.send(
-              client.lang.WRONG_ARGGUMENT(value.type, error)
-            )
+            await message.channel.send(client.lang.WRONG_ARGGUMENT(type, error))
           ).delete({ timeout: 10000 });
 
           const collected = await message.channel
@@ -58,7 +56,7 @@ export const commandRun = async (
           return perse(collected.first()?.content);
         }
       };
-      args[value.name] = await perse(splitedMessage[index + 1]);
+      args.push(await perse(splitedMessage[index + 1]));
     }
 
     command.run(message, args);

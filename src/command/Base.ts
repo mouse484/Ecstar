@@ -7,10 +7,10 @@ export type commandOptions = {
   readonly description?: string;
   readonly ownerOnly?: boolean;
   readonly guildOnly?: boolean;
-  readonly args?: Array<{ name: string; type: string }>;
+  readonly args?: string[];
 };
 
 export abstract class CommandBase {
   constructor(public client: Client, public options: commandOptions) {}
-  abstract run(message: Message, args?: { [argsName: string]: any }): void;
+  abstract run(message: Message, args?: any[]): void;
 }
