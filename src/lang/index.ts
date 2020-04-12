@@ -7,7 +7,9 @@ export class LangBase {
   BOT_READY = 'Ready to Go!';
   COMMAND_DIR_FILE_WARN =
     "Files cannot be placed directly under 'commands' folder";
-  WRONG_ARGGUMENT(type: string): string {
-    return `The command argument is wrong, please enter the ${type} again`;
+  WRONG_ARGGUMENT(type: string, message: string): string {
+    return `${message}\nPlease enter the ${type} again`;
   }
+  MISSING_ARGUMENT = 'Missing argument';
+  ARGUMENT_INVALID_NUMBER = 'The number passed in the argument is invalid';
 }

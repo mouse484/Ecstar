@@ -2,7 +2,7 @@ import { Client, Command, print } from 'ecstar';
 import { Message } from 'discord.js';
 import split from 'split-string';
 
-export const commandRun = (
+export const commandRun = async (
   client: Client,
   commandName: string,
   message: Message
@@ -28,13 +28,23 @@ export const commandRun = (
       quotes: ['"', "'"],
     });
 
-    command.options.args.forEach((value, index) => {
-      if (!command.options.args) return;
-
-      args[value.name] = client.args
-        .get(value.type)
-        ?.run(splitedMessage[index + 1]);
-    });
+    for (const [index, value] of command.options.args.entries()) {
+      const perse = async (string: string | undefined): Promise<string> => {
+        try {
+          if (!string) throw client.lang.MISSING_ARGUMENT;
+          return client.args.get(value.type)?.run(string);
+        } catch (error) {
+          if (typeof error !== 'string') throw error;
+          message.channel.send(client.lang.WRONG_ARGGUMENT(value.type, error));
+          const collected = await message.channel.awaitMessages(
+            (msg) => msg.author.id === message.author.id,
+            { max: 1, time: 60000, errors: ['time'] }
+          );
+          return perse(collected.first()?.content);
+        }
+      };
+      args[value.name] = await perse(splitedMessage[index + 1]);
+    }
 
     command.run(message, args);
   } else {
