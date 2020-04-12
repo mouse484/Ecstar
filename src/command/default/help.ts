@@ -3,10 +3,10 @@ import { Message, MessageEmbed } from 'discord.js';
 
 export = class extends Command {
   constructor(client: Client) {
-    super(client, { name: 'help', args: [{ name: 'type', type: 'text' }] });
+    super(client, { name: 'help', args: ['text'] });
   }
 
-  run(message: Message, { type }: { type: string }) {
+  run(message: Message, [type]: [string]) {
     const { commands }: { commands: Map<string, Command> } = this.client;
 
     const help = new MessageEmbed({
