@@ -1,5 +1,4 @@
 import { Lang } from 'ecstar';
-import { strict } from 'assert';
 
 export = class extends Lang {
   LOADING(type: string): string {

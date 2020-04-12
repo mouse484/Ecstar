@@ -1,5 +1,4 @@
 import { Client, Args } from 'ecstar';
-import { strict } from 'assert';
 
 export = class extends Args {
   constructor(client: Client) {
