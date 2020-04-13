@@ -3,7 +3,7 @@ import { Message, MessageEmbed } from 'discord.js';
 
 export = class extends Command {
   constructor(client: Client) {
-    super(client, { name: 'help', args: ['text'] });
+    super(client, { name: 'help', args: ['string'] });
   }
 
   run(message: Message, [type]: [string]) {
