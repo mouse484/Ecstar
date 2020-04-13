@@ -49,7 +49,7 @@ export const commandRun = async (
                 time: 10000,
                 errors: ['time'],
               })
-              .catch((error) => {
+              .catch(() => {
                 throw client.lang.TIME_OUT_ARGUMENT;
               });
 
