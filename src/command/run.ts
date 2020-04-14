@@ -36,9 +36,10 @@ export const commandRun = async (
       for (const [index, option] of commandArgs.entries()) {
         const perse = async (string: string | undefined): Promise<string> => {
           try {
-            if (option.optional) return '';
-
-            if (!string) throw client.lang.MISSING_ARGUMENT;
+            if (!string) {
+              if (!option.optional) return '';
+              throw client.lang.MISSING_ARGUMENT;
+            }
             return client.args.get(option.type)?.run(string);
           } catch (error) {
             if (typeof error !== 'string') throw error;
