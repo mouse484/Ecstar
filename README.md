@@ -104,9 +104,9 @@ options: [commandOptions](https://ecstar.js.org/modules/_command_base_.html#comm
 ### 📄Event File
 
 ```js
-import { Event } from 'ecstar';
+const { Event } = require('ecstar');
 
-export = class extends Event {
+module.exports = class extends Event {
   constructor(client) {
     super(client, 'Receive event name');
   }
@@ -120,11 +120,11 @@ export = class extends Event {
 ### 📄Args File
 
 ```js
-import { Args } from 'ecstar';
+const { Args } = require('ecstar');
 
-export = class extends Args {
+module.exports = class extends Args {
   constructor(client) {
-    super(client, 'string');
+    super(client, 'args name');
   }
   run(message){
     // What to do
@@ -136,9 +136,9 @@ export = class extends Args {
 ### 📄Lang File
 
 ```ts
-import { Lang } from 'ecstar';
+const { Lang } = require('ecstar');
 
-export = class extends Lang {
+module.exports = class extends Lang {
    LOADING_COMMANDS = '';
    ...
 };
