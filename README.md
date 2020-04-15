@@ -1,10 +1,18 @@
 ![image](https://user-images.githubusercontent.com/38714187/72132993-bb2ab900-33c3-11ea-9ddc-c3dd7feba787.png)
 
+<h1 align="center">Ecstar</h1>
+
 <p align="center">
   <img
     src="https://github.com/mouse484/Ecstar/workflows/ESLint/badge.svg"
     alt="ESLint badge"
   />
+  <a href="http://ecstar.js.org/">
+    <img
+      src="https://github.com/mouse484/Ecstar/workflows/document/badge.svg"
+      alt="document badge"
+    />
+  </a>
   <a href="https://www.npmjs.com/package/ecstar">
     <img src="https://img.shields.io/npm/v/ecstar" alt="npm version" />
   </a>
@@ -32,9 +40,6 @@
       alt="discord"
     />
   </a>
-  <a href="https://devtoken.rocks/package/ecstar">
-    <img src="https://badge.devtoken.rocks/ecstar" alt="ecstar Dev Token" />
-  </a>
   <a href="https://gitpod.io/#https://github.com/mouse484/Ecstar">
     <img
       src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod"
@@ -43,68 +48,50 @@
   </a>
 </p>
 
-<h1 align="center">Ecstar</h1>
-
 ## 📃Introduction
 
 Ecstar is the easiest framework [Discord.js](https://github.com/discordjs/discord.js).
 
-## 💬 Usage
+## 📖Document
 
-### 📥install
+https://ecstar.js.org
 
-- stable
-  `npm install ecstar` or `yarn add ecstar`
+## 📥Installation
 
-- mastar
-  `npm install mouse484/Ecstar#mastar` or `yarn add mouse484/Ecstar#mastar`
-
-### 📁Directory Tree
+Install [Ecstar](https://www.npmjs.com/package/ecstar) using [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/).
 
 ```
-Development Directory/
-├ commands
-│ ├ command file
-│ ├ directory
-│ │ └ command file
-│ └ directory
-│ 　 └ directory
-│ 　 　 └ command file
-├ events
-│ ├ event file
-│ └ directory
-│ 　 └ event file
-├ args
-│ └ args file
-└ Main file
+npm install ecstar
 ```
+
+```
+yarn add ecstar
+```
+
+## 💬Usage
 
 ### 📄Main File
 
-```js main.js
-import { Client } from 'ecstar';
+`/index.js`
 
-const client = new Client({
-  prefix: 'your prefix', //Required
-  owner: 'your id',
-  lang: new LangFile(),
-});
+```js main.js
+const { Client } = require('ecstar');
+
+const client = new Client(options);
 
 client.login('Your token here');
 ```
+options: [EcstarOptions](https://ecstar.js.org/interfaces/_client_.ecstaroptions.html)
+
 
 ### 📄Command File
 
 ```js
-import { Command } from 'ecstar';
+const { Command } = require('ecstar');
 
-export = class extends Command {
+module.exports = class extends Command {
   constructor(client) {
-    super(client, {
-      name: 'command name', //Required
-      aliases: ['alias1', 'alias2'],
-      ownerOnly: false; //or true
-    });
+    super(client, options);
   }
 
   run(message) {
@@ -112,13 +99,14 @@ export = class extends Command {
   }
 };
 ```
+options: [commandOptions](https://ecstar.js.org/modules/_command_base_.html#commandoptions)
 
 ### 📄Event File
 
 ```js
-import { Event } from 'ecstar';
+const { Event } = require('ecstar');
 
-export = class extends Event {
+module.exports = class extends Event {
   constructor(client) {
     super(client, 'Receive event name');
   }
@@ -132,11 +120,11 @@ export = class extends Event {
 ### 📄Args File
 
 ```js
-import { Args } from 'ecstar';
+const { Args } = require('ecstar');
 
-export = class extends Args {
+module.exports = class extends Args {
   constructor(client) {
-    super(client, 'string');
+    super(client, 'args name');
   }
   run(message){
     // What to do
@@ -148,9 +136,9 @@ export = class extends Args {
 ### 📄Lang File
 
 ```ts
-import { Lang } from 'ecstar';
+const { Lang } = require('ecstar');
 
-export = class extends Lang {
+module.exports = class extends Lang {
    LOADING_COMMANDS = '';
    ...
 };
