@@ -27,19 +27,26 @@ export const commandRun = async (
       separator: ' ',
       quotes: ['"', "'"],
     });
+    const commandArgs = command.options.args.map((argsOption) => {
+      if (typeof argsOption === 'string') return { type: argsOption };
+      return argsOption;
+    });
 
     try {
-      for (const [index, type] of command.options.args.entries()) {
+      for (const [index, option] of commandArgs.entries()) {
         const perse = async (string: string | undefined): Promise<string> => {
           try {
-            if (!string) throw client.lang.MISSING_ARGUMENT;
-            return client.args.get(type)?.run(string);
+            if (!string) {
+              if (!option.optional) return '';
+              throw client.lang.MISSING_ARGUMENT;
+            }
+            return client.args.get(option.type)?.run(string);
           } catch (error) {
             if (typeof error !== 'string') throw error;
 
             (
               await message.channel.send(
-                client.lang.WRONG_ARGGUMENT(type, error)
+                client.lang.WRONG_ARGGUMENT(option.type, error)
               )
             ).delete({ timeout: 10000 });
 
