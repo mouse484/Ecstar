@@ -87,15 +87,11 @@ options: [EcstarOptions](https://ecstar.js.org/interfaces/_client_.ecstaroptions
 ### 📄Command File
 
 ```js
-import { Command } from 'ecstar';
+const { Command } = require('ecstar');
 
-export = class extends Command {
+module.exports = class extends Command {
   constructor(client) {
-    super(client, {
-      name: 'command name', //Required
-      aliases: ['alias1', 'alias2'],
-      ownerOnly: false; //or true
-    });
+    super(client, options);
   }
 
   run(message) {
@@ -103,6 +99,7 @@ export = class extends Command {
   }
 };
 ```
+options: [commandOptions](https://ecstar.js.org/modules/_command_base_.html#commandoptions)
 
 ### 📄Event File
 
