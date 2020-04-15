@@ -1,5 +1,7 @@
 ![image](https://user-images.githubusercontent.com/38714187/72132993-bb2ab900-33c3-11ea-9ddc-c3dd7feba787.png)
 
+<h1 align="center">Ecstar</h1>
+
 <p align="center">
   <img
     src="https://github.com/mouse484/Ecstar/workflows/ESLint/badge.svg"
@@ -43,7 +45,6 @@
   </a>
 </p>
 
-<h1 align="center">Ecstar</h1>
 
 ## 📃Introduction
 
@@ -51,13 +52,14 @@ Ecstar is the easiest framework [Discord.js](https://github.com/discordjs/discor
 
 ## 💬 Usage
 
-### 📥install
-
-- stable
-  `npm install ecstar` or `yarn add ecstar`
-
-- mastar
-  `npm install mouse484/Ecstar#mastar` or `yarn add mouse484/Ecstar#mastar`
+## 📥Installation
+Install [Ecstar](https://www.npmjs.com/package/ecstar) using [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/).
+```
+npm install ecstar
+```
+```
+yarn add ecstar
+```
 
 ### 📁Directory Tree
 
