@@ -48,58 +48,41 @@
   </a>
 </p>
 
-
 ## 📃Introduction
 
 Ecstar is the easiest framework [Discord.js](https://github.com/discordjs/discord.js).
 
 ## 📖Document
+
 https://ecstar.js.org
 
-## 💬 Usage
-
 ## 📥Installation
+
 Install [Ecstar](https://www.npmjs.com/package/ecstar) using [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/).
+
 ```
 npm install ecstar
 ```
+
 ```
 yarn add ecstar
 ```
 
-### 📁Directory Tree
-
-```
-Development Directory/
-├ commands
-│ ├ command file
-│ ├ directory
-│ │ └ command file
-│ └ directory
-│ 　 └ directory
-│ 　 　 └ command file
-├ events
-│ ├ event file
-│ └ directory
-│ 　 └ event file
-├ args
-│ └ args file
-└ Main file
-```
+## 💬Usage
 
 ### 📄Main File
 
-```js main.js
-import { Client } from 'ecstar';
+`/index.js`
 
-const client = new Client({
-  prefix: 'your prefix', //Required
-  owner: 'your id',
-  lang: new LangFile(),
-});
+```js main.js
+const { Client } = require('ecstar');
+
+const client = new Client(options);
 
 client.login('Your token here');
 ```
+options: [EcstarOptions](https://ecstar.js.org/interfaces/_client_.ecstaroptions.html)
+
 
 ### 📄Command File
 
