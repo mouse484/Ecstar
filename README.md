@@ -7,6 +7,12 @@
     src="https://github.com/mouse484/Ecstar/workflows/ESLint/badge.svg"
     alt="ESLint badge"
   />
+  <a href="http://ecstar.js.org/">
+    <img
+      src="https://github.com/mouse484/Ecstar/workflows/document/badge.svg"
+      alt="document badge"
+    />
+  </a>
   <a href="https://www.npmjs.com/package/ecstar">
     <img src="https://img.shields.io/npm/v/ecstar" alt="npm version" />
   </a>
@@ -33,9 +39,6 @@
       src="https://img.shields.io/discord/443320971609374721"
       alt="discord"
     />
-  </a>
-  <a href="https://devtoken.rocks/package/ecstar">
-    <img src="https://badge.devtoken.rocks/ecstar" alt="ecstar Dev Token" />
   </a>
   <a href="https://gitpod.io/#https://github.com/mouse484/Ecstar">
     <img
