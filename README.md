@@ -86,6 +86,8 @@ options: [EcstarOptions](https://ecstar.js.org/interfaces/_client_.ecstaroptions
 
 ### 📄Command File
 
+`/commands/filename.js`
+
 ```js
 const { Command } = require('ecstar');
 
@@ -103,6 +105,8 @@ options: [commandOptions](https://ecstar.js.org/modules/_command_base_.html#comm
 
 ### 📄Event File
 
+`/events/filename.js`
+
 ```js
 const { Event } = require('ecstar');
 
@@ -118,6 +122,8 @@ module.exports = class extends Event {
 ```
 
 ### 📄Args File
+
+`/args/filename.js`
 
 ```js
 const { Args } = require('ecstar');
