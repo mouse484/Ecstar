@@ -65,11 +65,18 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<p><img src="https://user-images.githubusercontent.com/38714187/72132993-bb2ab900-33c3-11ea-9ddc-c3dd7feba787.png" alt="image"></p>
+				<h1 align="center">Ecstar</h1>
 				<p align="center">
 					<img
 					src="https://github.com/mouse484/Ecstar/workflows/ESLint/badge.svg"
 					alt="ESLint badge"
 					/>
+					<a href="http://ecstar.js.org/">
+						<img
+						src="https://github.com/mouse484/Ecstar/workflows/document/badge.svg"
+						alt="document badge"
+						/>
+					</a>
 					<a href="https://www.npmjs.com/package/ecstar">
 						<img src="https://img.shields.io/npm/v/ecstar" alt="npm version" />
 					</a>
@@ -97,9 +104,6 @@
 						alt="discord"
 						/>
 					</a>
-					<a href="https://devtoken.rocks/package/ecstar">
-						<img src="https://badge.devtoken.rocks/ecstar" alt="ecstar Dev Token" />
-					</a>
 					<a href="https://gitpod.io/#https://github.com/mouse484/Ecstar">
 						<img
 						src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod"
@@ -107,79 +111,55 @@
 						/>
 					</a>
 				</p>
-				<h1 align="center">Ecstar</h1>
 				<a href="#📃introduction" id="📃introduction" style="color: inherit; text-decoration: none;">
 					<h2>📃Introduction</h2>
 				</a>
 				<p>Ecstar is the easiest framework <a href="https://github.com/discordjs/discord.js">Discord.js</a>.</p>
-				<a href="#💬-usage" id="💬-usage" style="color: inherit; text-decoration: none;">
-					<h2>💬 Usage</h2>
+				<a href="#📖document" id="📖document" style="color: inherit; text-decoration: none;">
+					<h2>📖Document</h2>
 				</a>
-				<a href="#📥install" id="📥install" style="color: inherit; text-decoration: none;">
-					<h3>📥install</h3>
+				<p><a href="https://ecstar.js.org">https://ecstar.js.org</a></p>
+				<a href="#📥installation" id="📥installation" style="color: inherit; text-decoration: none;">
+					<h2>📥Installation</h2>
 				</a>
-				<ul>
-					<li><p>stable
-						<code>npm install ecstar</code> or <code>yarn add ecstar</code></p>
-					</li>
-					<li><p>mastar
-						<code>npm install mouse484/Ecstar#mastar</code> or <code>yarn add mouse484/Ecstar#mastar</code></p>
-					</li>
-				</ul>
-				<a href="#📁directory-tree" id="📁directory-tree" style="color: inherit; text-decoration: none;">
-					<h3>📁Directory Tree</h3>
+				<p>Install <a href="https://www.npmjs.com/package/ecstar">Ecstar</a> using <a href="https://www.npmjs.com/">npm</a> or <a href="https://yarnpkg.com/">yarn</a>.</p>
+				<pre><code>npm <span class="hljs-keyword">install</span> ecstar</code></pre><pre><code>yarn <span class="hljs-keyword">add</span><span class="bash"> ecstar</span></code></pre>
+				<a href="#💬usage" id="💬usage" style="color: inherit; text-decoration: none;">
+					<h2>💬Usage</h2>
 				</a>
-				<pre><code>Development Directory/
-├ commands
-│ ├ <span class="hljs-keyword">command</span> <span class="hljs-title">file</span>
-│ ├ <span class="hljs-built_in">directory</span>
-│ │ └ <span class="hljs-keyword">command</span> <span class="hljs-title">file</span>
-│ └ <span class="hljs-built_in">directory</span>
-│ 　 └ <span class="hljs-built_in">directory</span>
-│ 　 　 └ <span class="hljs-keyword">command</span> <span class="hljs-title">file</span>
-├ events
-│ ├ event <span class="hljs-built_in">file</span>
-│ └ <span class="hljs-built_in">directory</span>
-│ 　 └ event <span class="hljs-built_in">file</span>
-├ args
-│ └ args <span class="hljs-built_in">file</span>
-└ Main <span class="hljs-built_in">file</span></code></pre>
 				<a href="#📄main-file" id="📄main-file" style="color: inherit; text-decoration: none;">
 					<h3>📄Main File</h3>
 				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> { Client } <span class="hljs-keyword">from</span> <span class="hljs-string">'ecstar'</span>;
+				<p><code>/index.js</code></p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> { Client } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'ecstar'</span>);
 
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> Client({
-  <span class="hljs-attr">prefix</span>: <span class="hljs-string">'your prefix'</span>, <span class="hljs-comment">//Required</span>
-  <span class="hljs-attr">owner</span>: <span class="hljs-string">'your id'</span>,
-  <span class="hljs-attr">lang</span>: <span class="hljs-keyword">new</span> LangFile(),
-});
+<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> Client(options);
 
 client.login(<span class="hljs-string">'Your token here'</span>);</code></pre>
+				<p>options: <a href="https://ecstar.js.org/interfaces/_client_.ecstaroptions.html">EcstarOptions</a></p>
 				<a href="#📄command-file" id="📄command-file" style="color: inherit; text-decoration: none;">
 					<h3>📄Command File</h3>
 				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> { Command } <span class="hljs-keyword">from</span> <span class="hljs-string">'ecstar'</span>;
+				<p><code>/commands/filename.js</code></p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> { Command } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'ecstar'</span>);
 
-<span class="hljs-keyword">export</span> = <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Command</span> </span>{
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Command</span> </span>{
   <span class="hljs-keyword">constructor</span>(client) {
-    <span class="hljs-keyword">super</span>(client, {
-      <span class="hljs-attr">name</span>: <span class="hljs-string">'command name'</span>, <span class="hljs-comment">//Required</span>
-      <span class="hljs-attr">aliases</span>: [<span class="hljs-string">'alias1'</span>, <span class="hljs-string">'alias2'</span>],
-      <span class="hljs-attr">ownerOnly</span>: <span class="hljs-literal">false</span>; <span class="hljs-comment">//or true</span>
-    });
+    <span class="hljs-keyword">super</span>(client, options);
   }
 
   run(message) {
     <span class="hljs-comment">// What to do</span>
   }
 };</code></pre>
+				<p>options: <a href="https://ecstar.js.org/modules/_command_base_.html#commandoptions">commandOptions</a></p>
 				<a href="#📄event-file" id="📄event-file" style="color: inherit; text-decoration: none;">
 					<h3>📄Event File</h3>
 				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> { Event } <span class="hljs-keyword">from</span> <span class="hljs-string">'ecstar'</span>;
+				<p><code>/events/filename.js</code></p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> { Event } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'ecstar'</span>);
 
-<span class="hljs-keyword">export</span> = <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Event</span> </span>{
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Event</span> </span>{
   <span class="hljs-keyword">constructor</span>(client) {
     <span class="hljs-keyword">super</span>(client, <span class="hljs-string">'Receive event name'</span>);
   }
@@ -191,11 +171,12 @@ client.login(<span class="hljs-string">'Your token here'</span>);</code></pre>
 				<a href="#📄args-file" id="📄args-file" style="color: inherit; text-decoration: none;">
 					<h3>📄Args File</h3>
 				</a>
-				<pre><code class="language-js"><span class="hljs-keyword">import</span> { Args } <span class="hljs-keyword">from</span> <span class="hljs-string">'ecstar'</span>;
+				<p><code>/args/filename.js</code></p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> { Args } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'ecstar'</span>);
 
-<span class="hljs-keyword">export</span> = <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Args</span> </span>{
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Args</span> </span>{
   <span class="hljs-keyword">constructor</span>(client) {
-    <span class="hljs-keyword">super</span>(client, <span class="hljs-string">'string'</span>);
+    <span class="hljs-keyword">super</span>(client, <span class="hljs-string">'args name'</span>);
   }
   run(message){
     <span class="hljs-comment">// What to do</span>
@@ -205,9 +186,9 @@ client.login(<span class="hljs-string">'Your token here'</span>);</code></pre>
 				<a href="#📄lang-file" id="📄lang-file" style="color: inherit; text-decoration: none;">
 					<h3>📄Lang File</h3>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { Lang } <span class="hljs-keyword">from</span> <span class="hljs-string">'ecstar'</span>;
+				<pre><code class="language-ts"><span class="hljs-keyword">const</span> { Lang } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'ecstar'</span>);
 
-<span class="hljs-keyword">export</span> = <span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> Lang {
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> Lang {
    LOADING_COMMANDS = <span class="hljs-string">''</span>;
    ...
 };</code></pre>
@@ -322,6 +303,7 @@ client.login(<span class="hljs-string">'Your token here'</span>);</code></pre>
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
