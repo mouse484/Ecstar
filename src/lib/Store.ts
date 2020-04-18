@@ -1,8 +1,14 @@
 import { Client, directory, print, EcstarFile } from 'ecstar';
 import { watch } from 'chokidar';
+import path from 'path';
+import { promises as fs } from 'fs';
 
-export abstract class Store<T extends EcstarFile> extends Map<string, T> {
-  constructor(public client: Client, public type: string) {
+export class Store<T extends EcstarFile> extends Map<string, T> {
+  constructor(
+    public client: Client,
+    public type: string,
+    private dirname: string
+  ) {
     super();
     const thatdirectory = directory.getPath(type);
     if (thatdirectory) {
@@ -13,7 +19,15 @@ export abstract class Store<T extends EcstarFile> extends Map<string, T> {
       this.getDefault();
     }
   }
-  abstract getDefault(): void;
+  async getDefault() {
+    const dirpath = path.join(this.dirname, 'default');
+    const files = await fs.readdir(dirpath);
+    files
+      .filter((file) => !file.endsWith('.d.ts'))
+      .forEach((file) => {
+        this.import(path.join(dirpath, file));
+      });
+  }
   getFile(path: string): T {
     const file = require(path);
     const instantiated: T = new file(this.client);

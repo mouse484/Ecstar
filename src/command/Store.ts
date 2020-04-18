@@ -4,7 +4,7 @@ import { promises as fs } from 'fs';
 
 export class CommandStore extends Store<Command> {
   constructor(client: Client) {
-    super(client, 'commands');
+    super(client, 'commands', __dirname);
   }
   set(key: string, value: Command): this {
     super.set(key, value);
@@ -27,14 +27,5 @@ export class CommandStore extends Store<Command> {
       });
     }
     return true;
-  }
-  async getDefault() {
-    const dirpath = path.join(__dirname, 'default');
-    const files = await fs.readdir(dirpath);
-    files
-      .filter((file) => !file.endsWith('.d.ts'))
-      .forEach((file) => {
-        super.import(path.join(dirpath, file));
-      });
   }
 }
