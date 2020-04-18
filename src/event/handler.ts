@@ -14,10 +14,11 @@ export const eventHandler = (
     case 'message':
       new Message(client).run(callback[0]);
       break;
-    default:
+    default: {
       const event: Event | undefined = client.events.get(name);
       if (event) {
         event.run(...callback);
       }
+    }
   }
 };

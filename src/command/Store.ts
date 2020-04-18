@@ -1,6 +1,4 @@
 import { Client, Store, Command, print } from 'ecstar';
-import path from 'path';
-import { promises as fs } from 'fs';
 
 export class CommandStore extends Store<Command> {
   constructor(client: Client) {
