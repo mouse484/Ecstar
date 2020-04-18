@@ -12,11 +12,12 @@ export const eventHandler = (
       print.info(`${client.lang.BOT_READY} ${client.user?.tag}`);
       break;
     case 'message':
-      new Message(client).run(callback);
+      new Message(client).run(callback[0]);
       break;
-  }
-  const event: Event | undefined = client.events.get(name);
-  if (event) {
-    event.run(...callback);
+    default:
+      const event: Event | undefined = client.events.get(name);
+      if (event) {
+        event.run(...callback);
+      }
   }
 };
