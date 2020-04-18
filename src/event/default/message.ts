@@ -7,8 +7,7 @@ export = class extends Event {
   constructor(client: Client) {
     super(client, 'message');
   }
-  run(callback: Message[]) {
-    const [message] = callback;
+  run(message: Message) {
     if (message.author.bot) return;
     if (!message.content.startsWith(this.client.options.prefix)) return;
 
