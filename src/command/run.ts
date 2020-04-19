@@ -37,7 +37,7 @@ export const commandRun = async (
         const perse = async (string: string | undefined): Promise<string> => {
           try {
             if (!string) {
-              if (!option.optional) return '';
+              if (option.optional) return '';
               throw client.lang.MISSING_ARGUMENT;
             }
             return client.args.get(option.type)?.run(message, string);
