@@ -12,7 +12,7 @@ export class LangBase {
   }
   MISSING_ARGUMENT = 'Missing argument';
   INVALID_ARGUMENT = (type: string) => {
-    `The ${type} passed in the argument is invalid`;
+    return `The ${type} passed in the argument is invalid`;
   };
   TIME_OUT_ARGUMENT = 'Accepting arguments has timed out';
 }
