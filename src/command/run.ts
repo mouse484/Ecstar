@@ -40,7 +40,7 @@ export const commandRun = async (
               if (!option.optional) return '';
               throw client.lang.MISSING_ARGUMENT;
             }
-            return client.args.get(option.type)?.run(string);
+            return client.args.get(option.type)?.run(message, string);
           } catch (error) {
             if (typeof error !== 'string') throw error;
 
