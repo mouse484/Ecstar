@@ -12,7 +12,7 @@ export = class extends Lang {
   }
   MISSING_ARGUMENT = '引数が不足しています';
   INVALID_ARGUMENT = (type: string) => {
-    `引数に渡された値は${type}ではありません。`;
+    return `引数に渡された値は${type}ではありません。`;
   };
   TIME_OUT_ARGUMENT = '引数の受付はタイムアウトしました';
 };
