@@ -13,6 +13,11 @@ export class LangBase {
     return `Non-existent command(${commandName})`;
   }
 
+  COMMAND = {
+    OWNER_ONLY: 'Owner-only command',
+    GUILD_ONLY: 'Server-only command',
+  };
+
   WRONG_ARGGUMENT(type: string, message: string): string {
     return `${message}\nPlease enter the ${type} again`;
   }
