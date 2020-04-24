@@ -5,11 +5,14 @@ export class LangBase {
     return `Loading ${type}...`;
   }
   BOT_READY = 'Ready to Go!';
+
   COMMAND_DIR_FILE_WARN =
     "Files cannot be placed directly under 'commands' folder";
+
   NON_EXISTENT_COMMAND(commandName: string): string {
     return `Non-existent command(${commandName})`;
   }
+
   WRONG_ARGGUMENT(type: string, message: string): string {
     return `${message}\nPlease enter the ${type} again`;
   }
