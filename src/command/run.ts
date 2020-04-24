@@ -14,11 +14,11 @@ export const commandRun = async (
   }
 
   if (command.options.ownerOnly && client.options.owner !== message.author.id) {
-    return message.channel.send('sorry owner only command');
+    return message.channel.send(client.lang.COMMAND.OWNER_ONLY);
   }
 
   if (command.options.guildOnly && !message.guild) {
-    return message.channel.send('this command is guil only.');
+    return message.channel.send(client.lang.COMMAND.GUILD_ONLY);
   }
 
   if (command.options.args) {

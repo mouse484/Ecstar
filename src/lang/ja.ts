@@ -12,7 +12,12 @@ export = class extends Lang {
   NON_EXISTENT_COMMAND(commandName: string): string {
     return `存在しないコマンドです(${commandName})`;
   }
-  
+
+  COMMAND = {
+    OWNER_ONLY: 'オーナー専用のコマンドです',
+    GUILD_ONLY: 'サーバー専用のコマンドです',
+  };
+
   WRONG_ARGGUMENT(type: string, message: string): string {
     return `${message}\n${type}をもう一度入力してください`;
   }
