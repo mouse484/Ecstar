@@ -7,6 +7,9 @@ export = class extends Lang {
   BOT_READY = '準備が完了しました!';
   COMMAND_DIR_FILE_WARN =
     "ファイルを'commands'フォルダの直下に置くことはできません";
+  NON_EXISTENT_COMMAND(commandName: string): string {
+    return `存在しないコマンドです(${commandName})`;
+  }
   WRONG_ARGGUMENT(type: string, message: string): string {
     return `${message}\n${type}をもう一度入力してください`;
   }
