@@ -10,7 +10,7 @@ export const commandRun = async (
   const command: Command | undefined = client.commands.get(commandName);
 
   if (!command) {
-    return print.warn(`Non-existent Command(${commandName})`);
+    return print.warn(client.lang.NON_EXISTENT_COMMAND(commandName));
   }
 
   if (command.options.ownerOnly && client.options.owner !== message.author.id) {
