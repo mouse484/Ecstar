@@ -17,8 +17,7 @@ export = class extends Args {
       return true;
     } else if (falsy.includes(lowText)) {
       return false;
-    } else {
-      throw this.client.lang.INVALID_ARGUMENT(this.options.name);
     }
+    throw this.client.lang.INVALID_ARGUMENT(this.options.name);
   }
 };
