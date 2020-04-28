@@ -1,2 +1,1 @@
-export { isTextChannel } from './TextChannel';
-export { isVoiceChannel } from './VoiceChannel';
+export * from './channel';
