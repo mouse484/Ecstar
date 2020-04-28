@@ -19,14 +19,18 @@ export class Store<T extends EcstarFile> extends Map<string, T> {
       this.getDefault();
     }
   }
-  async getDefault() {
-    const dirpath = path.join(this.dirname, 'default');
-    const files = await fs.readdir(dirpath);
-    files
-      .filter((file) => !file.endsWith('.d.ts'))
-      .forEach((file) => {
-        this.import(path.join(dirpath, file));
-      });
+  getDefault() {
+    const walk = async (dirpath: string) => {
+      const files = await fs.readdir(dirpath);
+      files
+        .filter((file) => !file.endsWith('.d.ts'))
+        .forEach(async (file) => {
+          const thatPath = path.join(dirpath, file);
+          if ((await fs.stat(thatPath)).isDirectory()) return walk(thatPath);
+          this.import(thatPath);
+        });
+    };
+    walk(path.join(this.dirname, 'default'));
   }
   getFile(path: string): T {
     const file = require(path);
