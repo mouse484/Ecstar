@@ -1,9 +1,4 @@
-import {
-  Command,
-  Client,
-  isTextChannel,
-  isVoiceChannel,
-} from '../../../../src';
+import { Command, Client, isNamedChannel } from '../../../../src';
 import { Channel, Message, MessageEmbed } from 'discord.js';
 
 export = class extends Command {
@@ -15,9 +10,9 @@ export = class extends Command {
   }
 
   run(message: Message, [channel]: [Channel]) {
-    const embed = new MessageEmbed();
-    if (isTextChannel(channel) || isVoiceChannel(channel)) {
-      embed.addField('name', channel.name).addField('type', channel.type);
+    const embed = new MessageEmbed().addField('type', channel.type);
+    if (isNamedChannel(channel)) {
+      embed.addField('name', channel.name);
     }
     return message.channel.send(embed);
   }
