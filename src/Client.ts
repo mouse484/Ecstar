@@ -9,6 +9,7 @@ import {
 import {
   Client as DiscordClient,
   ClientOptions as DiscordClientOptions,
+  ClientEvents,
   Snowflake,
 } from 'discord.js';
 
@@ -18,22 +19,23 @@ interface EcstarOptions extends DiscordClientOptions {
   lang?: Lang;
 }
 
-type exCallback = [any, ...any[]];
-
 declare module 'discord.js' {
   interface ClientEvents {
-    '*': exCallback;
+    '*': [string, ...unknown[]];
   }
 }
 
-class ExtendClient extends DiscordClient {
-  emit(name: string, ...callback: exCallback) {
-    super.emit(name, ...callback);
-    return super.emit('*', name, ...callback);
+class ExtendDiscordClient extends DiscordClient {
+  emit<K extends keyof ClientEvents>(
+    name: keyof ClientEvents,
+    ...args: ClientEvents[K]
+  ) {
+    super.emit(name, ...args);
+    return super.emit('*', name, ...args);
   }
 }
 
-export class EcstarClient extends ExtendClient {
+export class EcstarClient extends ExtendDiscordClient {
   readonly options!: EcstarOptions;
   readonly lang = this.options.lang || new Lang();
   readonly commands = new CommandStore(this);
@@ -42,7 +44,7 @@ export class EcstarClient extends ExtendClient {
   constructor(options: EcstarOptions) {
     super(options);
 
-    this.on('*', (name: string, ...callback: exCallback) => {
+    this.on('*', (name: string, ...callback: unknown[]) => {
       eventHandler(this, name, ...callback);
     });
   }

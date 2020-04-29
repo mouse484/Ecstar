@@ -1,18 +1,20 @@
 import { Client, print, Event } from 'ecstar';
+import { ClientEvents, Message } from 'discord.js';
 
-import Message from './default/message';
+import MessageEvent from './default/message';
 
 export const eventHandler = (
   client: Client,
   name: string,
-  ...callback: [any, ...any[]]
+  ...callback: unknown[]
 ) => {
   switch (name) {
     case 'ready':
       print.info(`${client.lang.BOT_READY} ${client.user?.tag}`);
       break;
     case 'message':
-      new Message(client).run(callback[0]);
+      const message = callback[0];
+      if (message instanceof Message) new MessageEvent(client).run(message);
       break;
     default: {
       const event: Event | undefined = client.events.get(name);
