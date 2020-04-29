@@ -65,9 +65,8 @@ export const commandRun = async (
         };
 
         args.push(await perse(splitedMessage[index + 1]));
-
-        command.run(message, args);
       }
+      command.run(message, args);
     } catch (error) {
       if (error === client.lang.TIME_OUT_ARGUMENT) {
         (await message.channel.send(client.lang.TIME_OUT_ARGUMENT)).delete({
