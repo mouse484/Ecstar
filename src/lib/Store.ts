@@ -21,12 +21,12 @@ export class Store<T extends EcstarFile> extends Map<string, T> {
   }
   getDefault() {
     const walk = async (dirpath: string) => {
-      const files = await fs.readdir(dirpath);
-      files
-        .filter((file) => !file.endsWith('.d.ts'))
-        .forEach(async (file) => {
-          const thatPath = path.join(dirpath, file);
-          if ((await fs.stat(thatPath)).isDirectory()) return walk(thatPath);
+      const dirents = await fs.readdir(dirpath, { withFileTypes: true });
+      dirents
+        .filter((dirent) => !dirent.name.endsWith('.d.ts'))
+        .forEach(async (dirent) => {
+          const thatPath = path.join(dirpath, dirent.name);
+          if (dirent.isDirectory()) return walk(thatPath);
           this.import(thatPath);
         });
     };
