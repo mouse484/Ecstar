@@ -17,6 +17,7 @@ interface EcstarOptions extends DiscordClientOptions {
   prefix: string;
   owner?: Snowflake;
   lang?: Lang;
+  config?: { [key: string]: any };
 }
 
 declare module 'discord.js' {
@@ -37,6 +38,7 @@ class ExtendDiscordClient extends DiscordClient {
 
 export class EcstarClient extends ExtendDiscordClient {
   readonly options!: EcstarOptions;
+  readonly config = this.options.config;
   readonly lang = this.options.lang || new Lang();
   readonly commands = new CommandStore(this);
   readonly events = new EventStore(this);
