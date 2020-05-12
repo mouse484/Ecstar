@@ -7,12 +7,14 @@ export = class extends Args {
   }
   run(message: Message, text: string): GuildMember {
     const members = message.guild?.members.cache;
-    const member = members?.find(
-      (value) =>
-        value.id === text ||
-        value.displayName === text ||
-        value.user.username === text ||
-        value.user.tag === text
+    const member = members?.find((value) =>
+      [
+        value.id,
+        value.displayName,
+        value.user.username,
+        value.user.tag,
+        `<@!${value.id}>`,
+      ].includes(text)
     );
     if (!member) throw this.client.lang.INVALID_ARGUMENT(this.options.name);
     return member;
