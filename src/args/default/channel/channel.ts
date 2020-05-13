@@ -6,7 +6,6 @@ export = class extends Args {
     super(client, 'channel');
   }
   run(message: Message, text: string): Channel {
-    console.log(text);
     const channel = this.client.channels.cache.find((value) =>
       isNamedChannel(value)
         ? [value.name, value.id, `<#${value.id}>`].includes(text)
