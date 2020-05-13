@@ -8,7 +8,7 @@ export = class extends Args {
   run(message: Message, text: string): Channel {
     const channel = this.client.channels.cache.find(
       (value) =>
-        isCategoryChannel(value) && (value.name === text || value.id === text)
+        isCategoryChannel(value) && [value.name, value.id].includes(text)
     );
     if (!channel) throw this.client.lang.INVALID_ARGUMENT(this.options.name);
     return channel;
