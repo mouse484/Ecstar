@@ -1,4 +1,4 @@
-import { Client } from 'ecstar';
+import { Client, EcstarFile } from 'ecstar';
 import { Message } from 'discord.js';
 
 export type commandOptions = {
@@ -10,7 +10,9 @@ export type commandOptions = {
   readonly args?: (string | { type: string; optional?: boolean })[];
 };
 
-export abstract class CommandBase {
-  constructor(public client: Client, public options: commandOptions) {}
+export abstract class CommandBase extends EcstarFile {
+  constructor(public client: Client, public options: commandOptions) {
+    super(client, options.name);
+  }
   abstract run(message: Message, args?: any[]): void;
 }
