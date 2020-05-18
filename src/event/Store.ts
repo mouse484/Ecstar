@@ -14,6 +14,6 @@ export class EventStore extends Store<Event> {
     });
   }
   update(path: string): void {
-    print.warn("Event file can't auto update, please restart.");
+    print.warn(`Event file can't auto update, please restart. ${path}`);
   }
 }
