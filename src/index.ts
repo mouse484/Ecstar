@@ -11,6 +11,4 @@ export { EventStore } from './event/Store';
 export { CommandStore } from './command/Store';
 export { ArgsStore } from './args/Store';
 
-export { eventHandler } from './event/handler';
-
 export * from './lib/isType';

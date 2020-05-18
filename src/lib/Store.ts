@@ -37,11 +37,10 @@ export class Store<T extends EcstarFile> extends Map<string, T> {
     const instantiated: T = new file(this.client);
     return instantiated;
   }
-  import(path: string): T {
+  import(path: string): void {
     const file: T = this.getFile(path);
     print.store(this.type, 'import', file.name, path);
     this.set(file.name, file);
-    return file;
   }
   update(path: string): void {
     let file: T = this.getFile(path);
