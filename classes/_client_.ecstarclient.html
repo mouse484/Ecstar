@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="_client_.extenddiscordclient.html" class="tsd-signature-type">ExtendDiscordClient</a>
+						<span class="tsd-signature-type">Client</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">EcstarClient</span>
@@ -98,6 +98,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_client_.ecstarclient.html#args" class="tsd-kind-icon">args</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_client_.ecstarclient.html#channels" class="tsd-kind-icon">channels</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_client_.ecstarclient.html#commands" class="tsd-kind-icon">commands</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_client_.ecstarclient.html#config" class="tsd-kind-icon">config</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_client_.ecstarclient.html#emojis" class="tsd-kind-icon">emojis</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_client_.ecstarclient.html#events" class="tsd-kind-icon">events</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_client_.ecstarclient.html#guilds" class="tsd-kind-icon">guilds</a></li>
@@ -164,9 +165,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#constructor">constructor</a></p>
+								<p>Overrides Client.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/af61a8d/src/Client.ts#L43">src/Client.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/0e79194/src/Client.ts#L22">src/Client.ts:22</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -188,7 +189,7 @@
 					<div class="tsd-signature tsd-kind-icon">args<span class="tsd-signature-symbol">:</span> <a href="_args_store_.argsstore.html" class="tsd-signature-type">ArgsStore</a><span class="tsd-signature-symbol"> = new ArgsStore(this)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/af61a8d/src/Client.ts#L43">src/Client.ts:43</a></li>
+							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/0e79194/src/Client.ts#L22">src/Client.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -197,7 +198,7 @@
 					<h3>channels</h3>
 					<div class="tsd-signature tsd-kind-icon">channels<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ChannelManager</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#channels">channels</a></p>
+						<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#channels">channels</a></p>
 						<ul>
 							<li>Defined in node_modules/discord.js/typings/index.d.ts:170</li>
 						</ul>
@@ -209,7 +210,17 @@
 					<div class="tsd-signature tsd-kind-icon">commands<span class="tsd-signature-symbol">:</span> <a href="_command_store_.commandstore.html" class="tsd-signature-type">CommandStore</a><span class="tsd-signature-symbol"> = new CommandStore(this)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/af61a8d/src/Client.ts#L41">src/Client.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/0e79194/src/Client.ts#L20">src/Client.ts:20</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="config" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> config</h3>
+					<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol"> = this.options.config</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/0e79194/src/Client.ts#L18">src/Client.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -218,7 +229,7 @@
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> emojis</h3>
 					<div class="tsd-signature tsd-kind-icon">emojis<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">GuildEmojiManager</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#emojis">emojis</a></p>
+						<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#emojis">emojis</a></p>
 						<ul>
 							<li>Defined in node_modules/discord.js/typings/index.d.ts:171</li>
 						</ul>
@@ -230,7 +241,7 @@
 					<div class="tsd-signature tsd-kind-icon">events<span class="tsd-signature-symbol">:</span> <a href="_event_store_.eventstore.html" class="tsd-signature-type">EventStore</a><span class="tsd-signature-symbol"> = new EventStore(this)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/af61a8d/src/Client.ts#L42">src/Client.ts:42</a></li>
+							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/0e79194/src/Client.ts#L21">src/Client.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -239,7 +250,7 @@
 					<h3>guilds</h3>
 					<div class="tsd-signature tsd-kind-icon">guilds<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">GuildManager</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#guilds">guilds</a></p>
+						<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#guilds">guilds</a></p>
 						<ul>
 							<li>Defined in node_modules/discord.js/typings/index.d.ts:172</li>
 						</ul>
@@ -251,7 +262,7 @@
 					<div class="tsd-signature tsd-kind-icon">lang<span class="tsd-signature-symbol">:</span> <a href="_lang_index_.langbase.html" class="tsd-signature-type">LangBase</a><span class="tsd-signature-symbol"> = this.options.lang || new Lang()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/af61a8d/src/Client.ts#L40">src/Client.ts:40</a></li>
+							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/0e79194/src/Client.ts#L19">src/Client.ts:19</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -260,9 +271,9 @@
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> options</h3>
 					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_client_.ecstaroptions.html" class="tsd-signature-type">EcstarOptions</a></div>
 					<aside class="tsd-sources">
-						<p>Overrides <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#options">options</a></p>
+						<p>Overrides BaseClient.options</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/af61a8d/src/Client.ts#L39">src/Client.ts:39</a></li>
+							<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/0e79194/src/Client.ts#L17">src/Client.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -271,7 +282,7 @@
 					<h3>ready<wbr>At</h3>
 					<div class="tsd-signature tsd-kind-icon">ready<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#readyat">readyAt</a></p>
+						<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#readyat">readyAt</a></p>
 						<ul>
 							<li>Defined in node_modules/discord.js/typings/index.d.ts:173</li>
 						</ul>
@@ -282,7 +293,7 @@
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> ready<wbr>Timestamp</h3>
 					<div class="tsd-signature tsd-kind-icon">ready<wbr>Timestamp<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#readytimestamp">readyTimestamp</a></p>
+						<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#readytimestamp">readyTimestamp</a></p>
 						<ul>
 							<li>Defined in node_modules/discord.js/typings/index.d.ts:174</li>
 						</ul>
@@ -293,7 +304,7 @@
 					<h3>shard</h3>
 					<div class="tsd-signature tsd-kind-icon">shard<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ShardClientUtil</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#shard">shard</a></p>
+						<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#shard">shard</a></p>
 						<ul>
 							<li>Defined in node_modules/discord.js/typings/index.d.ts:175</li>
 						</ul>
@@ -304,7 +315,7 @@
 					<h3>token</h3>
 					<div class="tsd-signature tsd-kind-icon">token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#token">token</a></p>
+						<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#token">token</a></p>
 						<ul>
 							<li>Defined in node_modules/discord.js/typings/index.d.ts:176</li>
 						</ul>
@@ -315,7 +326,7 @@
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> uptime</h3>
 					<div class="tsd-signature tsd-kind-icon">uptime<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#uptime">uptime</a></p>
+						<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#uptime">uptime</a></p>
 						<ul>
 							<li>Defined in node_modules/discord.js/typings/index.d.ts:177</li>
 						</ul>
@@ -326,7 +337,7 @@
 					<h3>user</h3>
 					<div class="tsd-signature tsd-kind-icon">user<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ClientUser</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#user">user</a></p>
+						<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#user">user</a></p>
 						<ul>
 							<li>Defined in node_modules/discord.js/typings/index.d.ts:178</li>
 						</ul>
@@ -337,7 +348,7 @@
 					<h3>users</h3>
 					<div class="tsd-signature tsd-kind-icon">users<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">UserManager</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#users">users</a></p>
+						<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#users">users</a></p>
 						<ul>
 							<li>Defined in node_modules/discord.js/typings/index.d.ts:179</li>
 						</ul>
@@ -348,7 +359,7 @@
 					<h3>voice</h3>
 					<div class="tsd-signature tsd-kind-icon">voice<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ClientVoiceManager</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#voice">voice</a></p>
+						<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#voice">voice</a></p>
 						<ul>
 							<li>Defined in node_modules/discord.js/typings/index.d.ts:180</li>
 						</ul>
@@ -359,7 +370,7 @@
 					<h3>ws</h3>
 					<div class="tsd-signature tsd-kind-icon">ws<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WebSocketManager</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#ws">ws</a></p>
+						<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#ws">ws</a></p>
 						<ul>
 							<li>Defined in node_modules/discord.js/typings/index.d.ts:181</li>
 						</ul>
@@ -377,7 +388,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#addlistener">addListener</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#addlistener">addListener</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/node/globals.d.ts:554</li>
 								</ul>
@@ -422,7 +433,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#clearimmediate">clearImmediate</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#clearimmediate">clearImmediate</a></p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:103</li>
 								</ul>
@@ -446,7 +457,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#clearinterval">clearInterval</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#clearinterval">clearInterval</a></p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:101</li>
 								</ul>
@@ -470,7 +481,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#cleartimeout">clearTimeout</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#cleartimeout">clearTimeout</a></p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:102</li>
 								</ul>
@@ -494,7 +505,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#destroy">destroy</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#destroy">destroy</a></p>
 								<p>Overrides BaseClient.destroy</p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:182</li>
@@ -508,27 +519,27 @@
 					<a name="emit" class="tsd-anchor"></a>
 					<h3>emit</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">emit&lt;K&gt;<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><a href="../interfaces/_client_._discord_js_.clientevents.html" class="tsd-signature-type">ClientEvents</a>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ClientEvents</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">emit&lt;K&gt;<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ClientEvents</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#emit">emit</a></p>
-								<p>Overrides Client.emit</p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#emit">emit</a></p>
+								<p>Overrides EventEmitter.emit</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/mouse484/Ecstar/blob/af61a8d/src/Client.ts#L29">src/Client.ts:29</a></li>
+									<li>Defined in node_modules/discord.js/typings/index.d.ts:197</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
-									<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><a href="../interfaces/_client_._discord_js_.clientevents.html" class="tsd-signature-type">ClientEvents</a></h4>
+									<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">ClientEvents</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>name: <span class="tsd-signature-symbol">keyof </span><a href="../interfaces/_client_._discord_js_.clientevents.html" class="tsd-signature-type">ClientEvents</a></h5>
+									<h5>event: <span class="tsd-signature-type">K</span></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">ClientEvents</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">]</span></h5>
@@ -547,7 +558,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#eventnames">eventNames</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#eventnames">eventNames</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/node/globals.d.ts:569</li>
 								</ul>
@@ -565,7 +576,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#fetchapplication">fetchApplication</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#fetchapplication">fetchApplication</a></p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:183</li>
 								</ul>
@@ -583,7 +594,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#fetchguildpreview">fetchGuildPreview</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#fetchguildpreview">fetchGuildPreview</a></p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:184</li>
 								</ul>
@@ -607,7 +618,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#fetchinvite">fetchInvite</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#fetchinvite">fetchInvite</a></p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:185</li>
 								</ul>
@@ -631,7 +642,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#fetchvoiceregions">fetchVoiceRegions</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#fetchvoiceregions">fetchVoiceRegions</a></p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:186</li>
 								</ul>
@@ -649,7 +660,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#fetchwebhook">fetchWebhook</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#fetchwebhook">fetchWebhook</a></p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:187</li>
 								</ul>
@@ -676,7 +687,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#generateinvite">generateInvite</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#generateinvite">generateInvite</a></p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:188</li>
 								</ul>
@@ -700,7 +711,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#getmaxlisteners">getMaxListeners</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#getmaxlisteners">getMaxListeners</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/node/globals.d.ts:561</li>
 								</ul>
@@ -718,7 +729,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#listenercount">listenerCount</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#listenercount">listenerCount</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/node/globals.d.ts:565</li>
 								</ul>
@@ -742,7 +753,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#listeners">listeners</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#listeners">listeners</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/node/globals.d.ts:562</li>
 								</ul>
@@ -766,7 +777,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#login">login</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#login">login</a></p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:189</li>
 								</ul>
@@ -790,7 +801,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#off">off</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#off">off</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/node/globals.d.ts:558</li>
 								</ul>
@@ -835,7 +846,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#on">on</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#on">on</a></p>
 								<p>Overrides EventEmitter.on</p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:193</li>
@@ -844,7 +855,7 @@
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
-									<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><a href="../interfaces/_client_._discord_js_.clientevents.html" class="tsd-signature-type">ClientEvents</a></h4>
+									<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">ClientEvents</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -887,7 +898,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#once">once</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#once">once</a></p>
 								<p>Overrides EventEmitter.once</p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:195</li>
@@ -896,7 +907,7 @@
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
-									<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><a href="../interfaces/_client_._discord_js_.clientevents.html" class="tsd-signature-type">ClientEvents</a></h4>
+									<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">ClientEvents</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -939,7 +950,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#prependlistener">prependListener</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#prependlistener">prependListener</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/node/globals.d.ts:567</li>
 								</ul>
@@ -984,7 +995,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#prependoncelistener">prependOnceListener</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#prependoncelistener">prependOnceListener</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/node/globals.d.ts:568</li>
 								</ul>
@@ -1029,7 +1040,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#rawlisteners">rawListeners</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#rawlisteners">rawListeners</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/node/globals.d.ts:563</li>
 								</ul>
@@ -1053,7 +1064,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#removealllisteners">removeAllListeners</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#removealllisteners">removeAllListeners</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/node/globals.d.ts:559</li>
 								</ul>
@@ -1077,7 +1088,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#removelistener">removeListener</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#removelistener">removeListener</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/node/globals.d.ts:557</li>
 								</ul>
@@ -1122,7 +1133,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#setimmediate">setImmediate</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#setimmediate">setImmediate</a></p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:107</li>
 								</ul>
@@ -1167,7 +1178,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#setinterval">setInterval</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#setinterval">setInterval</a></p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:105</li>
 								</ul>
@@ -1215,7 +1226,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#setmaxlisteners">setMaxListeners</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#setmaxlisteners">setMaxListeners</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/node/globals.d.ts:560</li>
 								</ul>
@@ -1239,7 +1250,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#settimeout">setTimeout</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#settimeout">setTimeout</a></p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:106</li>
 								</ul>
@@ -1287,7 +1298,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#sweepmessages">sweepMessages</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#sweepmessages">sweepMessages</a></p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:190</li>
 								</ul>
@@ -1311,7 +1322,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_client_.extenddiscordclient.html">ExtendDiscordClient</a>.<a href="_client_.extenddiscordclient.html#tojson">toJSON</a></p>
+								<p>Inherited from <a href="_client_.ecstarclient.html">EcstarClient</a>.<a href="_client_.ecstarclient.html#tojson">toJSON</a></p>
 								<p>Overrides BaseClient.toJSON</p>
 								<ul>
 									<li>Defined in node_modules/discord.js/typings/index.d.ts:191</li>
@@ -1331,11 +1342,6 @@
 					</li>
 					<li class="current tsd-kind-module">
 						<a href="../modules/_client_.html">&quot;<wbr>Client&quot;</a>
-						<ul>
-							<li class=" tsd-kind-namespace tsd-parent-kind-module tsd-is-not-exported">
-								<a href="../modules/_client_._discord_js_.html">&quot;discord.js&quot;</a>
-							</li>
-						</ul>
 					</li>
 				</ul>
 			</nav>
@@ -1357,6 +1363,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_client_.ecstarclient.html#commands" class="tsd-kind-icon">commands</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_client_.ecstarclient.html#config" class="tsd-kind-icon">config</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_client_.ecstarclient.html#emojis" class="tsd-kind-icon">emojis</a>
@@ -1497,9 +1506,6 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_client_.extenddiscordclient.html" class="tsd-kind-icon">Extend<wbr>Discord<wbr>Client</a>
-					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
 						<a href="../interfaces/_client_.ecstaroptions.html" class="tsd-kind-icon">Ecstar<wbr>Options</a>
 					</li>
@@ -1513,16 +1519,15 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
