@@ -9,7 +9,7 @@ export = class extends Args {
     super(client, 'bool');
   }
   run(message: Message, text: string): boolean {
-    if (!text) throw this.client.lang.INVALID_ARGUMENT(this.options.name);
+    if (!text) throw this.client.lang.INVALID_ARGUMENT(this.name);
 
     const lowText = text.toLowerCase();
 
@@ -18,6 +18,6 @@ export = class extends Args {
     } else if (falsy.includes(lowText)) {
       return false;
     }
-    throw this.client.lang.INVALID_ARGUMENT(this.options.name);
+    throw this.client.lang.INVALID_ARGUMENT(this.name);
   }
 };

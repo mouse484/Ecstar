@@ -6,7 +6,7 @@ export = class extends Args {
     super(client, 'string');
   }
   run(message: Message, text: string): string {
-    if (!text) throw this.client.lang.INVALID_ARGUMENT(this.options.name);
+    if (!text) throw this.client.lang.INVALID_ARGUMENT(this.name);
     return text;
   }
 };

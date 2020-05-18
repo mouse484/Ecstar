@@ -17,7 +17,7 @@ export = class extends Command {
     const command = commands.get(type);
     if (command) {
       help.addFields([
-        { name: 'name', value: command.options.name, inline: true },
+        { name: 'name', value: command.name, inline: true },
         {
           name: 'description',
           value: command.options.description
@@ -35,7 +35,7 @@ export = class extends Command {
     } else {
       Object.keys(commands)
         .filter((commandName) => {
-          return commandName === commands.get(commandName)?.options.name;
+          return commandName === commands.get(commandName)?.name;
         })
         .forEach((commandName) => {
           const command = commands.get(commandName);

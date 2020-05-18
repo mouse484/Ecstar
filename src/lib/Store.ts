@@ -39,19 +39,19 @@ export class Store<T extends EcstarFile> extends Map<string, T> {
   }
   import(path: string): T {
     const file: T = this.getFile(path);
-    print.store(this.type, 'import', file.options.name, path);
-    this.set(file.options.name, file);
+    print.store(this.type, 'import', file.name, path);
+    this.set(file.name, file);
     return file;
   }
   update(path: string): void {
     let file: T = this.getFile(path);
 
-    this.delete(file.options.name);
+    this.delete(file.name);
     delete require.cache[path];
 
     file = this.getFile(path);
-    this.set(file.options.name, file);
+    this.set(file.name, file);
 
-    print.store(this.type, 'update', file.options.name, path);
+    print.store(this.type, 'update', file.name, path);
   }
 }
