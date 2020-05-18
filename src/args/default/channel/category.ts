@@ -10,7 +10,7 @@ export = class extends Args {
       (value) =>
         isCategoryChannel(value) && [value.name, value.id].includes(text)
     );
-    if (!channel) throw this.client.lang.INVALID_ARGUMENT(this.options.name);
+    if (!channel) throw this.client.lang.INVALID_ARGUMENT(this.name);
     return channel;
   }
 };

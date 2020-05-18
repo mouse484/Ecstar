@@ -9,7 +9,7 @@ export = class extends Args {
     const parsed = parseInt(text);
 
     if (Number.isNaN(parsed)) {
-      throw this.client.lang.INVALID_ARGUMENT(this.options.name);
+      throw this.client.lang.INVALID_ARGUMENT(this.name);
     }
     return parsed;
   }

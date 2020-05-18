@@ -9,7 +9,7 @@ export = class extends Args {
     const channel = this.client.channels.cache.find(
       (value) => isDMChannel(value) && value.id === text
     );
-    if (!channel) throw this.client.lang.INVALID_ARGUMENT(this.options.name);
+    if (!channel) throw this.client.lang.INVALID_ARGUMENT(this.name);
     return channel;
   }
 };

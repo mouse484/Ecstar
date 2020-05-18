@@ -16,7 +16,7 @@ export = class extends Args {
         `<@!${value.id}>`,
       ].includes(text)
     );
-    if (!member) throw this.client.lang.INVALID_ARGUMENT(this.options.name);
+    if (!member) throw this.client.lang.INVALID_ARGUMENT(this.name);
     return member;
   }
 };

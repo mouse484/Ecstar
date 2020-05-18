@@ -80,5 +80,5 @@ export const commandRun = async (
     command.run(message);
   }
 
-  print.command(`${command.options.name} (${commandName})`);
+  print.command(`${command.name} (${commandName})`);
 };

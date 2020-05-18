@@ -11,7 +11,7 @@ export = class extends Args {
         ? [value.name, value.id, `<#${value.id}>`].includes(text)
         : value.id === text
     );
-    if (!channel) throw this.client.lang.INVALID_ARGUMENT(this.options.name);
+    if (!channel) throw this.client.lang.INVALID_ARGUMENT(this.name);
     return channel;
   }
 };
