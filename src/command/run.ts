@@ -26,7 +26,6 @@ export const commandRun = async (
     command.options.permissions &&
     !message.member?.hasPermission(command.options.permissions)
   ) {
-      command.options.permissions
     return message.channel.send(client.lang.COMMAND.NEED_PERMISSION);
   }
 
