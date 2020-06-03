@@ -16,6 +16,7 @@ export class LangBase {
   COMMAND = {
     OWNER_ONLY: 'Owner-only command',
     GUILD_ONLY: 'Server-only command',
+    NEED_PERMISSION: 'The Command require permission',
   };
 
   WRONG_ARGGUMENT(type: string, message: string): string {

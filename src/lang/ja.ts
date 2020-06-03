@@ -16,6 +16,7 @@ export = class extends Lang {
   COMMAND = {
     OWNER_ONLY: 'オーナー専用のコマンドです',
     GUILD_ONLY: 'サーバー専用のコマンドです',
+    NEED_PERMISSION: 'このコマンドに必要権限がありません',
   };
 
   WRONG_ARGGUMENT(type: string, message: string): string {

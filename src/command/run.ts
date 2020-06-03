@@ -21,6 +21,15 @@ export const commandRun = async (
     return message.channel.send(client.lang.COMMAND.GUILD_ONLY);
   }
 
+  if (
+    message.guild &&
+    command.options.permissions &&
+    !message.member?.hasPermission(command.options.permissions)
+  ) {
+      command.options.permissions
+    return message.channel.send(client.lang.COMMAND.NEED_PERMISSION);
+  }
+
   if (command.options.args) {
     const args: string[] = [];
     const splitedMessage = split(message.content, {

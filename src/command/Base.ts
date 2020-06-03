@@ -1,5 +1,5 @@
 import { Client, EcstarFile } from 'ecstar';
-import { Message } from 'discord.js';
+import { Message, PermissionResolvable } from 'discord.js';
 
 export type commandOptions = {
   readonly name: string;
@@ -8,6 +8,7 @@ export type commandOptions = {
   readonly ownerOnly?: boolean;
   readonly guildOnly?: boolean;
   readonly args?: (string | { type: string; optional?: boolean })[];
+  readonly permissions?: PermissionResolvable[];
 };
 
 export abstract class CommandBase extends EcstarFile {
