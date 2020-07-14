@@ -1499,7 +1499,8 @@ escodegen@^1.11.1:
 
 eslint-config-mouse@mouse484/eslint-config:
   version "1.0.0"
-  resolved "https://codeload.github.com/mouse484/eslint-config/tar.gz/ef4563d907ada89fefea557d4135d6be228eaacf"
+  uid d9f06891d3ccd61be29fdf3758ed0616d6b0a6d7
+  resolved "https://codeload.github.com/mouse484/eslint-config/tar.gz/d9f06891d3ccd61be29fdf3758ed0616d6b0a6d7"
   dependencies:
     confusing-browser-globals "^1.0.9"
 
