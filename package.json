@@ -45,7 +45,7 @@
     "ttypescript": "^1.5.10",
     "typedoc": "^0.17.0",
     "typescript": "^3.7.2",
-    "typescript-transform-paths": "^1.1.14"
+    "typescript-transform-paths": "^2.0.1"
   },
   "engines": {
     "node": ">=12.0.0"
