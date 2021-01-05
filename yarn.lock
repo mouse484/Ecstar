@@ -4452,12 +4452,12 @@ typedoc@^0.17.0:
     shelljs "^0.8.4"
     typedoc-default-themes "^0.10.2"
 
-typescript-transform-paths@^1.1.14:
-  version "1.1.14"
-  resolved "https://registry.yarnpkg.com/typescript-transform-paths/-/typescript-transform-paths-1.1.14.tgz#4a3800a04977a527270980488f9c93055a31e474"
-  integrity sha512-oUXMH4D+GSqr/tGMlQVOB0RC9IUj1NokQVzRSbD+YeER5gR/U7vqj8KKrwuRSGd1xgKP/St+HjM8zoB57wVGDA==
+typescript-transform-paths@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/typescript-transform-paths/-/typescript-transform-paths-2.2.0.tgz#925c073050390f51d2aa5472428081dcb370b8d4"
+  integrity sha512-Cc+9Z7IbswrTT+0dKz6Uh+Nv2jUSUCndSCEHYomt5mQYT/xqmFOWOcm6WCKOvgCL6H/kJegGPyB6Q80V44miFA==
   dependencies:
-    slash "^3.0.0"
+    minimatch "^3.0.4"
 
 typescript@^3.7.2:
   version "3.9.7"
